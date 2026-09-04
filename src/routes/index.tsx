@@ -222,7 +222,12 @@ function Nav() {
 
         <div className="hidden md:flex items-center gap-3">
           <LanguageSwitcher />
-          <a href="#iletisim" className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-5 py-2 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500">
+          <a
+            href={whatsappLink(t.whatsapp.prefilledMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-5 py-2 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+          >
             {t.nav.ctaAppointment} <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -338,7 +343,12 @@ function Hero() {
             transition={{ delay: 1.6, duration: 1 }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            <a href="#iletisim" className="group inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold">
+            <a
+              href={whatsappLink(t.whatsapp.prefilledMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold"
+            >
               {t.hero.ctaConsult}
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
@@ -387,7 +397,12 @@ function HeroCta() {
               {t.hero.appointmentCtaDesc}
             </p>
           </div>
-          <a href="#randevu-formu" className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold shrink-0">
+          <a
+            href={whatsappLink(t.whatsapp.prefilledMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold shrink-0"
+          >
             {t.hero.appointmentCta}
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
@@ -641,7 +656,9 @@ const DetailDialog = memo(function DetailDialog({
 
             <div className="mt-7 flex items-center gap-3">
               <a
-                href="#iletisim"
+                href={whatsappLink(t.whatsapp.prefilledMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => onOpenChange(false)}
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-xs uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold"
               >
@@ -863,7 +880,12 @@ function Faq() {
         </motion.div>
 
         <motion.div {...fadeUp} className="mt-12 text-center">
-          <a href="#iletisim" className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-2.5 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500">
+          <a
+            href={whatsappLink(t.whatsapp.prefilledMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-2.5 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+          >
             {t.faqSection.cta} <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </motion.div>
