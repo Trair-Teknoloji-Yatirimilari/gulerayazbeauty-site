@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LocaleProvider, useT } from "@/i18n/context";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SITE_URL } from "@/lib/site";
 
 function NotFoundComponent() {
@@ -129,6 +130,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <LocaleProvider>
         <Outlet />
+        <WhatsAppButton />
       </LocaleProvider>
     </QueryClientProvider>
   );

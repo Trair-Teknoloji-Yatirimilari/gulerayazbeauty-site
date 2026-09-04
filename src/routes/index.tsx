@@ -52,10 +52,9 @@ import serviceVucut from "@/assets/service-vucut.jpg";
 import serviceDovme from "@/assets/service-dovme-silme.jpg";
 import serviceKaliciMakyaj from "@/assets/service-kalici-makyaj.jpg";
 import serviceKuafor from "@/assets/service-kuafor.jpg";
-import { AppointmentForm } from "@/components/AppointmentForm";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useT } from "@/i18n/context";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, PHONE_MOBILE, OPENING_HOURS, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -927,17 +926,57 @@ function Contact() {
         </motion.div>
 
         <motion.div {...fadeUp} id="randevu-formu" className="mt-16 max-w-3xl mx-auto scroll-mt-24">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-8 bg-primary/60" />
-              <span className="text-[10px] uppercase tracking-[0.4em] text-primary">{t.contact.formBadge}</span>
-              <div className="h-px w-8 bg-primary/60" />
+          <div className="rounded-sm border border-border/60 bg-card/85 backdrop-blur px-6 py-10 md:px-12 md:py-14 text-center shadow-elegant">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="h-px w-8 bg-primary" />
+              <span className="text-[10px] uppercase tracking-[0.4em] text-primary">{t.contact.ctaBadge}</span>
+              <div className="h-px w-8 bg-primary" />
             </div>
-            <h3 className="font-display text-2xl md:text-3xl text-foreground">
-              {t.contact.formTitleA} <span className="italic text-gold-gradient">{t.contact.formTitleB}</span>
+            <h3 className="font-display text-2xl md:text-4xl text-foreground leading-tight">
+              {t.contact.ctaTitleA} <span className="italic text-gold-gradient">{t.contact.ctaTitleB}</span>
             </h3>
+            <p className="mt-5 text-foreground/70 leading-relaxed max-w-xl mx-auto">{t.contact.ctaBody}</p>
+
+            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={whatsappLink(t.whatsapp.prefilledMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold"
+              >
+                {t.contact.ctaWhatsapp}
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+              <a
+                href={`tel:${PHONE_MOBILE}`}
+                className="inline-flex items-center gap-3 rounded-full border border-primary/60 px-8 py-3.5 text-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+              >
+                <Phone className="w-4 h-4" strokeWidth={1.5} />
+                {t.contact.ctaCall}
+              </a>
+            </div>
+
+            <div className="hairline my-9 mx-auto max-w-xs" />
+
+            <dl className="grid sm:grid-cols-2 gap-6 text-left max-w-lg mx-auto">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-primary mt-1 shrink-0" strokeWidth={1.5} />
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{t.contact.cards.clinic}</dt>
+                  <dd className="mt-1.5 text-sm text-foreground/85">{t.contact.address}</dd>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-primary mt-1 shrink-0" strokeWidth={1.5} />
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{t.contact.hoursLabel}</dt>
+                  <dd className="mt-1.5 text-sm text-foreground/85">
+                    {t.contact.hoursDays} · {OPENING_HOURS.opens}–{OPENING_HOURS.closes}
+                  </dd>
+                </div>
+              </div>
+            </dl>
           </div>
-          <AppointmentForm />
         </motion.div>
       </div>
     </section>
