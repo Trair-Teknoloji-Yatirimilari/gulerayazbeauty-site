@@ -112,6 +112,12 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        {/* wellnessallclub canlı destek widget'ı — shadow DOM kullanır, sayfa stilini etkilemez */}
+        <script
+          src="https://www.wellnessallclub.com/widget.js"
+          data-key="848d747e-89af-4c27-b379-c94dfda85cdf"
+          data-title="Canlı Destek"
+        />
       </body>
     </html>
   );
