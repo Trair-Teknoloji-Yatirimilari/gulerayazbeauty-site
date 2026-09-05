@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
-import { memo, useRef, useState } from "react";
+import { memo, useRef, useState, type CSSProperties } from "react";
 import {
   Sparkles,
   Zap,
@@ -40,7 +40,6 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-import heroBeauty from "@/assets/hero-beauty.jpg";
 import beautyCenter from "@/assets/beauty-center.jpg";
 import merkezGercek from "@/assets/merkez-gercek.jpg";
 import serviceLazer from "@/assets/service-lazer.jpg";
@@ -53,6 +52,7 @@ import serviceDovme from "@/assets/service-dovme-silme.jpg";
 import serviceKaliciMakyaj from "@/assets/service-kalici-makyaj.jpg";
 import serviceKuafor from "@/assets/service-kuafor.jpg";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { HeroMedia } from "@/components/HeroMedia";
 import { useT } from "@/i18n/context";
 import { SITE_URL, PHONE_MOBILE, OPENING_HOURS, whatsappLink } from "@/lib/site";
 
@@ -277,9 +277,9 @@ function Hero() {
         style={{ y, scale }}
         className="absolute inset-0"
       >
-        <img src={heroBeauty} alt={t.hero.heroAlt} className="w-full h-full object-cover" width={1920} height={1280} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/35 to-black/65" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+        <HeroMedia alt={t.hero.heroAlt} />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/40 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent" />
       </motion.div>
 
@@ -293,61 +293,49 @@ function Hero() {
 
       <motion.div style={{ opacity }} className="relative z-10 h-full flex items-end pb-24 md:pb-32">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-3 mb-6"
-          >
+          <div className="hero-reveal flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-white/70" />
             <span className="text-xs uppercase tracking-[0.4em] text-white/90">{t.hero.badge}</span>
-          </motion.div>
+          </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] max-w-5xl text-white">
-            <span dir="ltr" className="inline-block" style={{ unicodeBidi: "isolate" }}>
-              {t.hero.firstName.split("").map((c, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.04, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="inline-block"
-                >
-                  {c === " " ? "\u00A0" : c}
-                </motion.span>
-              ))}
+            <span
+              dir="ltr"
+              className="hero-reveal inline-block"
+              style={{ unicodeBidi: "isolate", "--hero-delay": "120ms" } as CSSProperties}
+            >
+              {t.hero.firstName}
             </span>
             <br />
-            <motion.span
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 1 }}
-              className="text-gold-gradient-light italic"
+            <span
+              className="hero-reveal text-gold-gradient-light italic inline-block"
+              style={{ "--hero-delay": "240ms" } as CSSProperties}
             >
               {t.hero.lastName}
-            </motion.span>
+            </span>
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 1 }}
-            className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed"
+          <div
+            className="hero-line mt-7 w-40 md:w-56"
+            style={{ "--hero-delay": "360ms" } as CSSProperties}
+          />
+
+          <p
+            className="hero-reveal mt-8 max-w-xl text-lg text-white/85 leading-relaxed"
+            style={{ "--hero-delay": "480ms" } as CSSProperties}
           >
             {t.hero.subtitle}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 1 }}
-            className="mt-10 flex flex-wrap gap-4"
+          <div
+            className="hero-reveal mt-10 flex flex-wrap gap-4"
+            style={{ "--hero-delay": "600ms" } as CSSProperties}
           >
             <a
               href={whatsappLink(t.whatsapp.prefilledMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold"
+              className="btn-sheen group inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold"
             >
               {t.hero.ctaConsult}
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -355,7 +343,7 @@ function Hero() {
             <a href="#hizmetler" className="inline-flex items-center gap-3 rounded-full border border-white/50 px-8 py-3.5 text-sm uppercase tracking-widest text-white/90 hover:bg-white/10 hover:border-white transition-all">
               {t.hero.ctaServices}
             </a>
-          </motion.div>
+          </div>
         </div>
       </motion.div>
 
