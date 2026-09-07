@@ -14,6 +14,7 @@ export const Route = createFileRoute("/blog")({
       { property: "og:title", content: "Güzellik & Bakım Blogu | Güler Ayaz Beauty" },
       { property: "og:description", content: "Güzellik ritüelleri, cilt bakımı ve iyi yaşam içerikleri." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/blog` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/blog` }],
