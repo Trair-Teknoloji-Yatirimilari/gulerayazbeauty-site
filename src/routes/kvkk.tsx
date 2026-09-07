@@ -13,6 +13,7 @@ export const Route = createFileRoute("/kvkk")({
       { property: "og:title", content: "KVKK Aydınlatma Metni | Güler Ayaz Beauty" },
       { property: "og:description", content: "Kişisel verilerinizin nasıl işlendiği, saklandığı ve haklarınız." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/kvkk` },
       { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/kvkk` }],

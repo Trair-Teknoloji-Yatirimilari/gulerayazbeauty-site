@@ -22,6 +22,7 @@ export const Route = createFileRoute("/galeri")({
           "Merkezimizden kareler, uygulama anları ve atmosferimiz.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/galeri` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/galeri` }],

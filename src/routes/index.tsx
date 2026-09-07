@@ -64,6 +64,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Güler Ayaz Beauty | Maslak Güzellik Merkezi" },
       { property: "og:description", content: "Uzman kadro, premium teknoloji, davetkar atmosfer." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/` }],
