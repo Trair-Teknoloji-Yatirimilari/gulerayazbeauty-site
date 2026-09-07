@@ -1,5 +1,5 @@
 -- PostgreSQL şeması (Supabase bağımlılığı olmadan)
--- Çalıştırma: docker exec -i gokhan-postgres psql -U gokhan_user -d gokhan_prod < db/init.sql
+-- Çalıştırma: docker exec -i gulerayaz-postgres psql -U gulerayaz_user -d gulerayaz_prod < db/init.sql
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 DO $$ BEGIN

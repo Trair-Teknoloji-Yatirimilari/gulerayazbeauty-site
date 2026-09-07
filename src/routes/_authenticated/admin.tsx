@@ -15,7 +15,7 @@ import { useT } from "@/i18n/context";
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Randevu Yönetim Paneli | Dr. Gökhan Değirmencioğlu" },
+      { title: "Yönetim Paneli | Güler Ayaz Beauty" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
