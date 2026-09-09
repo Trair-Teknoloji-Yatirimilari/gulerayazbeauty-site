@@ -495,6 +495,7 @@ export const tr = {
   },
   footer: {
     tagline: "Beauty Clinic · Maslak",
+    servicesHeader: "Hizmetler",
     contactHeader: "İletişim",
     socialHeader: "Sosyal",
     address: "Maslak 1453\nSarıyer / İstanbul",
@@ -623,6 +624,19 @@ export const tr = {
     error: "İşlem başarısız.",
     urlRequired: "Görsel URL veya dosya gerekli.",
     uploadError: "Dosya yüklenemedi.",
+  },
+  homeBlog: {
+    badge: "Blog'dan",
+    titleA: "Güzellik", titleB: "günlüğü",
+    intro: "Uygulamalar, süreçler ve bakım önerileri üzerine merkezimizden yazılar.",
+    cta: "Tüm yazılar",
+  },
+  relatedService: {
+    label: "İlgili hizmet",
+    cta: "Hizmet sayfasına git",
+  },
+  otherPosts: {
+    title: "Diğer yazılar",
   },
   blog: {
     badge: "Bilgi & İlham",

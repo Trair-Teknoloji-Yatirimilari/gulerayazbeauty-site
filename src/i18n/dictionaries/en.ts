@@ -497,6 +497,7 @@ export const en: typeof tr = {
   },
   footer: {
     tagline: "Beauty Clinic · Maslak",
+    servicesHeader: "Services",
     contactHeader: "Contact",
     socialHeader: "Social",
     address: "Maslak 1453\nSarıyer / Istanbul",
@@ -625,6 +626,19 @@ export const en: typeof tr = {
     error: "Operation failed.",
     urlRequired: "Image URL or file is required.",
     uploadError: "Could not upload file.",
+  },
+  homeBlog: {
+    badge: "From the Blog",
+    titleA: "Beauty", titleB: "journal",
+    intro: "Notes from our centre on treatments, processes and aftercare.",
+    cta: "All posts",
+  },
+  relatedService: {
+    label: "Related service",
+    cta: "Go to service page",
+  },
+  otherPosts: {
+    title: "Other posts",
   },
   blog: {
     badge: "Insights",

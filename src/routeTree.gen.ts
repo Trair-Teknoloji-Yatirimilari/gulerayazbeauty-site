@@ -13,10 +13,16 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CiltBakimiRouteImport } from './routes/cilt-bakimi'
+import { Route as DovmeSilmeRouteImport } from './routes/dovme-silme'
 import { Route as GaleriRouteImport } from './routes/galeri'
+import { Route as KaliciMakyajRouteImport } from './routes/kalici-makyaj'
+import { Route as KampanyaRouteImport } from './routes/kampanya'
 import { Route as KvkkRouteImport } from './routes/kvkk'
+import { Route as LazerEpilasyonRouteImport } from './routes/lazer-epilasyon'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillendirme'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as UploadsSplatRouteImport } from './routes/uploads.$'
@@ -44,14 +50,39 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CiltBakimiRoute = CiltBakimiRouteImport.update({
+  id: '/cilt-bakimi',
+  path: '/cilt-bakimi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DovmeSilmeRoute = DovmeSilmeRouteImport.update({
+  id: '/dovme-silme',
+  path: '/dovme-silme',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GaleriRoute = GaleriRouteImport.update({
   id: '/galeri',
   path: '/galeri',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KaliciMakyajRoute = KaliciMakyajRouteImport.update({
+  id: '/kalici-makyaj',
+  path: '/kalici-makyaj',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KampanyaRoute = KampanyaRouteImport.update({
+  id: '/kampanya',
+  path: '/kampanya',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KvkkRoute = KvkkRouteImport.update({
   id: '/kvkk',
   path: '/kvkk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LazerEpilasyonRoute = LazerEpilasyonRouteImport.update({
+  id: '/lazer-epilasyon',
+  path: '/lazer-epilasyon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -62,6 +93,11 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VucutSekillendirmeRoute = VucutSekillendirmeRouteImport.update({
+  id: '/vucut-sekillendirme',
+  path: '/vucut-sekillendirme',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -107,10 +143,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
+  '/cilt-bakimi': typeof CiltBakimiRoute
+  '/dovme-silme': typeof DovmeSilmeRoute
   '/galeri': typeof GaleriRoute
+  '/kalici-makyaj': typeof KaliciMakyajRoute
+  '/kampanya': typeof KampanyaRoute
   '/kvkk': typeof KvkkRoute
+  '/lazer-epilasyon': typeof LazerEpilasyonRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -123,10 +165,16 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
+  '/cilt-bakimi': typeof CiltBakimiRoute
+  '/dovme-silme': typeof DovmeSilmeRoute
   '/galeri': typeof GaleriRoute
+  '/kalici-makyaj': typeof KaliciMakyajRoute
+  '/kampanya': typeof KampanyaRoute
   '/kvkk': typeof KvkkRoute
+  '/lazer-epilasyon': typeof LazerEpilasyonRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -141,10 +189,16 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
+  '/cilt-bakimi': typeof CiltBakimiRoute
+  '/dovme-silme': typeof DovmeSilmeRoute
   '/galeri': typeof GaleriRoute
+  '/kalici-makyaj': typeof KaliciMakyajRoute
+  '/kampanya': typeof KampanyaRoute
   '/kvkk': typeof KvkkRoute
+  '/lazer-epilasyon': typeof LazerEpilasyonRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -159,10 +213,16 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/blog'
+    | '/cilt-bakimi'
+    | '/dovme-silme'
     | '/galeri'
+    | '/kalici-makyaj'
+    | '/kampanya'
     | '/kvkk'
+    | '/lazer-epilasyon'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/vucut-sekillendirme'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -175,10 +235,16 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/blog'
+    | '/cilt-bakimi'
+    | '/dovme-silme'
     | '/galeri'
+    | '/kalici-makyaj'
+    | '/kampanya'
     | '/kvkk'
+    | '/lazer-epilasyon'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/vucut-sekillendirme'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -192,10 +258,16 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/blog'
+    | '/cilt-bakimi'
+    | '/dovme-silme'
     | '/galeri'
+    | '/kalici-makyaj'
+    | '/kampanya'
     | '/kvkk'
+    | '/lazer-epilasyon'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/vucut-sekillendirme'
     | '/_authenticated/admin'
     | '/blog_/$slug'
     | '/uploads/$'
@@ -210,10 +282,16 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRoute
+  CiltBakimiRoute: typeof CiltBakimiRoute
+  DovmeSilmeRoute: typeof DovmeSilmeRoute
   GaleriRoute: typeof GaleriRoute
+  KaliciMakyajRoute: typeof KaliciMakyajRoute
+  KampanyaRoute: typeof KampanyaRoute
   KvkkRoute: typeof KvkkRoute
+  LazerEpilasyonRoute: typeof LazerEpilasyonRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VucutSekillendirmeRoute: typeof VucutSekillendirmeRoute
   BlogSlugRoute: typeof BlogSlugRoute
   UploadsSplatRoute: typeof UploadsSplatRoute
 }
@@ -248,6 +326,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cilt-bakimi': {
+      id: '/cilt-bakimi'
+      path: '/cilt-bakimi'
+      fullPath: '/cilt-bakimi'
+      preLoaderRoute: typeof CiltBakimiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dovme-silme': {
+      id: '/dovme-silme'
+      path: '/dovme-silme'
+      fullPath: '/dovme-silme'
+      preLoaderRoute: typeof DovmeSilmeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/galeri': {
       id: '/galeri'
       path: '/galeri'
@@ -255,11 +347,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GaleriRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kalici-makyaj': {
+      id: '/kalici-makyaj'
+      path: '/kalici-makyaj'
+      fullPath: '/kalici-makyaj'
+      preLoaderRoute: typeof KaliciMakyajRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kampanya': {
+      id: '/kampanya'
+      path: '/kampanya'
+      fullPath: '/kampanya'
+      preLoaderRoute: typeof KampanyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kvkk': {
       id: '/kvkk'
       path: '/kvkk'
       fullPath: '/kvkk'
       preLoaderRoute: typeof KvkkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lazer-epilasyon': {
+      id: '/lazer-epilasyon'
+      path: '/lazer-epilasyon'
+      fullPath: '/lazer-epilasyon'
+      preLoaderRoute: typeof LazerEpilasyonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -274,6 +387,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vucut-sekillendirme': {
+      id: '/vucut-sekillendirme'
+      path: '/vucut-sekillendirme'
+      fullPath: '/vucut-sekillendirme'
+      preLoaderRoute: typeof VucutSekillendirmeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -352,10 +472,16 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   BlogRoute: BlogRoute,
+  CiltBakimiRoute: CiltBakimiRoute,
+  DovmeSilmeRoute: DovmeSilmeRoute,
   GaleriRoute: GaleriRoute,
+  KaliciMakyajRoute: KaliciMakyajRoute,
+  KampanyaRoute: KampanyaRoute,
   KvkkRoute: KvkkRoute,
+  LazerEpilasyonRoute: LazerEpilasyonRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VucutSekillendirmeRoute: VucutSekillendirmeRoute,
   BlogSlugRoute: BlogSlugRoute,
   UploadsSplatRoute: UploadsSplatRoute,
 }

@@ -51,12 +51,25 @@ import serviceVucut from "@/assets/service-vucut.jpg";
 import serviceDovme from "@/assets/service-dovme-silme.jpg";
 import serviceKaliciMakyaj from "@/assets/service-kalici-makyaj.jpg";
 import serviceKuafor from "@/assets/service-kuafor.jpg";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { HeroMedia } from "@/components/HeroMedia";
+import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
+import { listPublishedPosts } from "@/lib/blog.functions";
+import { SERVICE_PATH_BY_KEY } from "@/lib/service-pages";
+import { BEAUTY_SALON_ID } from "@/lib/service-head";
 import { useT } from "@/i18n/context";
 import { SITE_URL, PHONE_MOBILE, OPENING_HOURS, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
+  // Blog bölümü için yazılar. DB erişilemezse ana sayfanın tamamı çökmesin —
+  // bölüm sessizce gizlenir.
+  loader: async () => {
+    try {
+      return await listPublishedPosts();
+    } catch {
+      return [];
+    }
+  },
   head: () => ({
     meta: [
       { title: "Güler Ayaz Beauty | Maslak Güzellik & Estetik Merkezi" },
@@ -74,6 +87,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BeautySalon",
+          "@id": BEAUTY_SALON_ID,
           name: "Güler Ayaz Beauty",
           url: SITE_URL,
           image: `${SITE_URL}/og-image.jpg`,
@@ -160,7 +174,7 @@ const SERVICE_IMAGES: Record<string, string> = {
 function Index() {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Nav />
+      <SiteNav onHome />
       <Hero />
       <HeroCta />
       <Marquee />
@@ -168,95 +182,13 @@ function Index() {
       <Services />
       <Journey />
       <Faq />
+      <HomeBlog />
       <Contact />
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
 
-/* ---------------- NAV ---------------- */
-
-function Nav() {
-  const [open, setOpen] = useState(false);
-  const { t } = useT();
-  const links: { href: string; label: string; route?: boolean }[] = [
-    { href: "#merkez", label: t.nav.about },
-    { href: "#hizmetler", label: t.nav.services },
-    { href: "#deneyim", label: t.nav.journey },
-    { href: "/galeri", label: t.nav.gallery, route: true },
-    { href: "/blog", label: t.nav.blog, route: true },
-    { href: "#sss", label: t.nav.faq },
-    { href: "#iletisim", label: t.nav.contact },
-  ];
-
-  return (
-    <motion.header
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl bg-background/90 border-b border-border/40"
-    >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-16 md:h-20">
-        <a href="#top" className="flex flex-col items-start leading-none group">
-          <span className="text-gold-gradient font-display text-base md:text-lg tracking-wide whitespace-nowrap">
-            {t.nav.brand}
-          </span>
-          <span className="text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-            {t.nav.tagline}
-          </span>
-        </a>
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map((l) =>
-            l.route ? (
-              <Link key={l.href} to={l.href} className="text-sm text-foreground/80 hover:text-primary transition-colors relative group">
-                {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-500 group-hover:w-full" />
-              </Link>
-            ) : (
-              <a key={l.href} href={l.href} className="text-sm text-foreground/80 hover:text-primary transition-colors relative group">
-                {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-500 group-hover:w-full" />
-              </a>
-            ),
-          )}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-3">
-          <LanguageSwitcher />
-          <a
-            href={whatsappLink(t.whatsapp.prefilledMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-5 py-2 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
-          >
-            {t.nav.ctaAppointment} <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
-        </div>
-        <div className="md:hidden flex items-center gap-2">
-          <LanguageSwitcher />
-          <button onClick={() => setOpen(!open)} className="text-primary p-2" aria-label={t.nav.menuAria}>
-            <div className="w-6 h-px bg-current mb-1.5" />
-            <div className="w-6 h-px bg-current mb-1.5" />
-            <div className="w-4 h-px bg-current ml-auto" />
-          </button>
-        </div>
-      </div>
-      {open && (
-        <div className="md:hidden border-t border-border/40 bg-background/95">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {links.map((l) =>
-              l.route ? (
-                <Link key={l.href} to={l.href} onClick={() => setOpen(false)} className="text-sm text-foreground/80">{l.label}</Link>
-              ) : (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm text-foreground/80">{l.label}</a>
-              ),
-            )}
-          </div>
-        </div>
-      )}
-    </motion.header>
-  );
-}
 
 /* ---------------- HERO ---------------- */
 
@@ -699,6 +631,7 @@ function ServiceRow({ service, reversed, index }: { service: ServiceItem; revers
   const { t } = useT();
   const Icon = SERVICE_ICONS[service.key] ?? Sparkles;
   const image = SERVICE_IMAGES[service.key] ?? beautyCenter;
+  const servicePath = SERVICE_PATH_BY_KEY[service.key];
   const [open, setOpen] = useState(false);
   const detail: Detail = {
     pitch: service.pitch,
@@ -767,12 +700,22 @@ function ServiceRow({ service, reversed, index }: { service: ServiceItem; revers
           )}
         </div>
 
-        <button
-          onClick={() => setOpen(true)}
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-2.5 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
-        >
-          {t.detailLabels.seeDetails} <ArrowUpRight className="w-3.5 h-3.5" />
-        </button>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => setOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-2.5 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+          >
+            {t.detailLabels.seeDetails} <ArrowUpRight className="w-3.5 h-3.5" />
+          </button>
+          {servicePath && (
+            <Link
+              to={servicePath}
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-primary hover:text-foreground transition-colors underline underline-offset-4"
+            >
+              Ayrıntılı bilgi <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+          )}
+        </div>
       </div>
       {open && (
         <DetailDialog
@@ -877,6 +820,84 @@ function Faq() {
           >
             {t.faqSection.cta} <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- BLOG'DAN (ana sayfadan blog'a iç bağlantı) ---------------- */
+
+function HomeBlog() {
+  const { t } = useT();
+  const posts = Route.useLoaderData();
+  const latest = (posts ?? []).slice(0, 3);
+  if (latest.length === 0) return null;
+
+  return (
+    <section id="blogdan" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <motion.div {...fadeUp} className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-10 bg-primary" />
+            <span className="text-xs uppercase tracking-[0.4em] text-primary">{t.homeBlog.badge}</span>
+            <div className="h-px w-10 bg-primary" />
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl leading-tight">
+            {t.homeBlog.titleA} <span className="italic text-gold-gradient">{t.homeBlog.titleB}</span>
+          </h2>
+          <p className="mt-6 text-foreground/70 max-w-2xl mx-auto">{t.homeBlog.intro}</p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {latest.map((post, i) => (
+            <motion.article
+              key={post.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Link
+                to="/blog/$slug"
+                params={{ slug: post.slug }}
+                className="group block h-full rounded-2xl border border-border/40 bg-card/80 backdrop-blur overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-muted/20">
+                  {post.cover_image_url ? (
+                    <img
+                      src={post.cover_image_url}
+                      alt={post.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-primary font-display text-3xl">GA</div>
+                  )}
+                </div>
+                <div className="p-6 flex flex-col gap-3">
+                  {post.category && (
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-primary">{post.category}</span>
+                  )}
+                  <h3 className="font-display text-xl leading-tight text-foreground group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h3>
+                  {post.excerpt && (
+                    <p className="text-sm text-foreground/70 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                  )}
+                </div>
+              </Link>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div {...fadeUp} className="mt-12 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-2.5 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+          >
+            {t.homeBlog.cta} <ArrowUpRight className="w-3.5 h-3.5" />
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -994,108 +1015,3 @@ function Contact() {
   );
 }
 
-/* ---------------- FOOTER ---------------- */
-
-function Footer() {
-  const { t } = useT();
-  const addressLines = t.footer.address.split("\n");
-  return (
-    <footer className="relative border-t border-border/40 py-12 md:py-16">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid md:grid-cols-3 gap-10 md:gap-8 items-start">
-          <div>
-            <span className="text-gold-gradient font-display text-lg tracking-wide whitespace-nowrap block">
-              {t.nav.brand}
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground mt-2 block">
-              {t.footer.tagline}
-            </span>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">{t.footer.contactHeader}</h4>
-            <a href="tel:+905010274777" className="flex items-center gap-3 text-sm text-foreground/80 hover:text-primary transition-colors">
-              <Phone className="w-4 h-4 text-primary" strokeWidth={1.5} />
-              +90 501 027 4 777
-            </a>
-            <a href="tel:+902122234777" className="flex items-center gap-3 text-sm text-foreground/80 hover:text-primary transition-colors">
-              <Phone className="w-4 h-4 text-primary" strokeWidth={1.5} />
-              +90 212 223 4 777
-            </a>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Maslak+1453+Sarıyer+İstanbul"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-3 text-sm text-foreground/80 hover:text-primary transition-colors"
-            >
-              <MapPin className="w-4 h-4 text-primary mt-0.5" strokeWidth={1.5} />
-              <span>
-                {addressLines.map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < addressLines.length - 1 && <br />}
-                  </span>
-                ))}
-              </span>
-            </a>
-          </div>
-
-          <div className="md:text-right">
-            <h4 className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-4">{t.footer.socialHeader}</h4>
-            <a
-              href="https://www.instagram.com/gulerayaz_beautycenter/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram: @gulerayaz_beautycenter"
-              className="inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
-            >
-              <Instagram className="w-4 h-4" />
-              @gulerayaz_beautycenter
-            </a>
-            <a
-              href="mailto:info@gulerayazbeauty.com"
-              className="mt-3 inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-              info@gulerayazbeauty.com
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-border/40">
-          <p className="text-xs text-muted-foreground text-center">
-            © {new Date().getFullYear()} {t.nav.brand}. {t.footer.copyright}
-          </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-[10px] text-muted-foreground">
-            <Link to="/galeri" className="hover:text-primary transition-colors underline underline-offset-2">
-              {t.footer.galleryLink}
-            </Link>
-            ·
-            <Link to="/blog" className="hover:text-primary transition-colors underline underline-offset-2">
-              Blog
-            </Link>
-            <span className="hidden sm:inline">·</span>
-            <Link to="/kvkk" className="hover:text-primary transition-colors underline underline-offset-2">
-              {t.footer.legalLink}
-            </Link>
-            <span className="hidden sm:inline">·</span>
-            <span>{t.footer.disclaimer}</span>
-          </div>
-          <p className="mt-2 text-[10px] text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
-            {t.footer.resultDisclaimer}
-          </p>
-        </div>
-        <p className="text-[11px] text-muted-foreground text-center mt-8">
-          Web tasarım &amp; geliştirme:{" "}
-          <a
-            href="https://www.trairx.com"
-            rel="noopener"
-            className="font-medium hover:text-foreground transition-colors"
-          >
-            TrairX Technology
-          </a>
-        </p>
-      </div>
-    </footer>
-  );
-}

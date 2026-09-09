@@ -497,6 +497,7 @@ export const fa: typeof tr = {
   },
   footer: {
     tagline: "Beauty Clinic · ماسلاک",
+    servicesHeader: "خدمات",
     contactHeader: "تماس",
     socialHeader: "شبکه‌های اجتماعی",
     address: "ماسلاک ۱۴۵۳\nسریئر / استانبول",
@@ -625,6 +626,19 @@ export const fa: typeof tr = {
     error: "عملیات ناموفق بود.",
     urlRequired: "آدرس تصویر یا فایل الزامی است.",
     uploadError: "بارگذاری فایل ممکن نشد.",
+  },
+  homeBlog: {
+    badge: "از وبلاگ",
+    titleA: "دفترچهٔ", titleB: "زیبایی",
+    intro: "یادداشت‌هایی از مرکز ما دربارهٔ خدمات، روندها و مراقبت پس از آن.",
+    cta: "همهٔ مطالب",
+  },
+  relatedService: {
+    label: "خدمت مرتبط",
+    cta: "رفتن به صفحهٔ خدمت",
+  },
+  otherPosts: {
+    title: "مطالب دیگر",
   },
   blog: {
     badge: "بینش و الهام",
