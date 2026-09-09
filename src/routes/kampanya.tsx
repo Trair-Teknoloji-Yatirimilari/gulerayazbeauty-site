@@ -34,16 +34,13 @@ export const Route = createFileRoute("/kampanya")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
-      // Kampanyaya özel paylaşım görseli bekleniyor. Gelen og-kampanya.jpg
-      // üzerinde indirim oranı yazdığı için yayına alınmadı (site genelinde
-      // fiyat/indirim oranı gösterilmiyor); rakamsız sürüm gelince buradaki
-      // iki adres /og/kampanya.jpg olarak güncellenecek.
-      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      // Kampanyaya özel paylaşım görseli (1200x630, rakamsız sürüm).
+      { property: "og:image", content: `${SITE_URL}/og/kampanya.jpg` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Güler Ayaz Beauty — Sonbahar Yenilenme programları" },
+      { property: "og:image:alt", content: "Güler Ayaz Beauty Clinic — Sonbahar Yenilenme" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/og/kampanya.jpg` },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
