@@ -179,6 +179,7 @@ function Index() {
       <HeroCta />
       <Marquee />
       <About />
+      <CampaignBand />
       <Services />
       <Journey />
       <Faq />
@@ -596,6 +597,37 @@ const DetailDialog = memo(function DetailDialog({
     </Dialog>
   );
 });
+
+/* ---------------- KAMPANYA BANDI ---------------- */
+
+function CampaignBand() {
+  const { t } = useT();
+  return (
+    <section className="relative">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <motion.div
+          {...fadeUp}
+          className="flex flex-col sm:flex-row items-center justify-between gap-5 rounded-sm border border-primary/30 bg-card/85 backdrop-blur px-6 py-5 md:px-8"
+        >
+          <div className="text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start gap-3">
+              <div className="h-px w-8 bg-primary/60" />
+              <span className="text-[10px] uppercase tracking-[0.35em] text-primary">{t.campaign.badge}</span>
+            </div>
+            <p className="mt-2 font-display text-xl md:text-2xl text-foreground leading-tight">{t.campaign.title}</p>
+            <p className="mt-1.5 text-sm text-foreground/70 leading-relaxed">{t.campaign.body}</p>
+          </div>
+          <Link
+            to="/kampanya"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full border border-primary/60 px-6 py-2.5 text-xs uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+          >
+            {t.campaign.cta} <ArrowUpRight className="w-3.5 h-3.5" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 /* ---------------- SERVICES ---------------- */
 

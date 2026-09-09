@@ -625,6 +625,14 @@ export const tr = {
     urlRequired: "Görsel URL veya dosya gerekli.",
     uploadError: "Dosya yüklenemedi.",
   },
+  campaign: {
+    badge: "Sonbahar Yenilenme",
+    title: "Sonbahara özel programlarımız",
+    body: "Cilt yenileme, lazer epilasyon ve form programlarında sonbahara özel koşullar.",
+    cta: "Kampanyayı gör",
+    footerLink: "Kampanya",
+    serviceLink: "Güncel kampanyalar",
+  },
   homeBlog: {
     badge: "Blog'dan",
     titleA: "Güzellik", titleB: "günlüğü",

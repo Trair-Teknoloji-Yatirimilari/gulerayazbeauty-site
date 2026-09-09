@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Shield, Mail, ArrowLeft, Clock, Trash2, Eye, Lock, FileText } from "lucide-react";
 import { useT } from "@/i18n/context";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/kvkk")({
   head: () => ({
@@ -93,6 +94,7 @@ function KvkkPage() {
           </div>
         </motion.div>
       </main>
+      <SiteFooter />
     </div>
   );
 }

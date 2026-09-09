@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "motion/react";
 import { listGallery } from "@/lib/gallery.functions";
 import { useT } from "@/i18n/context";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/galeri")({
   head: () => ({
@@ -188,6 +189,7 @@ function VideoSection() {
           </motion.figure>
         ))}
       </div>
+      <SiteFooter />
     </div>
   );
 }

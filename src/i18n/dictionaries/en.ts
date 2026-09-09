@@ -627,6 +627,14 @@ export const en: typeof tr = {
     urlRequired: "Image URL or file is required.",
     uploadError: "Could not upload file.",
   },
+  campaign: {
+    badge: "Autumn Renewal",
+    title: "Our autumn programmes",
+    body: "Special autumn terms on skin renewal, laser hair removal and body programmes.",
+    cta: "See the campaign",
+    footerLink: "Campaign",
+    serviceLink: "Current campaigns",
+  },
   homeBlog: {
     badge: "From the Blog",
     titleA: "Beauty", titleB: "journal",

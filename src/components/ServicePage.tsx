@@ -10,6 +10,7 @@ import {
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PHONE_MOBILE, whatsappLink } from "@/lib/site";
+import { useT } from "@/i18n/context";
 import type { ServicePage as ServicePageData } from "@/lib/service-pages";
 
 import serviceLazer from "@/assets/service-lazer.jpg";
@@ -51,6 +52,7 @@ function Cta({ label }: { label: string }) {
 }
 
 export function ServicePage({ data }: { data: ServicePageData }) {
+  const { t } = useT();
   const cover = COVERS[data.cover] ?? serviceLazer;
 
   return (
@@ -166,6 +168,14 @@ export function ServicePage({ data }: { data: ServicePageData }) {
                 <Phone className="w-4 h-4" strokeWidth={1.5} />
                 Ara
               </a>
+            </div>
+            <div className="mt-7 pt-6 border-t border-border/40">
+              <Link
+                to="/kampanya"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-primary hover:text-foreground transition-colors underline underline-offset-4"
+              >
+                {t.campaign.serviceLink} <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
 

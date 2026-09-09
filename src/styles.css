@@ -267,6 +267,16 @@
   &[data-state="closed"] {
     animation: accordion-up-cinematic 360ms cubic-bezier(0.7, 0, 0.84, 0);
     will-change: height;
+    /* İçerik DOM'da kalır (forceMount), görsel gizleme yalnızca yükseklikle —
+       böylece kapanma animasyonu görünür kalır. Odaklanma ve ekran okuyucu
+       tarafı bileşendeki `inert` niteliğiyle çözülüyor. */
+    height: 0;
+  }
+  /* Radix forceMount ile kapalı içeriğe hidden niteliği koyuyor; tarayıcının
+     display:none varsayılanı içeriği HTML'de bırakır ama biz kendi
+     gizlememizi kullanıyoruz. */
+  &[hidden] {
+    display: block;
   }
 }
 

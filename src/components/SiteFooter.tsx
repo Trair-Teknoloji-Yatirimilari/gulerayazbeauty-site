@@ -31,6 +31,11 @@ export function SiteFooter() {
                 </li>
               ))}
               <li>
+                <Link to="/kampanya" className="text-sm text-foreground/80 hover:text-primary transition-colors">
+                  {t.campaign.footerLink}
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog" className="text-sm text-foreground/80 hover:text-primary transition-colors">
                   Blog
                 </Link>

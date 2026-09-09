@@ -11,7 +11,8 @@ export const BEAUTY_SALON_ID = `${SITE_URL}/#beautysalon`;
  */
 export function serviceHead(data: ServicePage) {
   const url = `${SITE_URL}${data.path}`;
-  const image = `${SITE_URL}/og-image.jpg`;
+  // Her hizmet sayfasının kendi 1200x630 paylaşım görseli (public/og/<slug>.jpg)
+  const image = `${SITE_URL}/og${data.path}.jpg`;
 
   return {
     meta: [
@@ -22,6 +23,9 @@ export function serviceHead(data: ServicePage) {
       { property: "og:type", content: "website" },
       { property: "og:url", content: url },
       { property: "og:image", content: image },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: data.coverAlt },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: image },
     ],

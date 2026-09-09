@@ -5,6 +5,7 @@ import { getPostBySlug, listPublishedPosts } from "@/lib/blog.functions";
 import { SERVICE_BY_BLOG_CATEGORY } from "@/lib/service-pages";
 import { useT } from "@/i18n/context";
 import { SITE_URL } from "@/lib/site";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/blog_/$slug")({
   loader: async ({ params }) => {
@@ -76,10 +77,13 @@ function BlogDetailPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background pt-32 pb-24 text-center px-6">
-        <h1 className="font-display text-3xl text-gold-gradient mb-4">{t.blog.notFound}</h1>
-        <p className="text-foreground/60 mb-8">{t.blog.notFoundBody}</p>
-        <Link to="/blog" className="text-primary hover:underline">{t.blog.backBlog}</Link>
+      <div className="min-h-screen bg-background">
+        <div className="pt-32 pb-24 text-center px-6">
+          <h1 className="font-display text-3xl text-gold-gradient mb-4">{t.blog.notFound}</h1>
+          <p className="text-foreground/60 mb-8">{t.blog.notFoundBody}</p>
+          <Link to="/blog" className="text-primary hover:underline">{t.blog.backBlog}</Link>
+        </div>
+        <SiteFooter />
       </div>
     );
   }
@@ -194,6 +198,7 @@ function BlogDetailPage() {
           </div>
         </motion.div>
       </article>
+      <SiteFooter />
     </div>
   );
 }

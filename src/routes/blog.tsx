@@ -4,6 +4,7 @@ import { ArrowUpRight, Calendar } from "lucide-react";
 import { listPublishedPosts } from "@/lib/blog.functions";
 import { useT } from "@/i18n/context";
 import { SITE_URL } from "@/lib/site";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/blog")({
   loader: () => listPublishedPosts(),
@@ -110,6 +111,7 @@ function BlogListPage() {
           ))}
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }
