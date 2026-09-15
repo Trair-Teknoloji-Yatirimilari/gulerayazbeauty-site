@@ -92,8 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Güler Ayaz Beauty | Maslak Güzellik & Estetik Merkezi" },
       { name: "description", content: "Güler Ayaz Beauty · Maslak 1453'te lazer epilasyon, cilt bakımı, kirpik & kaş, manikür-pedikür ve özel Pilates." },
       { name: "author", content: "Güler Ayaz Beauty" },
-      // Meta işletme doğrulaması (pixel ile aynı yerde tutuluyor)
-      { name: "facebook-domain-verification", content: "yrphetf38urlygssm65xmrttpk6v9x" },
       { property: "og:title", content: "Güler Ayaz Beauty | Maslak Güzellik Merkezi" },
       { property: "og:description", content: "Uzman kadro, premium teknoloji, davetkar atmosfer. Sizin için özenle tasarlanmış güzellik ritüelleri." },
 
