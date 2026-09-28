@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowLeft, Calendar, Tag, ArrowUpRight } from "lucide-react";
 import { getPostBySlug, listPublishedPosts } from "@/lib/blog.functions";
@@ -13,6 +13,8 @@ export const Route = createFileRoute("/blog_/$slug")({
       getPostBySlug({ data: { slug: params.slug } }),
       listPublishedPosts().catch(() => []),
     ]);
+    // Yayında olmayan / olmayan slug gerçek 404 dönmeli (soft-404 ve taslak sızıntısını önler)
+    if (!post) throw notFound();
     return { post, all };
   },
   head: ({ loaderData, params }) => {

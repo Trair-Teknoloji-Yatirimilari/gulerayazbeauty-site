@@ -13,7 +13,9 @@ export type Block =
 
 export interface ServicePage {
   /** Route yolu — sitemap ve iç bağlantılar bunu kullanır */
-  path: "/lazer-epilasyon" | "/cilt-bakimi" | "/vucut-sekillendirme" | "/dovme-silme" | "/kalici-makyaj";
+  path:
+    | "/lazer-epilasyon" | "/cilt-bakimi" | "/vucut-sekillendirme" | "/dovme-silme" | "/kalici-makyaj"
+    | "/protez-tirnak" | "/ipek-kirpik" | "/reformer-pilates" | "/kuafor";
   /** Ana sayfadaki hizmet kartı anahtarı (SERVICE_IMAGES ile aynı) */
   serviceKey: string;
   /** Blog kategorisi eşlemesi (blog detayındaki "İlgili hizmet" kutusu) */
@@ -43,12 +45,12 @@ export const SERVICE_PAGES: ServicePage[] = [
     serviceKey: "lazer",
     blogCategory: "Lazer Epilasyon",
     navLabel: "Lazer Epilasyon",
-    title: "Maslak Lazer Epilasyon | Diode Lazer — Güler Ayaz Beauty",
+    title: "Maslak & Sarıyer Lazer Epilasyon | Diode Lazer — Güler Ayaz",
     description:
       "Maslak 1453'te soğutmalı diode lazer epilasyon. Cilt tonuna göre kişiselleştirilen seans planı için ücretsiz ön değerlendirme.",
-    h1: "Maslak'ta Lazer Epilasyon",
+    h1: "Maslak ve Sarıyer'de Lazer Epilasyon",
     cover: "service-lazer.jpg",
-    coverAlt: "Soğutmalı diode lazer başlığı ile lazer epilasyon uygulaması",
+    coverAlt: "Merkezimizde diode lazer ile epilasyon uygulaması",
     blocks: [
       { t: "p", html: "Güler Ayaz Beauty, Maslak 1453'te (Sarıyer / İstanbul) soğutmalı diode lazer teknolojisiyle epilasyon hizmeti vermektedir. Her süreç, cilt tonu ve kıl yapısı analiziyle başlar; seans parametreleri kişiye göre ayarlanır." },
       { t: "h2", text: "Diode Lazer Nasıl Çalışır?" },
@@ -173,10 +175,10 @@ export const SERVICE_PAGES: ServicePage[] = [
     serviceKey: "dovme",
     blogCategory: "Dövme Silme",
     navLabel: "Dövme Silme",
-    title: "Maslak Dövme Silme | Q-Switch Lazer — Güler Ayaz",
+    title: "Maslak & Sarıyer Dövme Silme | Q-Switch Lazer — Güler Ayaz",
     description:
       "Maslak 1453'te Q-Switch lazerle dövme ve kalıcı makyaj silme. Dövmeye özel seans planı için ücretsiz ön değerlendirme.",
-    h1: "Maslak'ta Q-Switch Lazer ile Dövme Silme",
+    h1: "Maslak ve Sarıyer'de Q-Switch Lazer ile Dövme Silme",
     cover: "service-dovme-silme.jpg",
     coverAlt: "Q-Switch lazer başlığı ile dövme silme uygulaması",
     blocks: [
@@ -248,6 +250,183 @@ export const SERVICE_PAGES: ServicePage[] = [
     ],
     afterFaqHtml:
       'Mevcut kalıcı makyajınızdan memnun değilseniz <a href="/dovme-silme">Q-Switch lazerle silme</a> seçeneği ön görüşmede değerlendirilir. Ayrıntılı anlatım için <a href="/blog/kalici-makyaj-kas-eyeliner-dudak">kalıcı makyaj rehberimize</a> göz atabilirsiniz.',
+    note: NOTE,
+  },
+  {
+    path: "/protez-tirnak",
+    serviceKey: "nail",
+    blogCategory: "Tırnak Bakımı",
+    navLabel: "Protez Tırnak & Nail Art",
+    title: "Maslak Protez Tırnak & Nail Art | Güler Ayaz Beauty",
+    description:
+      "Maslak 1453'te protez tırnak, kalıcı oje, manikür-pedikür ve nail art. Tırnak yapınıza göre malzeme ve kalıp seçimi, steril ekipman.",
+    h1: "Maslak'ta Protez Tırnak, Manikür ve Nail Art",
+    cover: "service-nail-gercek.jpg",
+    coverAlt: "Merkezimizde kalıcı oje uygulaması yapılan manikür seansı",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty, Maslak 1453'te (Sarıyer / İstanbul) protez tırnak, kalıcı oje, manikür-pedikür ve nail art uygulamaları sunar. Her uygulama, doğal tırnağın yapısına bakılarak başlar; malzeme, uzunluk ve kalıp bu değerlendirmeye göre birlikte seçilir." },
+      { t: "h2", text: "Uygulamalarımız" },
+      { t: "h3", text: "Protez Tırnak" },
+      { t: "p", html: "Doğal tırnak üzerine jel veya akrilik malzemeyle şekil ve uzunluk kazandırılır. Jel daha esnek ve hafif bir his verir; akrilik daha sert bir yapıya sahiptir ve uzun tasarımlarda tercih edilebilir. Hangisinin uygun olduğu kullanım alışkanlığına göre değerlendirilir." },
+      { t: "h3", text: "Kalıcı Oje ve Tırnak Güçlendirme" },
+      { t: "p", html: "Uzunluk eklemeden doğal tırnağın üzerine uygulanan kalıcı oje, günlük kullanımda daha dayanıklı bir renk sunar. İnce ve kırılgan tırnaklarda güçlendirme katmanı ile birlikte planlanabilir." },
+      { t: "h3", text: "Manikür ve Pedikür" },
+      { t: "p", html: "Klasik manikür ve pedikür; kütikül bakımı, şekillendirme ve nemlendirme adımlarını içerir. Tek kullanımlık törpü ve sterilize edilen aletlerle çalışılır." },
+      { t: "h3", text: "Nail Art" },
+      { t: "p", html: "Fransız, ombré, krom, taş ve folyo detaylarından özel gün temalı tasarımlara kadar farklı seçenekler uygulanır. Tasarım, günlük rutininize uyacak şekilde birlikte belirlenir." },
+      { t: "h2", text: "Kalıp ve Uzunluk Seçimi" },
+      { t: "p", html: "Yuvarlak ve badem formlar günlük kullanımda daha rahattır; kare-badem (coffin) ve sivri formlar daha belirgin bir görünüm arayanlar tarafından tercih edilir. Klavye kullanımı, spor ve ev işleri gibi alışkanlıklar uzunluk kararını doğrudan etkiler." },
+      { t: "h2", text: "Hijyen" },
+      { t: "ul", items: [
+        "Tek kullanımlık törpü ve buffer",
+        "Her misafir sonrası sterilize edilen metal aletler",
+        "Uygulama öncesi el ve tırnak yüzeyi dezenfeksiyonu",
+        "Tırnakta enfeksiyon veya mantar şüphesi varsa uygulama ertelenir",
+      ] },
+      { t: "h2", text: "Bakım ve Dolgu" },
+      { t: "p", html: "Tırnak uzadıkça dipte boşluk oluşur; bu noktada dolgu yapılması hem görünümü tazeler hem de kalkmayı önler. Dolgu aralığı tırnağın büyüme hızına göre değişir. Suyla yoğun temasta eldiven kullanmak ve kütikül yağıyla nemlendirmek uygulamanın ömrünü uzatır." },
+      { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır. Randevu WhatsApp üzerinden planlanır." },
+    ],
+    faqs: [
+      { q: "Protez tırnak doğal tırnağa zarar verir mi?", a: "Doğru uygulama, düzenli dolgu ve profesyonel sökümle zarar vermesi beklenmez. Sorunlar çoğunlukla evde zorla çıkarmaktan veya uzun süre bakımsız bırakmaktan kaynaklanır." },
+      { q: "Jel mi akrilik mi seçmeliyim?", a: "Jel daha doğal his ve hafiflik sunar; akrilik uzun tasarımlarda daha dayanıklıdır. Tercih, tırnak yapınız ve kullanım alışkanlığınıza göre birlikte yapılır." },
+      { q: "Dolguya ne zaman gelmeliyim?", a: "Tırnağın büyüme hızına bağlıdır; genellikle birkaç haftalık aralıklarla planlanır." },
+      { q: "Manikür ve protez tırnak aynı randevuda yapılabilir mi?", a: "Evet. Süre, seçilen tasarıma göre değişir; randevu planlanırken bu süre birlikte belirlenir." },
+    ],
+    afterFaqHtml:
+      'Jel, akrilik ve nail art seçeneklerinin ayrıntılı karşılaştırması için <a href="/blog/protez-tirnak-nedir-jel-akrilik-nail-art">protez tırnak rehberimize</a> göz atabilirsiniz.',
+    note: NOTE,
+  },
+  {
+    path: "/ipek-kirpik",
+    serviceKey: "kirpik",
+    blogCategory: "Kirpik & Kaş",
+    navLabel: "İpek Kirpik & Kaş",
+    title: "Maslak İpek Kirpik, Lifting & Kaş Laminasyonu | Güler Ayaz",
+    description:
+      "Maslak 1453'te ipek kirpik, volume kirpik, kirpik lifting ve kaş laminasyonu. Göz ve yüz formuna göre tasarım, hipoalerjenik yapıştırıcı.",
+    h1: "Maslak'ta İpek Kirpik, Kirpik Lifting ve Kaş Laminasyonu",
+    cover: "service-kirpik.jpg",
+    coverAlt: "Merkezimizde ipek kirpik uygulaması",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty, Maslak 1453'te (Sarıyer / İstanbul) ipek kirpik, kirpik lifting, kaş laminasyonu ve kaş tasarımı uygulamaları sunar. Her uygulama göz ve yüz formunun değerlendirilmesiyle başlar; yoğunluk ve kıvrım bu değerlendirmeye göre seçilir." },
+      { t: "h2", text: "İpek Kirpik" },
+      { t: "p", html: "Doğal kirpiklerin her birine tek tek hafif sentetik kirpikler eklenir. Doğal kirpik dökülmez, eklenen kirpik onun üzerinde durur ve doğal döngüyle birlikte zamanla dökülür." },
+      { t: "h3", text: "Klasik, Volume ve Mega Volume" },
+      { t: "p", html: "Klasik teknikte her doğal kirpiğe bir kirpik eklenir ve daha doğal bir görünüm hedeflenir. Volume ve mega volume tekniklerinde her doğal kirpiğe birden fazla ince kirpikten oluşan hafif demetler yerleştirilir; görünüm daha yoğundur. Seçim, doğal kirpiğin taşıyabileceği yoğunluğa göre yapılır." },
+      { t: "h2", text: "Kirpik Lifting" },
+      { t: "p", html: "Kirpiğe ekleme yapılmaz; mevcut doğal kirpikler kökten kıvrılarak daha dik ve belirgin görünmesi sağlanır. İsteğe göre kirpik boyama ile birlikte planlanabilir." },
+      { t: "h2", text: "Kaş Laminasyonu ve Kaş Tasarımı" },
+      { t: "p", html: "Kaş laminasyonunda kaş kılları istenen yöne sabitlenerek daha dolgun ve düzenli bir görünüm elde edilir. Kaş tasarımı ise yüz hattına göre şekillendirme, gerekirse boyama veya kına ile tamamlanır." },
+      { t: "h2", text: "Hijyen ve Ürünler" },
+      { t: "ul", items: [
+        "Tek kullanımlık fırça ve aplikatörler",
+        "Hipoalerjenik yapıştırıcı",
+        "Göz çevresinde tahriş, enfeksiyon veya bilinen alerji varsa uygulama öncesi değerlendirme",
+        "Kontakt lens kullananlar için uygulama öncesi bilgilendirme",
+      ] },
+      { t: "h2", text: "Uygulama Sonrası Bakım" },
+      { t: "ul", items: [
+        "İlk 24 saat kirpik ve kaşı ıslatmayın",
+        "Yağ bazlı göz makyajı temizleyicilerinden kaçının",
+        "Kirpikleri ovmayın, koparmayın; özel fırçayla nazikçe tarayın",
+        "İpek kirpikte görünümü korumak için birkaç haftada bir bakım planlayın",
+      ] },
+      { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır. Randevu WhatsApp üzerinden planlanır." },
+    ],
+    faqs: [
+      { q: "İpek kirpik ile kirpik lifting arasındaki fark nedir?", a: "İpek kirpikte doğal kirpiğe sentetik kirpik eklenir ve hem uzunluk hem yoğunluk kazanılır. Lifting'de ekleme yapılmaz, mevcut kirpikler kıvrılarak daha belirgin hale gelir." },
+      { q: "İpek kirpik doğal kirpiğe zarar verir mi?", a: "Doğal kirpiğin taşıyabileceği yoğunlukta ve doğru teknikle uygulandığında zarar vermesi beklenmez. Kirpikleri zorla koparmamak önemlidir." },
+      { q: "Uygulama ne kadar sürer?", a: "İpek kirpik tam set genellikle bir buçuk ila iki saat sürer. Lifting ve kaş laminasyonu daha kısadır." },
+      { q: "Kaş laminasyonu ile kirpik lifting aynı gün yapılabilir mi?", a: "Evet, uygun durumlarda aynı randevuda planlanabilir. Uygunluk ön görüşmede değerlendirilir." },
+    ],
+    afterFaqHtml:
+      'Ayrıntılı anlatım için <a href="/blog/ipek-kirpik-uygulamasi-nedir">ipek kirpik rehberimize</a> ve <a href="/blog/kas-laminasyonu-ve-kirpik-lifting">kaş laminasyonu ve kirpik lifting yazımıza</a> göz atabilirsiniz.',
+    note: NOTE,
+  },
+  {
+    path: "/reformer-pilates",
+    serviceKey: "pilates",
+    blogCategory: "Pilates",
+    navLabel: "Reformer Pilates",
+    title: "Maslak Reformer Pilates | Birebir Ders — Güler Ayaz Beauty",
+    description:
+      "Maslak 1453'te birebir, duet ve küçük grup reformer pilates dersleri. Sertifikalı eğitmen, kişiye göre planlanan program.",
+    h1: "Maslak'ta Reformer Pilates",
+    cover: "service-pilates.jpg",
+    coverAlt: "Reformer pilates stüdyosunda birebir ders",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty'nin Maslak 1453'teki stüdyosunda reformer pilates dersleri sertifikalı eğitmenler eşliğinde birebir, duet (2 kişi) ve küçük grup (3–4 kişi) olarak planlanır. Program, ilk derste yapılan duruş ve hareket değerlendirmesine göre kurulur." },
+      { t: "h2", text: "Reformer Pilates Nedir?" },
+      { t: "p", html: "Reformer, yaylı direnç sistemiyle çalışan bir pilates aletidir. Yay direnci hareketi hem zorlaştırabilir hem de destekleyebilir; bu sayede egzersizler farklı seviyelere göre ayarlanabilir. Merkez bölge (core) kasları, duruş, esneklik ve kontrollü hareket derslerin odağındadır." },
+      { t: "h2", text: "Ders Formatları" },
+      { t: "h3", text: "Birebir Ders" },
+      { t: "p", html: "Eğitmen tüm ders boyunca yalnızca sizinle çalışır. Başlangıç seviyesi, belirli bir hedefi olanlar veya programını tamamen kişiye göre isteyenler için uygundur." },
+      { t: "h3", text: "Duet ve Küçük Grup" },
+      { t: "p", html: "İki kişilik duet ve 3–4 kişilik küçük grup derslerinde katılımcılar benzer seviyede gruplanır; eğitmen her katılımcının hareketini takip eder." },
+      { t: "h3", text: "Hamilelik Dönemi ve Doğum Sonrası" },
+      { t: "p", html: "Hamilelik dönemi ve doğum sonrası toparlanma derslerine, hekim onayıyla ve döneme uygun bir programla başlanır." },
+      { t: "h2", text: "İlk Ders Nasıl Geçer?" },
+      { t: "p", html: "İlk derste duruş, esneklik ve temel hareket kalıpları değerlendirilir; varsa geçmiş sakatlıklar ve sağlık durumu konuşulur. Program bu bilgilere göre planlanır. Bilinen bir rahatsızlığınız varsa derslere başlamadan önce hekiminize danışmanız önerilir." },
+      { t: "h2", text: "Derse Gelirken" },
+      { t: "ul", items: [
+        "Rahat, vücudu saran spor kıyafeti",
+        "Kaymaz çorap (hijyen ve güvenlik için)",
+        "Ders öncesi ağır yemekten kaçınma",
+        "Su şişesi",
+      ] },
+      { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
+      { t: "p", html: "Stüdyomuz Maslak 1453 içinde yer alır; otopark mevcuttur. Maslak plazalarında çalışanlar için iş çıkışı saatleri de planlanabilir. Randevu WhatsApp üzerinden alınır." },
+    ],
+    faqs: [
+      { q: "Daha önce hiç pilates yapmadım, başlayabilir miyim?", a: "Evet. Reformer'daki yay direnci seviyeye göre ayarlanır; başlangıç için birebir ders önerilir." },
+      { q: "Haftada kaç ders yapmalıyım?", a: "Hedefe ve programa göre değişir; ilk değerlendirmeden sonra size uygun sıklık birlikte belirlenir." },
+      { q: "Reformer pilates ile mat pilates arasındaki fark nedir?", a: "Mat pilatesde vücut ağırlığıyla çalışılır; reformer'da yay direnci hareketi hem destekleyebilir hem zorlaştırabilir, bu da seviyeye göre daha hassas ayar imkânı verir." },
+      { q: "Hamileyken pilates yapabilir miyim?", a: "Hekim onayıyla ve döneme uygun bir programla başlanabilir. Onay olmadan ders planlanmaz." },
+    ],
+    afterFaqHtml:
+      'Ayrıntılı anlatım için <a href="/blog/reformer-pilates-nedir-maslak">reformer pilates rehberimize</a> göz atabilirsiniz.',
+    note: NOTE,
+  },
+  {
+    path: "/kuafor",
+    serviceKey: "kuafor",
+    blogCategory: "Kuaför",
+    navLabel: "Kuaför",
+    title: "Maslak Kuaför | Saç Kesim, Fön & Bakım — Güler Ayaz Beauty",
+    description:
+      "Maslak 1453'te saç kesimi, fön, saç bakımı ve özel gün saçı. Güzellik bakımı, tırnak ve saç randevusu tek ziyarette.",
+    h1: "Maslak'ta Kuaför Hizmetleri",
+    cover: "service-kuafor.jpg",
+    coverAlt: "Güler Ayaz Beauty salon içi bakım alanı",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty'de güzellik merkezi ve kuaför aynı çatı altındadır. Maslak 1453'teki (Sarıyer / İstanbul) salonumuzda saç kesimi, fön, bakım ve özel gün saçı için ayrı bir adrese gitmenize gerek kalmaz; cilt, tırnak ve saç randevuları aynı ziyarette planlanabilir." },
+      { t: "h2", text: "Hizmetlerimiz" },
+      { t: "h3", text: "Saç Kesimi" },
+      { t: "p", html: "Kesim planı saç tipine, yüz hattına ve günlük rutininize göre birlikte belirlenir. Kolay şekil alan, gündelik bakımı pratik bir kesim hedeflenir." },
+      { t: "h3", text: "Fön, Maşa ve Dalga" },
+      { t: "p", html: "Gündelik fönden maşa ve dalga şekillendirmeye kadar farklı stiller uygulanır. Isı koruyucu kullanımı her uygulamanın parçasıdır." },
+      { t: "h3", text: "Saç Bakımı" },
+      { t: "p", html: "Saçın durumuna göre nem, besleme ve onarım odaklı bakım uygulamaları planlanır. Yıkama sırasında saç derisi masajı bakımın parçasıdır." },
+      { t: "h3", text: "Topuz ve Özel Gün Saçı" },
+      { t: "p", html: "Düğün, nişan ve davet gibi özel günler için topuz ve şekillendirme uygulanır. Özel gün randevularının önceden planlanması önerilir; istenirse makyaj ve tırnak randevusuyla aynı güne yerleştirilebilir." },
+      { t: "h2", text: "Neden Tek Ziyaret?" },
+      { t: "ul", items: [
+        "Cilt bakımı, tırnak ve saç aynı gün, aynı adreste",
+        "Maslak plazalarında çalışanlar için iş çıkışı saatleri",
+        "Otopark mevcut",
+        "Randevu WhatsApp üzerinden",
+      ] },
+      { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır." },
+    ],
+    faqs: [
+      { q: "Randevusuz gelebilir miyim?", a: "Yoğunluk nedeniyle randevuyla çalışıyoruz; WhatsApp üzerinden uygun saati birlikte planlayabiliriz." },
+      { q: "Özel gün saçı için ne kadar önce randevu almalıyım?", a: "Özellikle hafta sonları için birkaç gün önceden randevu almanız önerilir." },
+      { q: "Saç ve tırnak randevusu aynı gün yapılabilir mi?", a: "Evet. Randevu planlanırken iki uygulamanın süresi birlikte hesaplanır." },
+    ],
     note: NOTE,
   },
 ];

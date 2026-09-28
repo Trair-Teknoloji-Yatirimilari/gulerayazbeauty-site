@@ -16,10 +16,14 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CiltBakimiRouteImport } from './routes/cilt-bakimi'
 import { Route as DovmeSilmeRouteImport } from './routes/dovme-silme'
 import { Route as GaleriRouteImport } from './routes/galeri'
+import { Route as IpekKirpikRouteImport } from './routes/ipek-kirpik'
 import { Route as KaliciMakyajRouteImport } from './routes/kalici-makyaj'
 import { Route as KampanyaRouteImport } from './routes/kampanya'
+import { Route as KuaforRouteImport } from './routes/kuafor'
 import { Route as KvkkRouteImport } from './routes/kvkk'
 import { Route as LazerEpilasyonRouteImport } from './routes/lazer-epilasyon'
+import { Route as ProtezTirnakRouteImport } from './routes/protez-tirnak'
+import { Route as ReformerPilatesRouteImport } from './routes/reformer-pilates'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillendirme'
@@ -65,6 +69,11 @@ const GaleriRoute = GaleriRouteImport.update({
   path: '/galeri',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IpekKirpikRoute = IpekKirpikRouteImport.update({
+  id: '/ipek-kirpik',
+  path: '/ipek-kirpik',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KaliciMakyajRoute = KaliciMakyajRouteImport.update({
   id: '/kalici-makyaj',
   path: '/kalici-makyaj',
@@ -75,6 +84,11 @@ const KampanyaRoute = KampanyaRouteImport.update({
   path: '/kampanya',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KuaforRoute = KuaforRouteImport.update({
+  id: '/kuafor',
+  path: '/kuafor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KvkkRoute = KvkkRouteImport.update({
   id: '/kvkk',
   path: '/kvkk',
@@ -83,6 +97,16 @@ const KvkkRoute = KvkkRouteImport.update({
 const LazerEpilasyonRoute = LazerEpilasyonRouteImport.update({
   id: '/lazer-epilasyon',
   path: '/lazer-epilasyon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProtezTirnakRoute = ProtezTirnakRouteImport.update({
+  id: '/protez-tirnak',
+  path: '/protez-tirnak',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReformerPilatesRoute = ReformerPilatesRouteImport.update({
+  id: '/reformer-pilates',
+  path: '/reformer-pilates',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -146,10 +170,14 @@ export interface FileRoutesByFullPath {
   '/cilt-bakimi': typeof CiltBakimiRoute
   '/dovme-silme': typeof DovmeSilmeRoute
   '/galeri': typeof GaleriRoute
+  '/ipek-kirpik': typeof IpekKirpikRoute
   '/kalici-makyaj': typeof KaliciMakyajRoute
   '/kampanya': typeof KampanyaRoute
+  '/kuafor': typeof KuaforRoute
   '/kvkk': typeof KvkkRoute
   '/lazer-epilasyon': typeof LazerEpilasyonRoute
+  '/protez-tirnak': typeof ProtezTirnakRoute
+  '/reformer-pilates': typeof ReformerPilatesRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
@@ -168,10 +196,14 @@ export interface FileRoutesByTo {
   '/cilt-bakimi': typeof CiltBakimiRoute
   '/dovme-silme': typeof DovmeSilmeRoute
   '/galeri': typeof GaleriRoute
+  '/ipek-kirpik': typeof IpekKirpikRoute
   '/kalici-makyaj': typeof KaliciMakyajRoute
   '/kampanya': typeof KampanyaRoute
+  '/kuafor': typeof KuaforRoute
   '/kvkk': typeof KvkkRoute
   '/lazer-epilasyon': typeof LazerEpilasyonRoute
+  '/protez-tirnak': typeof ProtezTirnakRoute
+  '/reformer-pilates': typeof ReformerPilatesRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
@@ -192,10 +224,14 @@ export interface FileRoutesById {
   '/cilt-bakimi': typeof CiltBakimiRoute
   '/dovme-silme': typeof DovmeSilmeRoute
   '/galeri': typeof GaleriRoute
+  '/ipek-kirpik': typeof IpekKirpikRoute
   '/kalici-makyaj': typeof KaliciMakyajRoute
   '/kampanya': typeof KampanyaRoute
+  '/kuafor': typeof KuaforRoute
   '/kvkk': typeof KvkkRoute
   '/lazer-epilasyon': typeof LazerEpilasyonRoute
+  '/protez-tirnak': typeof ProtezTirnakRoute
+  '/reformer-pilates': typeof ReformerPilatesRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
@@ -216,10 +252,14 @@ export interface FileRouteTypes {
     | '/cilt-bakimi'
     | '/dovme-silme'
     | '/galeri'
+    | '/ipek-kirpik'
     | '/kalici-makyaj'
     | '/kampanya'
+    | '/kuafor'
     | '/kvkk'
     | '/lazer-epilasyon'
+    | '/protez-tirnak'
+    | '/reformer-pilates'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
@@ -238,10 +278,14 @@ export interface FileRouteTypes {
     | '/cilt-bakimi'
     | '/dovme-silme'
     | '/galeri'
+    | '/ipek-kirpik'
     | '/kalici-makyaj'
     | '/kampanya'
+    | '/kuafor'
     | '/kvkk'
     | '/lazer-epilasyon'
+    | '/protez-tirnak'
+    | '/reformer-pilates'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
@@ -261,10 +305,14 @@ export interface FileRouteTypes {
     | '/cilt-bakimi'
     | '/dovme-silme'
     | '/galeri'
+    | '/ipek-kirpik'
     | '/kalici-makyaj'
     | '/kampanya'
+    | '/kuafor'
     | '/kvkk'
     | '/lazer-epilasyon'
+    | '/protez-tirnak'
+    | '/reformer-pilates'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
@@ -285,10 +333,14 @@ export interface RootRouteChildren {
   CiltBakimiRoute: typeof CiltBakimiRoute
   DovmeSilmeRoute: typeof DovmeSilmeRoute
   GaleriRoute: typeof GaleriRoute
+  IpekKirpikRoute: typeof IpekKirpikRoute
   KaliciMakyajRoute: typeof KaliciMakyajRoute
   KampanyaRoute: typeof KampanyaRoute
+  KuaforRoute: typeof KuaforRoute
   KvkkRoute: typeof KvkkRoute
   LazerEpilasyonRoute: typeof LazerEpilasyonRoute
+  ProtezTirnakRoute: typeof ProtezTirnakRoute
+  ReformerPilatesRoute: typeof ReformerPilatesRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VucutSekillendirmeRoute: typeof VucutSekillendirmeRoute
@@ -347,6 +399,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GaleriRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ipek-kirpik': {
+      id: '/ipek-kirpik'
+      path: '/ipek-kirpik'
+      fullPath: '/ipek-kirpik'
+      preLoaderRoute: typeof IpekKirpikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kalici-makyaj': {
       id: '/kalici-makyaj'
       path: '/kalici-makyaj'
@@ -361,6 +420,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KampanyaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kuafor': {
+      id: '/kuafor'
+      path: '/kuafor'
+      fullPath: '/kuafor'
+      preLoaderRoute: typeof KuaforRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kvkk': {
       id: '/kvkk'
       path: '/kvkk'
@@ -373,6 +439,20 @@ declare module '@tanstack/react-router' {
       path: '/lazer-epilasyon'
       fullPath: '/lazer-epilasyon'
       preLoaderRoute: typeof LazerEpilasyonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/protez-tirnak': {
+      id: '/protez-tirnak'
+      path: '/protez-tirnak'
+      fullPath: '/protez-tirnak'
+      preLoaderRoute: typeof ProtezTirnakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reformer-pilates': {
+      id: '/reformer-pilates'
+      path: '/reformer-pilates'
+      fullPath: '/reformer-pilates'
+      preLoaderRoute: typeof ReformerPilatesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -475,10 +555,14 @@ const rootRouteChildren: RootRouteChildren = {
   CiltBakimiRoute: CiltBakimiRoute,
   DovmeSilmeRoute: DovmeSilmeRoute,
   GaleriRoute: GaleriRoute,
+  IpekKirpikRoute: IpekKirpikRoute,
   KaliciMakyajRoute: KaliciMakyajRoute,
   KampanyaRoute: KampanyaRoute,
+  KuaforRoute: KuaforRoute,
   KvkkRoute: KvkkRoute,
   LazerEpilasyonRoute: LazerEpilasyonRoute,
+  ProtezTirnakRoute: ProtezTirnakRoute,
+  ReformerPilatesRoute: ReformerPilatesRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VucutSekillendirmeRoute: VucutSekillendirmeRoute,

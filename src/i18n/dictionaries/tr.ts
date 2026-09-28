@@ -124,21 +124,21 @@ export const tr = {
           "Tüm Vücut Paketi",
         ],
         pitch:
-          "Diode lazer teknolojisi ile ağrısız, ciltte iz bırakmayan, tüm cilt tonlarında güvenli lazer epilasyon. Seans sonrasında hemen sosyal hayata dönüş.",
+          "Soğutmalı diode lazer ile cilt tonu ve kıl yapısına göre ayarlanan lazer epilasyon. Seans planı ücretsiz ön değerlendirmeyle kişiye özel hazırlanır.",
         benefits: [
-          "Ağrısız, soğutmalı başlık ile konforlu uygulama",
+          "Soğutmalı başlık ile konforu artıran uygulama",
           "Her cilt tonuna uygun cihaz ayarları",
-          "8 seans sonunda %90'a varan kalıcı incelme",
+          "Seans sayısı bölgeye ve kıl yapısına göre belirlenir",
           "Uzman epilasyon uzmanı eşliğinde"
         ],
         duration: "10–90 dk",
-        effect: "3–4 seans sonrası",
+        effect: "Seanslar ilerledikçe kademeli",
         interval: "4–6 hafta",
         closing:
-          "İpeksi pürüzsüz bir cilt için kesintisiz, hijyenik ve sonuç odaklı bir program.",
+          "Hijyenik, planlı ve kişiye özel bir seans programı.",
         faqs: [
-          { q: "Kaç seans sonra kalıcı sonuç alınır?", a: "Vücut bölgesine göre değişmekle birlikte ortalama 8 seansta %85–90 oranında kalıcı incelme sağlanır." },
-          { q: "Lazer epilasyon acı verir mi?", a: "Cihazımızın entegre soğutmalı başlığı sayesinde uygulama son derece konforludur; sadece hafif bir sıcaklık hissedilir." },
+          { q: "Kaç seans gerekir?", a: "Bölgeye, kıl yapısına ve hormonal duruma göre değişir. Seans sayısı ön değerlendirmede size özel planlanır." },
+          { q: "Lazer epilasyon acı verir mi?", a: "Kişiden kişiye değişir. Soğutmalı başlık sayesinde çoğu misafir uygulamayı hafif bir sıcaklık hissi olarak tanımlar." },
           { q: "Seans aralığı ne kadar olmalı?", a: "İlk seanslarda 4 hafta, sonraki seanslarda 6 haftada bir uygulanır. Yüz bölgesinde 3 haftalık aralık tercih edilir." },
           { q: "Yaz aylarında yapılabilir mi?", a: "Yapılabilir; ancak uygulama sonrası 48 saat güneşe direkt maruz kalmamak ve SPF 50+ kullanmak gerekir." },
         ],
@@ -164,21 +164,21 @@ export const tr = {
         pitch:
           "Cildinizin ihtiyacına özel; nemlendiren, arındıran ve canlandıran profesyonel bakım protokolleri. Her seans; analiz, temizlik, arındırma ve besleme aşamalarını içerir. Q-Switch karbon peeling ve tüy sarartma uygulamaları da bu başlık altında planlanır.",
         benefits: [
-          "Anında parlaklık ve nem hissi",
-          "Gözeneklerde belirgin sıkılaşma",
+          "Arındırma, nem ve besleme adımları",
+          "Gözenek görünümüne yönelik uygulamalar",
           "Akne ve lekeye özel program seçenekleri",
-          "Ciltte hassasiyet bırakmayan, klinik onaylı ürünler"
+          "Cilt tipine göre seçilen profesyonel ürünler"
         ],
         duration: "45–75 dk",
         effect: "Anında",
         interval: "2–4 haftada bir",
         closing:
-          "Cildinizin ışığını içerideki dengesinden alan bakım. Filtrenin yerini gerçek bir parlaklığa bırakır.",
+          "Cildinizin ihtiyacına göre planlanan, düzenli bir bakım ritmi.",
         faqs: [
           { q: "İlk seansta hangi bakımı seçmeliyim?", a: "Uzman estetisyenimiz cilt analizi yaparak size en uygun protokolü öneriyor. İlk seansta genellikle Klasik veya Hydrafacial ile başlarız." },
           { q: "Ne sıklıkla yapılmalı?", a: "Sağlıklı bir cilt için ortalama 2–4 haftada bir seans önerilir. Akne / leke programlarında sıklık haftalık olabilir." },
           { q: "Sonrasında makyaj yapabilir miyim?", a: "Klasik ve Hydrafacial sonrası 4–6 saat, karbon peeling sonrası 24 saat makyajsız kalmanız önerilir." },
-          { q: "Hamilelikte uygulanır mı?", a: "Klasik cilt bakımı ve Hydrafacial hamilelikte güvenle uygulanır; kimyasal peeling ve karbon peeling önerilmez." },
+          { q: "Hamilelikte uygulanır mı?", a: "Hamilelik döneminde bakım, hekiminizin onayıyla ve içerik seçimi buna göre yapılarak planlanır; kimyasal peeling ve karbon peeling bu dönemde uygulanmaz." },
         ],
         pricing: [
           { label: "Güncel fiyat bilgisi için bize ulaşın", price: "" },
@@ -203,7 +203,7 @@ export const tr = {
           "Bakışınızı çerçeveleyen, sizin gözünüzün formuna göre tasarlanan kirpik ve kaş uygulamaları. Sertifikalı ürünler, tek kullanımlık ekipman, hipoalerjenik yapıştırıcı.",
         benefits: [
           "Doğal — dramatik arası, size özel yoğunluk",
-          "3–4 haftaya kadar dolgun, düşmeyen kirpik",
+          "Doğal kirpik döngüsüne göre planlanan dolum aralığı",
           "Kirpik lifting ile makyajsız etkileyici bakış",
           "Kaşta simetri ve altın oran tasarımı"
         ],
@@ -213,9 +213,9 @@ export const tr = {
         closing:
           "Makyaj yerine geçen bir çerçeve; her sabah aynada 15 dakika kazandıran bir ritüel.",
         faqs: [
-          { q: "Kirpik ekstensiyon doğal kirpiğime zarar verir mi?", a: "Doğru teknik ve hafif ürünlerle uygulandığında zarar vermez. Bizde her ekstensiyon, doğal kirpiğinizin kaldırabileceği uzunluk ve kalınlıkta seçilir." },
+          { q: "Kirpik ekstensiyon doğal kirpiğime zarar verir mi?", a: "Doğru teknik ve hafif ürünlerle uygulandığında zarar vermesi beklenmez. Bizde her ekstensiyon, doğal kirpiğinizin kaldırabileceği uzunluk ve kalınlıkta seçilir." },
           { q: "Ne kadar dayanır?", a: "Ortalama 3–4 hafta. 3. haftadan sonra dolum yaparak dolgunluk korunur." },
-          { q: "Kirpik lifting nedir?", a: "Doğal kirpiklerinizi kalıcı olarak yukarı kaldıran ve boyayan uygulama. Ortalama 6–8 hafta etkili kalır." },
+          { q: "Kirpik lifting nedir?", a: "Doğal kirpiklerinizi kökten kıvırıp isteğe göre boyayan uygulama; ekleme yapılmaz. Etkisi kişiye göre değişmekle birlikte birkaç hafta sürer." },
           { q: "Kaş tasarımında nasıl planlama yapılır?", a: "Yüz oranlarınıza göre altın oran ölçümü yapılır; simetri sağlanarak kaş formu size özel tasarlanır." },
         ],
         pricing: [
@@ -237,7 +237,7 @@ export const tr = {
           "Fransız · Ombré · Krom",
         ],
         pitch:
-          "Steril ekipman, kaliteli markalar ve sanatsal detaylarla tasarlanmış manikür-pedikür deneyimi. Kalıcı oje ve protez tırnak uygulamalarında 3–4 hafta kusursuz görünüm.",
+          "Steril ekipman, kaliteli markalar ve sanatsal detaylarla tasarlanmış manikür-pedikür deneyimi. Kalıcı oje ve protez tırnakta dolum aralığı tırnağın uzama hızına göre planlanır.",
         benefits: [
           "Tek kullanımlık törpü, freze ve steril alet",
           "OPI, Kodi, DND gibi premium markalar",
@@ -250,7 +250,7 @@ export const tr = {
         closing:
           "Bakımlı bir tırnak, en sessiz stil göstergenizdir.",
         faqs: [
-          { q: "Kalıcı oje tırnağa zarar verir mi?", a: "Doğru teknikle uygulandığında ve doğru sökümle çıkarıldığında zarar vermez. Uygulamalarımızda tırnak yüzeyi minimum işleme tabi tutulur." },
+          { q: "Kalıcı oje tırnağa zarar verir mi?", a: "Doğru teknikle uygulandığında ve doğru sökümle çıkarıldığında zarar vermesi beklenmez. Uygulamalarımızda tırnak yüzeyi minimum işleme tabi tutulur." },
           { q: "Protez tırnak ne kadar dayanır?", a: "Ortalama 3–4 hafta. Sonrasında dolum yaparak sürekli olarak kullanılabilir." },
           { q: "Alerjim var, uygulama yapılır mı?", a: "Alerji öykünüzü paylaştıktan sonra hipoalerjenik alternatif ürünlerimizle uygulama planlanabilir." },
           { q: "Nail art tasarımı ne kadar sürüyor?", a: "Basit tasarımlar 15 dk, karmaşık el çizimi ve süsleme 45–60 dk sürebilir." },
@@ -270,25 +270,25 @@ export const tr = {
           "Küçük Grup (3–4 kişi)",
           "Prenatal Pilates",
           "Postnatal Toparlanma",
-          "Rehabilitasyon Odaklı",
+          "Kişiye Özel Program",
         ],
         pitch:
-          "Sertifikalı eğitmenler eşliğinde reformer, cadillac ve mat pilates. Size özel program ile omurga sağlığı, duruş, esneklik ve toparlanma bir arada.",
+          "Sertifikalı eğitmenler eşliğinde reformer, cadillac ve mat pilates. Size özel program ile duruş, esneklik, core gücü ve kontrollü hareket bir arada.",
         benefits: [
           "Sertifikalı, deneyimli eğitmen kadrosu",
-          "Duruş bozukluğu ve bel ağrısına özel program",
-          "Prenatal ve postnatal onaylı protokoller",
+          "Duruş ve core odaklı kişiye özel program",
+          "Hamilelik ve doğum sonrası dönemde hekim onayıyla planlanan dersler",
           "Butik atmosferde birebir odak"
         ],
         duration: "50 dk / seans",
-        effect: "6–8 seansta belirgin fark",
+        effect: "Düzenli derslerle kademeli",
         interval: "Haftada 2–3 seans önerilir",
         closing:
           "Bedeninizle yeniden hizalanmanın en zarif yolu.",
         faqs: [
           { q: "Daha önce hiç pilates yapmadım, katılabilir miyim?", a: "Evet. Birebir derslerde seviyeniz değerlendirilir ve programınız sıfırdan planlanır." },
-          { q: "Ne kadar sürede sonuç alırım?", a: "Haftada 2–3 seans ile ortalama 6–8 seansta duruş, esneklik ve karın sıkılığında belirgin değişim fark edilir." },
-          { q: "Hamilelikte pilates güvenli mi?", a: "İlk 12 haftadan sonra doktor onayı ile prenatal reformer güvenle uygulanır. Programınız hamileliğe özel düzenlenir." },
+          { q: "Ne kadar sürede sonuç alırım?", a: "Ders sıklığına, başlangıç seviyenize ve hedefinize göre değişir; ilerleme düzenli derslerle kademeli olarak izlenir." },
+          { q: "Hamilelikte pilates yapılabilir mi?", a: "Hamilelik döneminde derslere yalnızca hekim onayıyla başlanır; program döneme göre düzenlenir." },
           { q: "Ders iptal kuralı nedir?", a: "En az 12 saat öncesinden bildirilen iptaller ücretsizdir. Sonrasındaki iptaller paket derslerinizden düşülür." },
         ],
         pricing: [
@@ -487,7 +487,7 @@ export const tr = {
     ctaWhatsapp: "WhatsApp'tan Randevu Al",
     ctaCall: "Ara",
     hoursLabel: "Çalışma Saatleri",
-    hoursDays: "Pazartesi – Cumartesi",
+    hoursDays: "Her gün",
   },
   whatsapp: {
     ariaLabel: "WhatsApp'tan yazın",

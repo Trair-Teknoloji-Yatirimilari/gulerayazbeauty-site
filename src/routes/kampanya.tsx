@@ -302,7 +302,7 @@ function KampanyaPage() {
             </h2>
             <p className="mt-5 text-foreground/70 leading-relaxed max-w-xl mx-auto">
               Hangi programın size uygun olduğunu konuşmak için ücretsiz ön değerlendirmeye bekliyoruz.
-              Maslak 1453, Sarıyer / İstanbul · Pazartesi–Cumartesi 08:30–21:00
+              Maslak 1453, Sarıyer / İstanbul · Her gün 08:30–21:00
             </p>
             <div className="mt-8">
               <Cta label="WhatsApp'tan Randevu Al" />

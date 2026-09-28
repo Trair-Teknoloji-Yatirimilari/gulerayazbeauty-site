@@ -18,6 +18,10 @@ import serviceCilt from "@/assets/service-cilt-gercek.jpg";
 import serviceVucut from "@/assets/service-vucut.jpg";
 import serviceDovme from "@/assets/service-dovme-silme.jpg";
 import serviceKaliciMakyaj from "@/assets/service-kalici-makyaj.jpg";
+import serviceNail from "@/assets/service-nail-gercek.jpg";
+import serviceKirpik from "@/assets/service-kirpik.jpg";
+import servicePilates from "@/assets/service-pilates.jpg";
+import serviceKuafor from "@/assets/service-kuafor.jpg";
 
 const COVERS: Record<string, string> = {
   "service-lazer.jpg": serviceLazer,
@@ -25,6 +29,10 @@ const COVERS: Record<string, string> = {
   "service-vucut.jpg": serviceVucut,
   "service-dovme-silme.jpg": serviceDovme,
   "service-kalici-makyaj.jpg": serviceKaliciMakyaj,
+  "service-nail-gercek.jpg": serviceNail,
+  "service-kirpik.jpg": serviceKirpik,
+  "service-pilates.jpg": servicePilates,
+  "service-kuafor.jpg": serviceKuafor,
 };
 
 /** Sayfa genelinde kullanılan randevu mesajı (kampanya sayfası kendi metnini kullanır) */
@@ -157,7 +165,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             </h2>
             <p className="mt-4 text-foreground/70 leading-relaxed max-w-xl mx-auto">
               Size uygun planlamayı birlikte konuşmak için WhatsApp'tan yazabilir ya da doğrudan arayabilirsiniz.
-              Maslak 1453, Sarıyer / İstanbul · Pazartesi – Cumartesi 08:30–21:00
+              Maslak 1453, Sarıyer / İstanbul · Her gün 08:30–21:00
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Cta label="WhatsApp'tan Randevu Al" />

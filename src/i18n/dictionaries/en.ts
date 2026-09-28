@@ -126,21 +126,21 @@ export const en: typeof tr = {
           "Full Body Package",
         ],
         pitch:
-          "Diode laser technology for painless, mark-free laser hair removal safe for all skin tones. Return to social life immediately after the session.",
+          "Laser hair removal with a cooled diode laser, adjusted to your skin tone and hair type. Your session plan is prepared after a free pre-assessment.",
         benefits: [
-          "Painless application with integrated cooling head",
+          "Cooling head for a more comfortable application",
           "Device settings suitable for every skin tone",
-          "Up to 90% permanent reduction after 8 sessions",
+          "Number of sessions set by area and hair type",
           "Applied by an expert epilation technician"
         ],
         duration: "10–90 min",
-        effect: "After 3–4 sessions",
+        effect: "Gradual as sessions progress",
         interval: "4–6 weeks",
         closing:
-          "An uninterrupted, hygienic and results-focused program for silky-smooth skin.",
+          "A hygienic, planned and personalized session program.",
         faqs: [
-          { q: "How many sessions for permanent results?", a: "It varies by body area, but on average 85–90% permanent reduction is achieved in 8 sessions." },
-          { q: "Is laser hair removal painful?", a: "Thanks to our device's integrated cooling head, application is very comfortable; you'll feel only a mild warmth." },
+          { q: "How many sessions are needed?", a: "It depends on the area, hair type and hormonal factors. The number of sessions is planned for you at the pre-assessment." },
+          { q: "Is laser hair removal painful?", a: "It varies from person to person. With the cooling head, most guests describe it as a mild warmth." },
           { q: "What is the session interval?", a: "Every 4 weeks initially, then every 6 weeks. For facial areas, 3-week intervals are preferred." },
           { q: "Can it be done in summer?", a: "Yes; however you should avoid direct sun for 48 hours after and use SPF 50+." },
         ],
@@ -166,21 +166,21 @@ export const en: typeof tr = {
         pitch:
           "Professional care protocols that hydrate, purify and revitalize according to your skin's needs. Each session includes analysis, cleansing, exfoliation and nourishment. Q-Switch carbon peeling and hair bleaching are also planned under this heading.",
         benefits: [
-          "Immediate glow and hydration",
-          "Visibly tightened pores",
+          "Cleansing, hydration and nourishment steps",
+          "Treatments aimed at the appearance of pores",
           "Dedicated programs for acne and pigmentation",
-          "Clinically approved, non-irritating products"
+          "Professional products chosen for your skin type"
         ],
         duration: "45–75 min",
         effect: "Immediate",
         interval: "Every 2–4 weeks",
         closing:
-          "Care that lets your skin's inner balance shine. Real radiance replaces the filter.",
+          "A regular care rhythm planned around your skin's needs.",
         faqs: [
           { q: "Which facial should I choose first?", a: "Our expert aesthetician will perform a skin analysis and recommend the right protocol. We usually start with a Classic or Hydrafacial." },
           { q: "How often?", a: "Every 2–4 weeks for healthy skin. Acne / pigmentation programs may be weekly." },
           { q: "Can I wear makeup after?", a: "4–6 hours makeup-free after Classic and Hydrafacial; 24 hours after carbon peeling." },
-          { q: "Is it safe during pregnancy?", a: "Classic facial and Hydrafacial are safe. Chemical and carbon peels are not recommended." },
+          { q: "Can I have a facial during pregnancy?", a: "During pregnancy, care is planned with your doctor's approval and products are chosen accordingly; chemical and carbon peels are not applied." },
         ],
         pricing: [
           { label: "Contact us for current pricing", price: "" },
@@ -205,7 +205,7 @@ export const en: typeof tr = {
           "Lash and brow applications designed to frame your gaze, tailored to your eye shape. Certified products, single-use tools, hypoallergenic adhesive.",
         benefits: [
           "Natural — dramatic, custom density",
-          "Full, long-lasting lashes for 3–4 weeks",
+          "Refill intervals planned around your natural lash cycle",
           "Lash lifting for an expressive look without makeup",
           "Golden-ratio symmetry in brow design"
         ],
@@ -215,9 +215,9 @@ export const en: typeof tr = {
         closing:
           "A frame that replaces makeup; a ritual that gives you back 15 minutes each morning.",
         faqs: [
-          { q: "Do lash extensions damage natural lashes?", a: "Applied correctly with light products, they do not damage. We choose the length and thickness your lashes can carry." },
+          { q: "Do lash extensions damage natural lashes?", a: "Applied correctly with light products, they are not expected to cause damage. We choose the length and thickness your lashes can carry." },
           { q: "How long do they last?", a: "3–4 weeks on average. Refill after week 3 to maintain fullness." },
-          { q: "What is lash lifting?", a: "An application that permanently lifts and tints your natural lashes. Lasts about 6–8 weeks." },
+          { q: "What is lash lifting?", a: "Your natural lashes are lifted from the root and optionally tinted; nothing is added. The effect varies by person and lasts a few weeks." },
           { q: "How do you plan brow design?", a: "Golden-ratio measurements are made based on your face proportions; symmetry is ensured and the shape is designed for you." },
         ],
         pricing: [
@@ -239,7 +239,7 @@ export const en: typeof tr = {
           "French · Ombré · Chrome",
         ],
         pitch:
-          "Manicure-pedicure experience designed with sterile equipment, premium brands and artistic detail. Flawless look for 3–4 weeks with gel polish and extensions.",
+          "Manicure-pedicure experience designed with sterile equipment, premium brands and artistic detail. Refill intervals for gel polish and extensions are planned around your nail growth.",
         benefits: [
           "Single-use files, bits and sterile tools",
           "Premium brands like OPI, Kodi, DND",
@@ -252,7 +252,7 @@ export const en: typeof tr = {
         closing:
           "A well-kept nail is your quietest style statement.",
         faqs: [
-          { q: "Does gel polish damage the nail?", a: "Applied and removed correctly, it does not damage. We buff the nail surface minimally." },
+          { q: "Does gel polish damage the nail?", a: "Applied and removed correctly, it is not expected to cause damage. We buff the nail surface minimally." },
           { q: "How long do extensions last?", a: "3–4 weeks on average. With refills, they can be maintained continuously." },
           { q: "I have allergies — can I still apply?", a: "After you share your allergy history, we can plan the application with hypoallergenic alternatives." },
           { q: "How long does nail art take?", a: "Simple designs 15 min; detailed hand-painted designs 45–60 min." },
@@ -272,25 +272,25 @@ export const en: typeof tr = {
           "Small Group (3–4 people)",
           "Prenatal Pilates",
           "Postnatal Recovery",
-          "Rehab-Focused",
+          "Personalized Program",
         ],
         pitch:
-          "Reformer, cadillac and mat pilates with certified instructors. A personalized program combining spine health, posture, flexibility and recovery.",
+          "Reformer, cadillac and mat pilates with certified instructors. A personalized program combining posture, flexibility, core strength and controlled movement.",
         benefits: [
           "Certified, experienced instructors",
-          "Programs for posture and back pain",
-          "Approved prenatal and postnatal protocols",
+          "Personalized posture and core program",
+          "Pregnancy and postnatal lessons planned with doctor approval",
           "Boutique atmosphere with 1-on-1 focus"
         ],
         duration: "50 min / session",
-        effect: "Visible change in 6–8 sessions",
+        effect: "Gradual with regular lessons",
         interval: "2–3 sessions per week",
         closing:
           "The most graceful way to realign with your body.",
         faqs: [
           { q: "I've never done pilates — can I join?", a: "Yes. In 1-on-1 lessons, your level is assessed and the program is planned from scratch." },
-          { q: "How soon will I see results?", a: "With 2–3 sessions per week, noticeable change in posture, flexibility and core tone in 6–8 sessions." },
-          { q: "Is pilates safe during pregnancy?", a: "After the first 12 weeks and with doctor approval, prenatal reformer is safely applied. Your program is tailored to pregnancy." },
+          { q: "How soon will I see results?", a: "It depends on frequency, starting level and goals; progress is followed gradually with regular lessons." },
+          { q: "Can I do pilates during pregnancy?", a: "During pregnancy, lessons start only with your doctor's approval; the program is adapted to your stage." },
           { q: "What is the cancellation policy?", a: "Cancellations made at least 12 hours in advance are free. Later cancellations are deducted from your package." },
         ],
         pricing: [
@@ -489,7 +489,7 @@ export const en: typeof tr = {
     ctaWhatsapp: "Book via WhatsApp",
     ctaCall: "Call",
     hoursLabel: "Opening Hours",
-    hoursDays: "Monday – Saturday",
+    hoursDays: "Every day",
   },
   whatsapp: {
     ariaLabel: "Chat on WhatsApp",

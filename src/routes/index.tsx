@@ -89,6 +89,7 @@ export const Route = createFileRoute("/")({
           "@type": "BeautySalon",
           "@id": BEAUTY_SALON_ID,
           name: "Güler Ayaz Beauty",
+          alternateName: ["GÜLER AYAZ BEAUTY CENTER", "Güler Ayaz Beauty Clinic"],
           url: SITE_URL,
           image: `${SITE_URL}/og-image.jpg`,
           telephone: "+902122234777",
@@ -103,12 +104,18 @@ export const Route = createFileRoute("/")({
           openingHoursSpecification: [
             {
               "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
               opens: "08:30",
               closes: "21:00",
             },
           ],
-          sameAs: ["https://www.instagram.com/gulerayaz_beautycenter/"],
+          geo: { "@type": "GeoCoordinates", latitude: 41.1184636, longitude: 29.0086571 },
+          hasMap: "https://maps.google.com/?cid=12830356268545959416",
+          areaServed: ["Maslak", "Sarıyer", "İstanbul"],
+          sameAs: [
+            "https://www.instagram.com/gulerayaz_beautycenter/",
+            "https://www.tiktok.com/@gulerayazbeauty",
+          ],
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Güler Ayaz Beauty — Hizmetler",
