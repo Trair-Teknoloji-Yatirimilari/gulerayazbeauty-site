@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 const STATIC_PAGES = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/lazer-epilasyon", changefreq: "monthly", priority: "0.9" },
+  { path: "/erkek-lazer-epilasyon", changefreq: "monthly", priority: "0.9" },
   { path: "/cilt-bakimi", changefreq: "monthly", priority: "0.9" },
   { path: "/vucut-sekillendirme", changefreq: "monthly", priority: "0.9" },
   { path: "/dovme-silme", changefreq: "monthly", priority: "0.9" },

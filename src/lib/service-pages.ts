@@ -14,8 +14,9 @@ export type Block =
 export interface ServicePage {
   /** Route yolu — sitemap ve iç bağlantılar bunu kullanır */
   path:
-    | "/lazer-epilasyon" | "/cilt-bakimi" | "/vucut-sekillendirme" | "/dovme-silme" | "/kalici-makyaj"
-    | "/protez-tirnak" | "/ipek-kirpik" | "/reformer-pilates" | "/kuafor";
+    | "/lazer-epilasyon" | "/erkek-lazer-epilasyon" | "/cilt-bakimi" | "/vucut-sekillendirme"
+    | "/dovme-silme" | "/kalici-makyaj" | "/protez-tirnak" | "/ipek-kirpik" | "/reformer-pilates"
+    | "/kuafor";
   /** Ana sayfadaki hizmet kartı anahtarı (SERVICE_IMAGES ile aynı) */
   serviceKey: string;
   /** Blog kategorisi eşlemesi (blog detayındaki "İlgili hizmet" kutusu) */
@@ -82,8 +83,53 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Lazer epilasyon acı verir mi?", a: "Kişiden kişiye değişir. Soğutmalı başlık sayesinde çoğu misafir uygulamayı hafif bir sıcaklık ve karıncalanma olarak tanımlar." },
       { q: "Kaç seans gerekir?", a: "Kıl yapısı, hormonal durum ve bölgeye göre değişir. Analiz sonrası size özel bir plan oluşturulur; analiz olmadan sayı söylemiyoruz." },
       { q: "Yazın seans yapılabilir mi?", a: "Cilt tonu dengeliyse evet. Yakın zamanda yoğun bronzlaşma varsa seans ertelenir. Ayrıntı için yazın lazer epilasyon ve güneş rehberimize göz atabilirsiniz." },
-      { q: "Erkek misafir kabul ediliyor mu?", a: "Evet." },
+      { q: "Erkek misafir kabul ediliyor mu?", a: "Evet. Ayrıntılar için erkek lazer epilasyon sayfamıza bakabilirsiniz." },
     ],
+    afterFaqHtml:
+      "Erkek misafirlerimiz için bölgeler, seans aralıkları ve uygulama düzeni ayrı anlatılmıştır: <a href=\"/erkek-lazer-epilasyon\">Maslak erkek lazer epilasyon</a>.",
+    note: NOTE,
+  },
+  {
+    path: "/erkek-lazer-epilasyon",
+    // Ana sayfada kendi kartı yok; SERVICE_PATH_BY_KEY'de "lazer" anahtarını
+    // ezmemesi için ayrı bir anahtar kullanıyor.
+    serviceKey: "lazer-erkek",
+    blogCategory: "Erkek Lazer Epilasyon",
+    navLabel: "Erkek Lazer Epilasyon",
+    title: "Maslak Erkek Lazer Epilasyon | Diode Lazer — Güler Ayaz",
+    description:
+      "Maslak 1453'te erkeklere yönelik diode lazer epilasyon. Sırt, göğüs, ense, sakal sınırı ve tüm vücut için kişiye özel seans planı.",
+    h1: "Maslak'ta Erkek Lazer Epilasyon",
+    cover: "service-lazer.jpg",
+    coverAlt: "Merkezimizde erkek misafir için diode lazer epilasyon uygulaması",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty, Maslak 1453'te (Sarıyer / İstanbul) erkek misafirlerine de soğutmalı diode lazer epilasyon uygulaması yapmaktadır. Süreç, kadın misafirlerde olduğu gibi cilt tonu ve kıl yapısı analiziyle başlar; ancak erkek kıl yapısı genellikle daha kalın ve yoğun olduğu için seans parametreleri ve aralıkları farklı planlanır." },
+      { t: "h2", text: "Hangi Bölgeler Uygulanıyor?" },
+      { t: "p", html: "En çok tercih edilen bölgeler sırt, omuz, göğüs, karın, ense ve sakal sınırıdır. Bunların yanında kol, bacak, koltuk altı ve tüm vücut kombinasyonları da uygulanır. Bölge seçimi ve kombinasyon, ücretsiz ön değerlendirmede birlikte belirlenir." },
+      { t: "h3", text: "Sakal Sınırı ve Ense" },
+      { t: "p", html: "Sakal tamamen alınmak yerine çoğunlukla sınır çalışması tercih edilir: boyun ve elmacık hattındaki dağınık kıllar seyreltilir, sakalın şekli korunur. Ense hattı da aynı mantıkla düzenlenir. Bu bölgelerde hedeflenen görünümü ilk seanstan önce netleştiriyoruz, çünkü sonuç kalıcı yönde ilerler." },
+      { t: "h2", text: "Erkeklerde Seans Planı Neden Farklı?" },
+      { t: "p", html: "Kalın ve koyu kıl, lazer enerjisini daha çok tutar; bu da parametrelerin dikkatli ayarlanmasını gerektirir. Ayrıca sırt ve göğüs gibi geniş bölgelerde kıl büyüme döngüsü vücudun diğer bölgelerinden farklı ilerleyebilir. Bu nedenle seans aralıkları bölgeye göre ayrı belirlenir ve süreç boyunca yeniden değerlendirilir." },
+      { t: "ul", items: [
+        "Seans öncesi bölgenin jiletle alınması gerekir; ağda veya cımbız kullanılmaz",
+        "Seanstan önceki ve sonraki günlerde yoğun güneş ve solaryum önerilmez",
+        "Uygulama sonrası sauna, hamam ve sıcak duş kısa süre ertelenir",
+        "Geçici kızarıklık olağandır ve kısa sürede yatışır",
+      ] },
+      { t: "h2", text: "Kimler İçin Uygun Değildir?" },
+      { t: "p", html: "Aktif cilt enfeksiyonu, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda uygulama ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
+      { t: "h2", text: "Maslak ve Çevresinden Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Maslak plazalarında çalışanlar için iş çıkışı saatleri de uygundur — hafta içi ve hafta sonu 08:30–21:00 arası açığız. Sarıyer, Ayazağa, Levent ve Şişli çevresinden metro ve ana arterlerle kolay ulaşılır." },
+    ],
+    faqs: [
+      { q: "Erkekler için ayrı bir kabin var mı?", a: "Uygulamalar kapalı kabinde birebir yapılır. Randevu planlanırken tercihinizi belirtebilirsiniz." },
+      { q: "Sırt ve göğüs için kaç seans gerekir?", a: "Kıl yoğunluğu, hormonal durum ve bölgeye göre değişir. Ön değerlendirme sonrası size özel bir plan oluşturulur; analiz olmadan sayı söylemiyoruz." },
+      { q: "Sakalımın tamamını aldırmak zorunda mıyım?", a: "Hayır. Çoğu misafirimiz yalnızca boyun ve elmacık hattındaki sınırı düzenletir; sakalın şekli korunur." },
+      { q: "Seanstan önce tüyleri almam gerekir mi?", a: "Evet, bölgenin seans gününden kısa süre önce jiletle alınmış olması gerekir. Ağda ve cımbız kıl kökünü çıkardığı için uygulamadan önce kullanılmaz." },
+      { q: "Uygulama acı verir mi?", a: "Kişiden kişiye değişir. Soğutmalı başlık sayesinde çoğu misafir uygulamayı sıcaklık ve karıncalanma olarak tanımlar." },
+    ],
+    afterFaqHtml:
+      "Kadın misafirlerimiz için bölge listesi ve seans düzeni <a href=\"/lazer-epilasyon\">lazer epilasyon sayfamızda</a> yer alıyor. Randevu ve ücretsiz ön değerlendirme için WhatsApp'tan yazabilirsiniz.",
     note: NOTE,
   },
   {
