@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Instagram, Mail } from "lucide-react";
 import { useT } from "@/i18n/context";
 import { SERVICE_PAGES } from "@/lib/service-pages";
+import { reopenConsent } from "@/lib/consent";
 
 export function SiteFooter() {
   const { t } = useT();
@@ -114,6 +115,15 @@ export function SiteFooter() {
             <Link to="/kvkk" className="hover:text-primary transition-colors underline underline-offset-2">
               {t.footer.legalLink}
             </Link>
+            <span className="hidden sm:inline">·</span>
+            {/* KVKK: rızanın geri alınması, verilmesi kadar kolay olmalı */}
+            <button
+              type="button"
+              onClick={reopenConsent}
+              className="hover:text-primary transition-colors underline underline-offset-2"
+            >
+              {t.consent.manageLink}
+            </button>
             <span className="hidden sm:inline">·</span>
             <span>{t.footer.disclaimer}</span>
           </div>

@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useT } from "@/i18n/context";
-import { loadMetaPixel, readConsent, writeConsent } from "@/lib/consent";
+import {
+  CONSENT_REOPEN_EVENT,
+  isPixelLoaded,
+  loadMetaPixel,
+  readConsent,
+  writeConsent,
+} from "@/lib/consent";
+import { isTrackablePath } from "@/lib/track";
 
 /**
  * Çerez onay bandı.
@@ -10,30 +17,46 @@ import { loadMetaPixel, readConsent, writeConsent } from "@/lib/consent";
  * ziyaretçi "Kabul et" demeden yüklenmiyor. Karar localStorage'da saklanıyor,
  * sonraki ziyaretlerde bant gösterilmiyor.
  *
- * SSR'da hiçbir şey basmaz (ilk render'da `decided === null` ve `mounted`
- * false olduğu için) — hidrasyon uyuşmazlığı oluşmaz.
+ * Yönetim ekranlarında (/admin, /auth) ne bant gösterilir ne de Pixel
+ * yüklenir — daha önce rıza verilmiş bir tarayıcı doğrudan panele girse bile.
+ *
+ * SSR'da hiçbir şey basmaz (`mounted` false) — hidrasyon uyuşmazlığı olmaz.
  */
 export function CookieConsent() {
   const { t } = useT();
   const c = t.consent;
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const trackable = isTrackablePath(pathname);
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
+  useEffect(() => setMounted(true), []);
+
+  // Rıza varsa Pixel'i yükle; yoksa bandı göster. Yönetim ekranlarında ikisi de yok.
   useEffect(() => {
-    setMounted(true);
+    if (!trackable) {
+      setVisible(false);
+      return;
+    }
     const stored = readConsent();
     if (stored === "granted") {
       loadMetaPixel();
-      return;
+      setVisible(false);
+    } else if (stored === "denied") {
+      setVisible(false);
+    } else {
+      setVisible(true);
     }
-    if (stored === "denied") return;
-    setVisible(true);
+  }, [trackable]);
+
+  // Footer'daki "Çerez tercihleri" bağlantısı bandı yeniden açar
+  useEffect(() => {
+    const onReopen = () => setVisible(true);
+    window.addEventListener(CONSENT_REOPEN_EVENT, onReopen);
+    return () => window.removeEventListener(CONSENT_REOPEN_EVENT, onReopen);
   }, []);
 
-  // Yönetim panelinde ve giriş ekranında gösterme
-  if (!mounted || !visible) return null;
-  if (pathname.startsWith("/admin") || pathname.startsWith("/auth")) return null;
+  if (!mounted || !visible || !trackable) return null;
 
   const accept = () => {
     writeConsent("granted");
@@ -42,8 +65,13 @@ export function CookieConsent() {
   };
 
   const decline = () => {
+    // localStorage'a bakılmaz: bandı yeniden açan reopenConsent() kaydı zaten
+    // silmiş olur, o yüzden ölçüt Pixel'in bellekte yüklü olup olmadığıdır.
+    const wasLoaded = isPixelLoaded();
     writeConsent("denied");
     setVisible(false);
+    // Yüklenmiş fbq'yu bellekten kaldırmanın tek güvenilir yolu sayfayı yenilemek
+    if (wasLoaded) window.location.reload();
   };
 
   return (

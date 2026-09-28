@@ -30,6 +30,26 @@ export function writeConsent(v: ConsentValue): void {
   }
 }
 
+/** Çerez bandını yeniden açmak için yayılan olay (footer bağlantısı kullanır). */
+export const CONSENT_REOPEN_EVENT = "ga:consent:reopen";
+
+/**
+ * Kayıtlı kararı siler ve bandı yeniden açar.
+ *
+ * KVKK, rızanın geri alınmasının verilmesi kadar kolay olmasını arar; bu
+ * yüzden footer'daki "Çerez tercihleri" bağlantısı buraya bağlıdır. Not:
+ * sayfa yenilenene kadar hâlihazırda yüklenmiş Pixel betiği bellekte kalır,
+ * bu yüzden reddedildiğinde sayfa bir kez yeniden yüklenir.
+ */
+export function reopenConsent(): void {
+  try {
+    window.localStorage.removeItem(CONSENT_KEY);
+  } catch {
+    /* yoksay */
+  }
+  window.dispatchEvent(new Event(CONSENT_REOPEN_EVENT));
+}
+
 /** Meta (Facebook) Pixel kimliği — rıza sonrası yüklenir. */
 export const META_PIXEL_ID = "1807896346887596";
 
@@ -45,6 +65,16 @@ type Fbq = {
 type PixelWindow = Window & { fbq?: Fbq; _fbq?: Fbq };
 
 let pixelLoaded = false;
+
+/**
+ * Pixel bu sayfa yaşam döngüsünde yüklendi mi?
+ *
+ * Rıza geri alınırken buna bakılır: localStorage'daki kayda bakmak yanıltıcı,
+ * çünkü bandı yeniden açan reopenConsent() kaydı zaten silmiş oluyor.
+ */
+export function isPixelLoaded(): boolean {
+  return pixelLoaded;
+}
 
 /**
  * Meta'nın standart pixel betiğini çalıştırır ve PageView gönderir.
