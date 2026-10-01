@@ -105,6 +105,7 @@ export const en: typeof tr = {
   },
   services: {
     badge: "Our Services",
+    allServicesCta: "See all services",
     titleA: "Beauty",
     titleB: "rituals",
     intro:
@@ -451,7 +452,7 @@ export const en: typeof tr = {
     badge: "Experience",
     titleA: "Your visit to", titleB: "our center",
     steps: [
-      { n: "01", t: "Booking", d: "Quick booking via online form, phone or WhatsApp." },
+      { n: "01", t: "Booking", d: "Quick booking via WhatsApp, phone or live chat." },
       { n: "02", t: "Welcome", d: "A calm ritual that starts with a coffee in the reception area." },
       { n: "03", t: "Session", d: "Your session in sterile rooms with our expert team." },
       { n: "04", t: "Care Plan", d: "At-home care recommendations for long-lasting results." },
@@ -506,6 +507,7 @@ export const en: typeof tr = {
   footer: {
     tagline: "Beauty Clinic · Maslak",
     servicesHeader: "Services",
+    allServices: "All services",
     contactHeader: "Contact",
     socialHeader: "Social",
     address: "Maslak 1453\nSarıyer / Istanbul",

@@ -24,6 +24,11 @@ export function SiteFooter() {
           <div className="space-y-3">
             <h4 className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">{t.footer.servicesHeader}</h4>
             <ul className="space-y-2">
+              <li>
+                <Link to="/hizmetler" className="text-sm text-primary hover:text-primary/80 transition-colors">
+                  {t.footer.allServices}
+                </Link>
+              </li>
               {SERVICE_PAGES.map((s) => (
                 <li key={s.path}>
                   <Link to={s.path} className="text-sm text-foreground/80 hover:text-primary transition-colors">

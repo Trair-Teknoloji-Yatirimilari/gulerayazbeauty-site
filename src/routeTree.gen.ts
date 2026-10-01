@@ -17,6 +17,7 @@ import { Route as CiltBakimiRouteImport } from './routes/cilt-bakimi'
 import { Route as DovmeSilmeRouteImport } from './routes/dovme-silme'
 import { Route as ErkekLazerEpilasyonRouteImport } from './routes/erkek-lazer-epilasyon'
 import { Route as GaleriRouteImport } from './routes/galeri'
+import { Route as HizmetlerRouteImport } from './routes/hizmetler'
 import { Route as IpekKirpikRouteImport } from './routes/ipek-kirpik'
 import { Route as KaliciMakyajRouteImport } from './routes/kalici-makyaj'
 import { Route as KampanyaRouteImport } from './routes/kampanya'
@@ -77,6 +78,11 @@ const ErkekLazerEpilasyonRoute = ErkekLazerEpilasyonRouteImport.update({
 const GaleriRoute = GaleriRouteImport.update({
   id: '/galeri',
   path: '/galeri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HizmetlerRoute = HizmetlerRouteImport.update({
+  id: '/hizmetler',
+  path: '/hizmetler',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IpekKirpikRoute = IpekKirpikRouteImport.update({
@@ -201,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/dovme-silme': typeof DovmeSilmeRoute
   '/erkek-lazer-epilasyon': typeof ErkekLazerEpilasyonRoute
   '/galeri': typeof GaleriRoute
+  '/hizmetler': typeof HizmetlerRoute
   '/ipek-kirpik': typeof IpekKirpikRoute
   '/kalici-makyaj': typeof KaliciMakyajRoute
   '/kampanya': typeof KampanyaRoute
@@ -232,6 +239,7 @@ export interface FileRoutesByTo {
   '/dovme-silme': typeof DovmeSilmeRoute
   '/erkek-lazer-epilasyon': typeof ErkekLazerEpilasyonRoute
   '/galeri': typeof GaleriRoute
+  '/hizmetler': typeof HizmetlerRoute
   '/ipek-kirpik': typeof IpekKirpikRoute
   '/kalici-makyaj': typeof KaliciMakyajRoute
   '/kampanya': typeof KampanyaRoute
@@ -265,6 +273,7 @@ export interface FileRoutesById {
   '/dovme-silme': typeof DovmeSilmeRoute
   '/erkek-lazer-epilasyon': typeof ErkekLazerEpilasyonRoute
   '/galeri': typeof GaleriRoute
+  '/hizmetler': typeof HizmetlerRoute
   '/ipek-kirpik': typeof IpekKirpikRoute
   '/kalici-makyaj': typeof KaliciMakyajRoute
   '/kampanya': typeof KampanyaRoute
@@ -298,6 +307,7 @@ export interface FileRouteTypes {
     | '/dovme-silme'
     | '/erkek-lazer-epilasyon'
     | '/galeri'
+    | '/hizmetler'
     | '/ipek-kirpik'
     | '/kalici-makyaj'
     | '/kampanya'
@@ -329,6 +339,7 @@ export interface FileRouteTypes {
     | '/dovme-silme'
     | '/erkek-lazer-epilasyon'
     | '/galeri'
+    | '/hizmetler'
     | '/ipek-kirpik'
     | '/kalici-makyaj'
     | '/kampanya'
@@ -361,6 +372,7 @@ export interface FileRouteTypes {
     | '/dovme-silme'
     | '/erkek-lazer-epilasyon'
     | '/galeri'
+    | '/hizmetler'
     | '/ipek-kirpik'
     | '/kalici-makyaj'
     | '/kampanya'
@@ -394,6 +406,7 @@ export interface RootRouteChildren {
   DovmeSilmeRoute: typeof DovmeSilmeRoute
   ErkekLazerEpilasyonRoute: typeof ErkekLazerEpilasyonRoute
   GaleriRoute: typeof GaleriRoute
+  HizmetlerRoute: typeof HizmetlerRoute
   IpekKirpikRoute: typeof IpekKirpikRoute
   KaliciMakyajRoute: typeof KaliciMakyajRoute
   KampanyaRoute: typeof KampanyaRoute
@@ -469,6 +482,13 @@ declare module '@tanstack/react-router' {
       path: '/galeri'
       fullPath: '/galeri'
       preLoaderRoute: typeof GaleriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hizmetler': {
+      id: '/hizmetler'
+      path: '/hizmetler'
+      fullPath: '/hizmetler'
+      preLoaderRoute: typeof HizmetlerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ipek-kirpik': {
@@ -656,6 +676,7 @@ const rootRouteChildren: RootRouteChildren = {
   DovmeSilmeRoute: DovmeSilmeRoute,
   ErkekLazerEpilasyonRoute: ErkekLazerEpilasyonRoute,
   GaleriRoute: GaleriRoute,
+  HizmetlerRoute: HizmetlerRoute,
   IpekKirpikRoute: IpekKirpikRoute,
   KaliciMakyajRoute: KaliciMakyajRoute,
   KampanyaRoute: KampanyaRoute,

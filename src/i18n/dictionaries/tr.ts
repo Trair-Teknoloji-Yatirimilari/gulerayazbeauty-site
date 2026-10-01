@@ -103,6 +103,7 @@ export const tr = {
   },
   services: {
     badge: "Hizmetlerimiz",
+    allServicesCta: "Tüm hizmetleri gör",
     titleA: "Güzellik",
     titleB: "ritüelleri",
     intro:
@@ -449,7 +450,7 @@ export const tr = {
     badge: "Deneyim",
     titleA: "Merkezimize", titleB: "gelişiniz",
     steps: [
-      { n: "01", t: "Randevu", d: "Online form, telefon veya WhatsApp üzerinden hızlı randevu." },
+      { n: "01", t: "Randevu", d: "WhatsApp, telefon veya canlı destek üzerinden hızlı randevu." },
       { n: "02", t: "Karşılama", d: "Karşılama alanında bir kahve ile başlayan sakin bir ritüel." },
       { n: "03", t: "Uygulama", d: "Steril kabinlerde uzman kadro eşliğinde seansınız." },
       { n: "04", t: "Bakım Planı", d: "Uzun soluklu sonuç için evde uygulanacak bakım önerileri." },
@@ -504,6 +505,7 @@ export const tr = {
   footer: {
     tagline: "Beauty Clinic · Maslak",
     servicesHeader: "Hizmetler",
+    allServices: "Tüm hizmetler",
     contactHeader: "İletişim",
     socialHeader: "Sosyal",
     address: "Maslak 1453\nSarıyer / İstanbul",

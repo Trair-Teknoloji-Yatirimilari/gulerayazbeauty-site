@@ -659,6 +659,17 @@ function Services() {
             <ServiceRow key={s.key} service={s} reversed={i % 2 === 1} index={i} />
           ))}
         </div>
+
+        {/* Ana sayfada kartı olmayan hizmet sayfaları buradan erişilebilir olsun */}
+        <div className="mt-20 text-center">
+          <Link
+            to="/hizmetler"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/50 px-8 py-3.5 text-sm uppercase tracking-widest text-primary transition-colors hover:bg-primary/10"
+          >
+            {t.services.allServicesCta}
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
