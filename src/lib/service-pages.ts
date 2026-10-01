@@ -14,9 +14,10 @@ export type Block =
 export interface ServicePage {
   /** Route yolu — sitemap ve iç bağlantılar bunu kullanır */
   path:
-    | "/lazer-epilasyon" | "/erkek-lazer-epilasyon" | "/cilt-bakimi" | "/vucut-sekillendirme"
-    | "/dovme-silme" | "/kalici-makyaj" | "/protez-tirnak" | "/ipek-kirpik" | "/reformer-pilates"
-    | "/kuafor";
+    | "/lazer-epilasyon" | "/erkek-lazer-epilasyon" | "/cilt-bakimi" | "/karbon-peeling"
+    | "/vucut-sekillendirme" | "/dovme-silme" | "/kalici-makyaj" | "/protez-tirnak"
+    | "/ipek-kirpik" | "/reformer-pilates" | "/kuafor" | "/sac-boyama"
+    | "/keratin-brezilya-fonu" | "/protez-sac";
   /** Ana sayfadaki hizmet kartı anahtarı (SERVICE_IMAGES ile aynı) */
   serviceKey: string;
   /** Blog kategorisi eşlemesi (blog detayındaki "İlgili hizmet" kutusu) */
@@ -170,6 +171,47 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Hassas cildim var, uygun mu?", a: "Hassas ciltler için içerik ve yoğunluk farklılaştırılır. Uygunluk, analiz sırasında değerlendirilir." },
       { q: "Karbon peeling ile Hydrafacial birlikte planlanabilir mi?", a: "Analiz sonucuna göre farklı seanslarda dönüşümlü planlanabilir. Sıralama ve aralık kişiye göre belirlenir." },
     ],
+    afterFaqHtml:
+      "Karbon peeling uygulamasının cihaz, seans düzeni ve sonrası bakım ayrıntılarını ayrı bir sayfada anlattık: <a href=\"/karbon-peeling\">Maslak Q-Switch karbon peeling</a>.",
+    note: NOTE,
+  },
+  {
+    path: "/karbon-peeling",
+    serviceKey: "karbon-peeling",
+    blogCategory: "Karbon Peeling",
+    navLabel: "Karbon Peeling",
+    title: "Maslak Karbon Peeling | Q-Switch Karbon Maske — Güler Ayaz",
+    description:
+      "Maslak 1453'te Q-Switch lazerle karbon peeling. Gözenek görünümü, yağlanma ve matlık odaklı, cilt analiziyle planlanan seanslar.",
+    h1: "Maslak'ta Q-Switch Karbon Peeling",
+    cover: "service-cilt-gercek.jpg",
+    coverAlt: "Merkezimizde cilt uygulaması için hazırlık",
+    blocks: [
+      { t: "p", html: "Karbon peeling, cilde ince bir karbon solüsyonu uygulandıktan sonra Q-Switch lazer atımlarıyla çalışılan bir uygulamadır. Güler Ayaz Beauty'de Maslak 1453'te (Sarıyer / İstanbul) uygulanır ve her seans cilt analiziyle başlar." },
+      { t: "h2", text: "Nasıl Uygulanır?" },
+      { t: "p", html: "Temizlenen cilde karbon solüsyonu sürülür ve kısa süre beklenir. Bu sürede solüsyon, gözenek yüzeyine ve ölü hücrelere tutunur. Ardından Q-Switch lazer atımlarıyla bu katman uzaklaştırılır. Uygulama boyunca cihazın enerji seviyesi cilt tipine göre ayarlanır." },
+      { t: "h3", text: "Hangi Durumlarda Tercih Ediliyor?" },
+      { t: "p", html: "En sık gözenek görünümü, ciltte yağlanma, matlık ve yüzey pürüzlülüğü nedeniyle tercih edilir. Uygunluk ve beklenen seans sayısı, analiz sonrasında kişiye özel belirlenir; analiz yapılmadan seans sayısı söylenmez." },
+      { t: "h2", text: "Seans Sonrası" },
+      { t: "ul", items: [
+        "Ciltte kısa süreli hafif pembelik olağandır",
+        "Seans sonrası günlerde yoğun güneş ve solaryum önerilmez",
+        "Güneş koruyucu kullanımı sürecin parçasıdır",
+        "Peeling içerikli ev bakım ürünleri bir süre ertelenir",
+      ] },
+      { t: "h2", text: "Kimler İçin Uygun Değildir?" },
+      { t: "p", html: "Aktif cilt enfeksiyonu, açık yara, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda uygulama ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur." },
+    ],
+    faqs: [
+      { q: "Karbon peeling ile Hydrafacial arasındaki fark nedir?", a: "Hydrafacial su ve vakum temelli bir temizlik ve besleme uygulamasıdır; karbon peeling ise lazer atımlarıyla çalışır. Hangisinin uygun olduğu cilt analizinde belirlenir, bazı durumlarda ikisi dönüşümlü planlanır." },
+      { q: "Kaç seans gerekir?", a: "Cilt tipi ve hedefe göre değişir. Analiz sonrası size özel bir plan oluşturulur; analiz olmadan sayı söylemiyoruz." },
+      { q: "Seanstan sonra işe dönebilir miyim?", a: "Genellikle aynı gün sosyal hayata dönülür. Ciltte kısa süreli hafif pembelik olabilir." },
+      { q: "Yazın uygulanabilir mi?", a: "Yakın zamanda yoğun güneşlenme yoksa değerlendirilebilir. Seans sonrası güneş koruyucu kullanımı önemlidir." },
+    ],
+    afterFaqHtml:
+      "Cilt bakımı programlarının tamamı ve Hydrafacial için <a href=\"/cilt-bakimi\">cilt bakımı sayfamıza</a>, aynı Q-Switch cihazıyla yapılan dövme silme için <a href=\"/dovme-silme\">dövme silme sayfamıza</a> bakabilirsiniz.",
     note: NOTE,
   },
   {
@@ -458,6 +500,12 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "p", html: "Saçın durumuna göre nem, besleme ve onarım odaklı bakım uygulamaları planlanır. Yıkama sırasında saç derisi masajı bakımın parçasıdır." },
       { t: "h3", text: "Topuz ve Özel Gün Saçı" },
       { t: "p", html: "Düğün, nişan ve davet gibi özel günler için topuz ve şekillendirme uygulanır. Özel gün randevularının önceden planlanması önerilir; istenirse makyaj ve tırnak randevusuyla aynı güne yerleştirilebilir." },
+      { t: "h3", text: "Saç Boyama" },
+      { t: "p", html: "Ombre, sombre, balyaj, röfle ve dip boya uygulamaları yapılır. Teknik seçimi ve renk planı saçın geçmişine göre belirlenir; ayrıntılar <a href=\"/sac-boyama\">saç boyama sayfamızda</a>." },
+      { t: "h3", text: "Keratin Bakımı ve Brezilya Fönü" },
+      { t: "p", html: "Elektriklenme ve kabarma şikâyeti olan saçlarda tercih edilen bakım uygulamalarıdır. İkisinin farkı ve sonrası bakım <a href=\"/keratin-brezilya-fonu\">keratin bakımı ve Brezilya fönü sayfamızda</a> anlatıldı." },
+      { t: "h3", text: "Protez Saç ve Saç Kaynağı" },
+      { t: "p", html: "Uzunluk ve yoğunluk eklemek için protez saç ve kaynak uygulanır. Yöntem seçimi ve bakım düzeni için <a href=\"/protez-sac\">protez saç sayfamıza</a> bakabilirsiniz." },
       { t: "h2", text: "Neden Tek Ziyaret?" },
       { t: "ul", items: [
         "Cilt bakımı, tırnak ve saç aynı gün, aynı adreste",
@@ -472,7 +520,138 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Randevusuz gelebilir miyim?", a: "Yoğunluk nedeniyle randevuyla çalışıyoruz; WhatsApp üzerinden uygun saati birlikte planlayabiliriz." },
       { q: "Özel gün saçı için ne kadar önce randevu almalıyım?", a: "Özellikle hafta sonları için birkaç gün önceden randevu almanız önerilir." },
       { q: "Saç ve tırnak randevusu aynı gün yapılabilir mi?", a: "Evet. Randevu planlanırken iki uygulamanın süresi birlikte hesaplanır." },
+      { q: "Saç boyama ve keratin aynı randevuda yapılabilir mi?", a: "Sıralama ve aralık saçın durumuna göre belirlenir; ikisi genellikle aynı güne konmaz. Ön değerlendirmede birlikte planlanır." },
     ],
+    afterFaqHtml:
+      "Saç hizmetlerinin ayrıntıları: <a href=\"/sac-boyama\">saç boyama (ombre, sombre, balyaj)</a>, <a href=\"/keratin-brezilya-fonu\">keratin bakımı ve Brezilya fönü</a>, <a href=\"/protez-sac\">protez saç ve saç kaynağı</a>.",
+    note: NOTE,
+  },
+  {
+    path: "/sac-boyama",
+    serviceKey: "sac-boyama",
+    blogCategory: "Saç Boyama",
+    navLabel: "Saç Boyama (Ombre & Balyaj)",
+    title: "Maslak Saç Boyama | Ombre, Sombre & Balyaj — Güler Ayaz",
+    description:
+      "Maslak 1453'te ombre, sombre, balyaj, röfle ve dip boya. Saç geçmişi ve taban rengi değerlendirilerek planlanan renk çalışması.",
+    h1: "Maslak'ta Saç Boyama: Ombre, Sombre ve Balyaj",
+    cover: "service-kuafor.jpg",
+    coverAlt: "Güler Ayaz Beauty kuaför bölümünde saç uygulaması",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty'nin Maslak 1453'teki (Sarıyer / İstanbul) kuaför bölümünde ombre, sombre, balyaj, röfle ve dip boya uygulanır. Her renk çalışması saçın taban rengi, daha önce uygulanmış boya ve saçın güncel durumu değerlendirilerek planlanır." },
+      { t: "h2", text: "Teknikler Arasındaki Fark" },
+      { t: "h3", text: "Ombre" },
+      { t: "p", html: "Köklerden uçlara doğru belirgin bir renk geçişi oluşturulur. Geçiş çizgisi daha nettir, bu yüzden uçlarda daha açık bir ton görünür. Dip boya ihtiyacını azalttığı için bakım aralığı genellikle daha uzundur." },
+      { t: "h3", text: "Sombre" },
+      { t: "p", html: "Ombrenin daha yumuşak geçişli hâlidir. Ton farkı az tutulur ve geçiş belirsizleştirilir; doğala yakın bir görünüm arayanlar tarafından tercih edilir." },
+      { t: "h3", text: "Balyaj" },
+      { t: "p", html: "Boya, saç tutamlarına serbest el tekniğiyle sürülerek yüzeyde ışık etkisi oluşturulur. Tutamlar saç hareketine göre yerleştirildiği için uzadıkça daha doğal bir çıkış verir." },
+      { t: "h3", text: "Röfle ve Dip Boya" },
+      { t: "p", html: "Röflede tutamlar folyo veya başlıkla ayrılarak eşit açılır. Dip boya ise uzayan kök bölgesinin mevcut renge eşitlenmesidir; aralık saç uzama hızına göre belirlenir." },
+      { t: "h2", text: "Renk Öncesi Değerlendirme" },
+      { t: "p", html: "Açma işlemi gerektiren tekniklerde, saçın o açıklığı kaldırıp kaldıramayacağı önceden değerlendirilir. Daha önce uygulanmış kalıcı boya, kına veya düzleştirme işlemleri sonucu doğrudan etkiler; bu yüzden saç geçmişinizi paylaşmanız önemlidir. Gerektiğinde hedef renge tek seansta değil, birkaç seansta yaklaşılır." },
+      { t: "h2", text: "Boya Sonrası Bakım" },
+      { t: "ul", items: [
+        "Renk koruyucu, sülfatsız şampuan önerilir",
+        "İlk yıkama için birkaç gün beklenir",
+        "Isı koruyucu kullanımı fön ve maşa öncesinde gereklidir",
+        "Havuz ve deniz sonrası saçın durulanması rengin ömrünü uzatır",
+      ] },
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır." },
+    ],
+    faqs: [
+      { q: "Ombre ile sombre arasındaki fark nedir?", a: "İkisi de kökten uca renk geçişidir; sombre'de ton farkı daha az ve geçiş daha yumuşaktır, ombre'de geçiş daha belirgindir." },
+      { q: "Balyaj ne kadar sürede bir yenilenir?", a: "Saç uzama hızına ve seçilen tona göre değişir. Balyaj kökte sert bir çizgi bırakmadığı için yenileme aralığı dip boyaya göre genellikle daha uzundur." },
+      { q: "İşlem ne kadar sürer?", a: "Saç boyu, yoğunluğu ve hedef renge göre değişir. Randevu planlanırken tahmini süre birlikte belirlenir." },
+      { q: "Boyalı saça keratin bakımı yapılabilir mi?", a: "Değerlendirme sonrası planlanır. İki işlemin sırası ve arasındaki süre saçın durumuna göre belirlenir." },
+      { q: "Siyah saçtan açık tona tek seansta geçilebilir mi?", a: "Her saçta mümkün olmayabilir. Saçın taban rengi ve geçmişi değerlendirilir; gerekiyorsa hedefe birkaç seansta yaklaşılır." },
+    ],
+    afterFaqHtml:
+      "Renk çalışması sonrası bakım için <a href=\"/keratin-brezilya-fonu\">keratin bakımı ve Brezilya fönü</a>, kesim ve şekillendirme için <a href=\"/kuafor\">kuaför sayfamıza</a> bakabilirsiniz. Randevu için WhatsApp'tan yazabilirsiniz.",
+    note: NOTE,
+  },
+  {
+    path: "/keratin-brezilya-fonu",
+    serviceKey: "keratin",
+    blogCategory: "Keratin Bakımı",
+    navLabel: "Keratin & Brezilya Fönü",
+    title: "Maslak Keratin Bakımı & Brezilya Fönü | Güler Ayaz Beauty",
+    description:
+      "Maslak 1453'te keratin bakımı ve Brezilya fönü. Saç yapısı değerlendirilerek ürün, işlem süresi ve sonrası bakım kişiye göre planlanır.",
+    h1: "Maslak'ta Keratin Bakımı ve Brezilya Fönü",
+    cover: "service-kuafor.jpg",
+    coverAlt: "Güler Ayaz Beauty kuaför bölümünde saç bakımı uygulaması",
+    blocks: [
+      { t: "p", html: "Elektriklenme, kabarma ve zor şekillenen saç en sık duyduğumuz şikâyetler. Güler Ayaz Beauty'nin Maslak 1453'teki (Sarıyer / İstanbul) kuaför bölümünde bu şikâyetlere yönelik keratin bakımı ve Brezilya fönü uygulanır." },
+      { t: "h2", text: "İkisi Aynı Şey mi?" },
+      { t: "p", html: "Sık karıştırılıyor. Brezilya fönü de keratin içerikli bir uygulamadır; aradaki fark hedefte. Keratin bakımı daha çok saç telinin beslenmesi ve yüzeyin pürüzsüzleşmesi üzerine kuruludur. Brezilya fönü ise buna ek olarak saçı daha belirgin şekilde düzleştirir ve şekillendirme süresini kısaltır. Hangisinin uygun olduğu, saçın kalınlığı, gözenekliliği ve beklentinize göre birlikte belirlenir." },
+      { t: "h2", text: "Uygulama Nasıl İlerliyor?" },
+      { t: "p", html: "Saç, işleme hazırlayan bir şampuanla yıkanır. Ürün tutam tutam uygulanır ve bekleme süresi tamamlanır. Ardından saç kurutulur ve ısı ile sabitlenir. Toplam süre saç boyuna ve yoğunluğuna göre değişir; randevu planlanırken tahmini süre paylaşılır." },
+      { t: "h3", text: "Ürün İçeriği" },
+      { t: "p", html: "Kullanılacak ürün, saçın durumuna göre seçilir. Seans öncesinde hangi ürünün kullanılacağı ve içeriği hakkında bilgi verilir; hamilelik, emzirme dönemi veya solunum yolu hassasiyeti varsa bunu önceden paylaşmanız önemlidir." },
+      { t: "h2", text: "Sonrası Bakım" },
+      { t: "ul", items: [
+        "İlk yıkama için uygulamadan sonra belirtilen süre beklenir",
+        "Sülfatsız ve tuzsuz şampuan önerilir",
+        "Saçın ilk günlerde tokayla sıkıştırılmaması istenir",
+        "Kalıcılık saç yapısına, yıkama sıklığına ve kullanılan ürünlere göre kişiden kişiye değişir",
+      ] },
+      { t: "h2", text: "Boya ile Birlikte Planlama" },
+      { t: "p", html: "Renk çalışması ve keratin işlemi genellikle aynı güne konmaz. Hangisinin önce yapılacağı ve aradaki süre, saçın güncel durumuna göre ön değerlendirmede belirlenir." },
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur." },
+    ],
+    faqs: [
+      { q: "Brezilya fönü ile keratin bakımı aynı şey mi?", a: "Brezilya fönü de keratin içerikli bir uygulamadır. Keratin bakımı besleme ve pürüzsüzleştirme odaklıdır; Brezilya fönü buna ek olarak daha belirgin bir düzleşme sağlar." },
+      { q: "Ne kadar kalıcı olur?", a: "Saç yapısına, yıkama sıklığına ve kullanılan şampuana göre kişiden kişiye değişir. Analiz sırasında sizin saçınız için beklenen aralık konuşulur." },
+      { q: "İşlem ne kadar sürer?", a: "Saç boyu ve yoğunluğuna göre değişir; randevu planlanırken tahmini süre paylaşılır." },
+      { q: "Boyalı saça uygulanabilir mi?", a: "Değerlendirme sonrası planlanır. Boya ile keratin işleminin sırası ve arasındaki süre saçın durumuna göre belirlenir." },
+      { q: "Saçımı ne zaman yıkayabilirim?", a: "Kullanılan ürüne göre değişen bir bekleme süresi vardır; bu süre uygulama sonunda size ayrıca söylenir." },
+      { q: "Hamileyken yaptırabilir miyim?", a: "Hamilelik ve emzirme döneminde uygulamayı önermiyoruz. Durumunuzu randevu öncesinde paylaşmanız yeterli." },
+    ],
+    afterFaqHtml:
+      "Renk çalışması için <a href=\"/sac-boyama\">saç boyama sayfamıza</a>, kesim ve şekillendirme için <a href=\"/kuafor\">kuaför sayfamıza</a> bakabilirsiniz.",
+    note: NOTE,
+  },
+  {
+    path: "/protez-sac",
+    serviceKey: "protez-sac",
+    blogCategory: "Protez Saç",
+    navLabel: "Protez Saç & Kaynak",
+    title: "Maslak Protez Saç & Saç Kaynağı | Güler Ayaz Beauty",
+    description:
+      "Maslak 1453'te protez saç ve saç kaynağı. Saç yoğunluğu ve saç derisi değerlendirmesiyle yöntem, renk uyumu ve bakım düzeni kişiye özel belirlenir.",
+    h1: "Maslak'ta Protez Saç ve Saç Kaynağı",
+    cover: "service-kuafor.jpg",
+    coverAlt: "Güler Ayaz Beauty kuaför bölümünde saç uygulaması",
+    blocks: [
+      { t: "p", html: "Protez saç ve saç kaynağı, mevcut saça uzunluk veya yoğunluk eklemek için uygulanır. Güler Ayaz Beauty'nin Maslak 1453'teki (Sarıyer / İstanbul) kuaför bölümünde her uygulama, saç yoğunluğunun ve saç derisinin değerlendirilmesiyle başlar." },
+      { t: "h2", text: "Yöntem Seçimi" },
+      { t: "p", html: "Birden fazla uygulama yöntemi vardır ve hiçbiri her saç için uygun değildir. Seçim; saç telinin kalınlığı, mevcut yoğunluk, saç derisinin hassasiyeti ve günlük bakım alışkanlığınıza göre ön değerlendirmede birlikte yapılır. Kullanılacak yöntem, bakım aralığı ve çıkarma süreci randevu öncesinde net olarak konuşulur." },
+      { t: "h3", text: "Renk ve Doku Uyumu" },
+      { t: "p", html: "Eklenen saçın tonu ve dokusu mevcut saçla eşleştirilir. Gerekirse uygulama öncesinde ya da sonrasında renk çalışmasıyla uyum sağlanır; bu durumda sıralama ayrıca planlanır." },
+      { t: "h2", text: "Bakım ve Kullanım" },
+      { t: "ul", items: [
+        "Tarama ve yıkama düzeni uygulama sonunda tarif edilir",
+        "Bağlantı bölgelerinde düğümlenmeyi önlemek için düzenli tarama gerekir",
+        "Saç uzadıkça bağlantı noktaları aşağı iner; periyodik bakım randevusu planlanır",
+        "Çıkarma işleminin salonda yapılması önerilir",
+      ] },
+      { t: "h2", text: "Kimler İçin Uygun Değildir?" },
+      { t: "p", html: "Saç derisinde egzama, mantar veya açık yara gibi aktif bir sorun varsa uygulama yapılmaz. Yaygın saç dökülmesi şikâyetiniz varsa, uygulamadan önce bir hekim değerlendirmesi öneriyoruz; dökülmenin nedeni belirlenmeden eklenen ağırlık durumu zorlaştırabilir. Çok ince ve kırılgan saçlarda yöntem seçimi ayrıca dikkat gerektirir." },
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız." },
+    ],
+    faqs: [
+      { q: "Kendi saçıma zarar verir mi?", a: "Uygun yöntem seçildiğinde ve bakım aralıklarına uyulduğunda beklenmez. Risk; yanlış yöntem, fazla ağırlık ve bakımın aksaması durumunda artar. Bu yüzden ön değerlendirme ve periyodik kontrol uygulamanın parçasıdır." },
+      { q: "Ne kadar dayanır?", a: "Yönteme, saç uzama hızına ve bakıma göre değişir. Beklenen bakım aralığı ön değerlendirmede size özel söylenir." },
+      { q: "Yıkayabilir, fön çekebilir miyim?", a: "Evet. Yıkama ve şekillendirme düzeni uygulama sonunda ayrıntılı tarif edilir; bağlantı bölgelerinde dikkat edilmesi gerekenler gösterilir." },
+      { q: "Saç dökülmem var, yaptırabilir miyim?", a: "Önce dökülmenin nedeninin bir hekim tarafından değerlendirilmesini öneriyoruz. Değerlendirme sonrası uygunluk birlikte konuşulur." },
+      { q: "Çıkarmak istediğimde ne oluyor?", a: "Çıkarma işleminin salonda yapılması önerilir. Evde zorlanarak çıkarmak saç telinde kırılmaya yol açabilir." },
+    ],
+    afterFaqHtml:
+      "Renk uyumu için <a href=\"/sac-boyama\">saç boyama</a>, bakım uygulamaları için <a href=\"/keratin-brezilya-fonu\">keratin bakımı ve Brezilya fönü</a> sayfalarımıza bakabilirsiniz.",
     note: NOTE,
   },
 ];
