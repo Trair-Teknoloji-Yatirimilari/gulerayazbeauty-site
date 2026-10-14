@@ -172,7 +172,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Karbon peeling ile Hydrafacial birlikte planlanabilir mi?", a: "Analiz sonucuna göre farklı seanslarda dönüşümlü planlanabilir. Sıralama ve aralık kişiye göre belirlenir." },
     ],
     afterFaqHtml:
-      "Karbon peeling uygulamasının cihaz, seans düzeni ve sonrası bakım ayrıntılarını ayrı bir sayfada anlattık: <a href=\"/karbon-peeling\">Maslak Q-Switch karbon peeling</a>.",
+      "Karbon peeling uygulamasının cihaz, seans düzeni ve sonrası bakım ayrıntılarını ayrı bir sayfada anlattık: <a href=\"/karbon-peeling\">Maslak Q-Switch karbon peeling</a>. Mevsim geçişlerinde cilt bakımı ve Hydrafacial için ayrı bir rehberimiz var: <a href=\"/blog/yaz-sonrasi-cilt-bakimi-hydrafacial\">yaz sonrası cilt bakımı</a>.",
     note: NOTE,
   },
   {
@@ -211,7 +211,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Yazın uygulanabilir mi?", a: "Yakın zamanda yoğun güneşlenme yoksa değerlendirilebilir. Seans sonrası güneş koruyucu kullanımı önemlidir." },
     ],
     afterFaqHtml:
-      "Cilt bakımı programlarının tamamı ve Hydrafacial için <a href=\"/cilt-bakimi\">cilt bakımı sayfamıza</a>, aynı Q-Switch cihazıyla yapılan dövme silme için <a href=\"/dovme-silme\">dövme silme sayfamıza</a> bakabilirsiniz.",
+      "Cilt bakımı programlarının tamamı ve Hydrafacial için <a href=\"/cilt-bakimi\">cilt bakımı sayfamıza</a>, aynı Q-Switch cihazıyla yapılan dövme silme için <a href=\"/dovme-silme\">dövme silme sayfamıza</a> bakabilirsiniz. Uygulamanın nasıl çalıştığını ve seans düzenini ayrıntılı anlattığımız yazı: <a href=\"/blog/karbon-peeling-nedir-q-switch\">karbon peeling nedir</a>.",
     note: NOTE,
   },
   {
