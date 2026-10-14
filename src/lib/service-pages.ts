@@ -253,6 +253,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Kaç seans gerekir?", a: "Vücut yapısına, hedef bölgeye ve programa uyuma göre değişir; vücut analizi sonrası belirlenir." },
       { q: "Üçü aynı gün yapılabilir mi?", a: "Analiz sonucuna göre bazı kombinasyonlar aynı seansta ardışık planlanabilir." },
       { q: "Seans ağrılı mıdır?", a: "Hayır. EMS sırasında kas kasılması, G5 sırasında kuvvetli masaj hissi tarif edilir." },
+      { q: "Klasik masaj hizmeti veriyor musunuz?", a: "Hayır. Merkezimizde klasik veya rahatlama masajı hizmeti bulunmamaktadır. G5, vücut şekillendirme programının parçası olan mekanik bir cihaz uygulamasıdır." },
     ],
     afterFaqHtml:
       'Ayrıntılı karşılaştırma için <a href="/blog/bolgesel-incelme-slim-x-ems-pro-g5">Slim-X, EMS Pro ve G5 rehberimize</a> göz atabilirsiniz.',

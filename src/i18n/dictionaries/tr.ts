@@ -326,6 +326,7 @@ export const tr = {
           { q: "Uygulama sırasında ne hissedilir?", a: "Slim-X'te ılık bir his, EMS Pro'da ritmik kas kasılmaları, G5'te ise derin masaj hissi olur. Şiddet, konforunuza göre ayarlanır." },
           { q: "Kaç seanslık program planlanır?", a: "Vücut analizi ve hedefinize göre değişir; genellikle haftada 2–3 seanstan oluşan seriler halinde planlanır." },
           { q: "Spor ve beslenme ile birlikte mi uygulanmalı?", a: "Düzenli hareket ve dengeli beslenme, uygulamaların etkisini destekler. Ekibimiz seans planınızın yanında bu konuda da öneri paylaşır." },
+          { q: "Klasik masaj hizmeti veriyor musunuz?", a: "Hayır. Merkezimizde klasik veya rahatlama masajı hizmeti bulunmamaktadır. G5, vücut şekillendirme programının parçası olan mekanik bir cihaz uygulamasıdır." },
         ],
         pricing: [
           { label: "Güncel fiyat bilgisi için bize ulaşın", price: "" },

@@ -328,6 +328,7 @@ export const en: typeof tr = {
           { q: "What does the application feel like?", a: "A warm sensation with Slim-X, rhythmic muscle contractions with EMS Pro, and a deep massage sensation with G5. Intensity is adjusted to your comfort." },
           { q: "How many sessions are planned?", a: "It depends on your body analysis and your goal; it is usually planned as a series of 2–3 sessions per week." },
           { q: "Should it be combined with exercise and nutrition?", a: "Regular movement and balanced nutrition support the effect of the applications. Alongside your session plan, our team also shares guidance on this." },
+          { q: "Do you offer classic massage?", a: "No. We do not offer classic or relaxation massage. G5 is a mechanical device application that is part of the body contouring program." },
         ],
         pricing: [
           { label: "Contact us for current pricing", price: "" },
