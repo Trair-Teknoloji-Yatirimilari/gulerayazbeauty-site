@@ -107,7 +107,7 @@ const GROUPS: { title: string; intro: string; paths: string[] }[] = [
     title: "Cilt ve Vücut",
     intro:
       "Cilt analiziyle planlanan bakım programları ve ölçüm temelli vücut uygulamaları.",
-    paths: ["/cilt-bakimi", "/vucut-sekillendirme", "/reformer-pilates"],
+    paths: ["/cilt-bakimi", "/led-isik-terapisi", "/vucut-sekillendirme", "/reformer-pilates"],
   },
   {
     title: "Saç",
@@ -119,7 +119,7 @@ const GROUPS: { title: string; intro: string; paths: string[] }[] = [
     title: "Tırnak, Kirpik ve Kalıcı Makyaj",
     intro:
       "Tek kullanımlık ve sterilize ekipmanla çalışılan detay uygulamaları.",
-    paths: ["/protez-tirnak", "/ipek-kirpik", "/kalici-makyaj"],
+    paths: ["/manikur-pedikur", "/protez-tirnak", "/ipek-kirpik", "/kalici-makyaj"],
   },
 ];
 

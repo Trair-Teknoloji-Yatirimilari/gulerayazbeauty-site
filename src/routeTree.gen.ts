@@ -27,6 +27,8 @@ import { Route as KeratinBrezilyaFonuRouteImport } from './routes/keratin-brezil
 import { Route as KuaforRouteImport } from './routes/kuafor'
 import { Route as KvkkRouteImport } from './routes/kvkk'
 import { Route as LazerEpilasyonRouteImport } from './routes/lazer-epilasyon'
+import { Route as LedIsikTerapisiRouteImport } from './routes/led-isik-terapisi'
+import { Route as ManikurPedikurRouteImport } from './routes/manikur-pedikur'
 import { Route as ProtezSacRouteImport } from './routes/protez-sac'
 import { Route as ProtezTirnakRouteImport } from './routes/protez-tirnak'
 import { Route as ReformerPilatesRouteImport } from './routes/reformer-pilates'
@@ -131,6 +133,16 @@ const LazerEpilasyonRoute = LazerEpilasyonRouteImport.update({
   path: '/lazer-epilasyon',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LedIsikTerapisiRoute = LedIsikTerapisiRouteImport.update({
+  id: '/led-isik-terapisi',
+  path: '/led-isik-terapisi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManikurPedikurRoute = ManikurPedikurRouteImport.update({
+  id: '/manikur-pedikur',
+  path: '/manikur-pedikur',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProtezSacRoute = ProtezSacRouteImport.update({
   id: '/protez-sac',
   path: '/protez-sac',
@@ -223,6 +235,8 @@ export interface FileRoutesByFullPath {
   '/kuafor': typeof KuaforRoute
   '/kvkk': typeof KvkkRoute
   '/lazer-epilasyon': typeof LazerEpilasyonRoute
+  '/led-isik-terapisi': typeof LedIsikTerapisiRoute
+  '/manikur-pedikur': typeof ManikurPedikurRoute
   '/protez-sac': typeof ProtezSacRoute
   '/protez-tirnak': typeof ProtezTirnakRoute
   '/reformer-pilates': typeof ReformerPilatesRoute
@@ -256,6 +270,8 @@ export interface FileRoutesByTo {
   '/kuafor': typeof KuaforRoute
   '/kvkk': typeof KvkkRoute
   '/lazer-epilasyon': typeof LazerEpilasyonRoute
+  '/led-isik-terapisi': typeof LedIsikTerapisiRoute
+  '/manikur-pedikur': typeof ManikurPedikurRoute
   '/protez-sac': typeof ProtezSacRoute
   '/protez-tirnak': typeof ProtezTirnakRoute
   '/reformer-pilates': typeof ReformerPilatesRoute
@@ -291,6 +307,8 @@ export interface FileRoutesById {
   '/kuafor': typeof KuaforRoute
   '/kvkk': typeof KvkkRoute
   '/lazer-epilasyon': typeof LazerEpilasyonRoute
+  '/led-isik-terapisi': typeof LedIsikTerapisiRoute
+  '/manikur-pedikur': typeof ManikurPedikurRoute
   '/protez-sac': typeof ProtezSacRoute
   '/protez-tirnak': typeof ProtezTirnakRoute
   '/reformer-pilates': typeof ReformerPilatesRoute
@@ -326,6 +344,8 @@ export interface FileRouteTypes {
     | '/kuafor'
     | '/kvkk'
     | '/lazer-epilasyon'
+    | '/led-isik-terapisi'
+    | '/manikur-pedikur'
     | '/protez-sac'
     | '/protez-tirnak'
     | '/reformer-pilates'
@@ -359,6 +379,8 @@ export interface FileRouteTypes {
     | '/kuafor'
     | '/kvkk'
     | '/lazer-epilasyon'
+    | '/led-isik-terapisi'
+    | '/manikur-pedikur'
     | '/protez-sac'
     | '/protez-tirnak'
     | '/reformer-pilates'
@@ -393,6 +415,8 @@ export interface FileRouteTypes {
     | '/kuafor'
     | '/kvkk'
     | '/lazer-epilasyon'
+    | '/led-isik-terapisi'
+    | '/manikur-pedikur'
     | '/protez-sac'
     | '/protez-tirnak'
     | '/reformer-pilates'
@@ -428,6 +452,8 @@ export interface RootRouteChildren {
   KuaforRoute: typeof KuaforRoute
   KvkkRoute: typeof KvkkRoute
   LazerEpilasyonRoute: typeof LazerEpilasyonRoute
+  LedIsikTerapisiRoute: typeof LedIsikTerapisiRoute
+  ManikurPedikurRoute: typeof ManikurPedikurRoute
   ProtezSacRoute: typeof ProtezSacRoute
   ProtezTirnakRoute: typeof ProtezTirnakRoute
   ReformerPilatesRoute: typeof ReformerPilatesRoute
@@ -565,6 +591,20 @@ declare module '@tanstack/react-router' {
       path: '/lazer-epilasyon'
       fullPath: '/lazer-epilasyon'
       preLoaderRoute: typeof LazerEpilasyonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/led-isik-terapisi': {
+      id: '/led-isik-terapisi'
+      path: '/led-isik-terapisi'
+      fullPath: '/led-isik-terapisi'
+      preLoaderRoute: typeof LedIsikTerapisiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manikur-pedikur': {
+      id: '/manikur-pedikur'
+      path: '/manikur-pedikur'
+      fullPath: '/manikur-pedikur'
+      preLoaderRoute: typeof ManikurPedikurRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/protez-sac': {
@@ -706,6 +746,8 @@ const rootRouteChildren: RootRouteChildren = {
   KuaforRoute: KuaforRoute,
   KvkkRoute: KvkkRoute,
   LazerEpilasyonRoute: LazerEpilasyonRoute,
+  LedIsikTerapisiRoute: LedIsikTerapisiRoute,
+  ManikurPedikurRoute: ManikurPedikurRoute,
   ProtezSacRoute: ProtezSacRoute,
   ProtezTirnakRoute: ProtezTirnakRoute,
   ReformerPilatesRoute: ReformerPilatesRoute,

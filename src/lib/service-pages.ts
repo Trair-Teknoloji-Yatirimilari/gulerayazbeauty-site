@@ -17,7 +17,8 @@ export interface ServicePage {
     | "/lazer-epilasyon" | "/erkek-lazer-epilasyon" | "/cilt-bakimi" | "/karbon-peeling"
     | "/vucut-sekillendirme" | "/dovme-silme" | "/kalici-makyaj" | "/protez-tirnak"
     | "/ipek-kirpik" | "/reformer-pilates" | "/kuafor" | "/sac-boyama"
-    | "/keratin-brezilya-fonu" | "/protez-sac" | "/cihazlar";
+    | "/keratin-brezilya-fonu" | "/protez-sac" | "/cihazlar"
+    | "/manikur-pedikur" | "/led-isik-terapisi";
   /** Ana sayfadaki hizmet kartı anahtarı (SERVICE_IMAGES ile aynı) */
   serviceKey: string;
   /** true ise bu bir hizmet değil, hub sayfasıdır: /hizmetler kataloğuna girmez */
@@ -716,6 +717,118 @@ export const SERVICE_PAGES: ServicePage[] = [
     ],
     afterFaqHtml:
       "Tüm hizmet başlıklarımızı <a href=\"/hizmetler\">hizmetler sayfamızda</a> topladık; cihazlarla ilgili ayrıntılı yazılara <a href=\"/blog\">blog bölümümüzden</a> ulaşabilirsiniz.",
+    note: NOTE,
+  },
+  {
+    path: "/manikur-pedikur",
+    serviceKey: "manikur-pedikur",
+    blogCategory: "Manikür & Pedikür",
+    navLabel: "Manikür & Pedikür",
+    title: "Maslak Manikür, Pedikür ve Kalıcı Oje | Güler Ayaz Beauty",
+    description:
+      "Maslak 1453'te manikür, pedikür, kalıcı oje ve nail art. Tırnak yapısı değerlendirilerek planlanan uygulamalar ve doğru çıkarma yöntemi.",
+    h1: "Maslak'ta Manikür, Pedikür ve Kalıcı Oje",
+    cover: "service-nail-gercek.jpg",
+    coverAlt: "Güler Ayaz Beauty tırnak bölümünde kalıcı oje uygulaması",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty'nin Maslak 1453'teki (Sarıyer / İstanbul) tırnak bölümünde manikür, pedikür, kalıcı oje ve nail art uygulamaları yapılır. Her randevu tırnak ve çevre dokunun değerlendirilmesiyle başlar; uygulanacak işlem buna göre planlanır." },
+
+      { t: "h2", text: "Hangi Uygulamalar Yapılıyor?" },
+      { t: "ul", items: [
+        "<strong>Manikür</strong> — el tırnaklarının şekillendirilmesi ve tırnak çevresinin düzenlenmesi",
+        "<strong>Pedikür</strong> — ayak tırnaklarının şekillendirilmesi ve ayak bakımı",
+        "<strong>Kalıcı oje</strong> — UV/LED lamba ile sertleştirilen oje uygulaması",
+        "<strong>Nail art</strong> — tasarım ve süsleme çalışmaları",
+      ] },
+      { t: "p", html: "Protez tırnak (jel ve akrilik) ayrı bir başlık; ayrıntıları <a href=\"/protez-tirnak\">protez tırnak sayfamızda</a> anlattık." },
+
+      { t: "h2", text: "Manikür Nasıl İlerliyor?" },
+      { t: "p", html: "Önce mevcut oje varsa uygun yöntemle alınır. Tırnak boyu ve formu konuşularak şekillendirilir, tırnak çevresindeki deri düzenlenir. Ardından istenen uygulamaya geçilir. Tırnak çevresinde kesik, kızarıklık veya mantar şüphesi gibi bir durum görürsek uygulamayı ertelemeyi öneriyoruz; bunu baştan söylüyoruz." },
+
+      { t: "h2", text: "Pedikür" },
+      { t: "p", html: "Ayak tırnaklarının şekillendirilmesi ve ayak bakımını kapsar. Batık tırnak, kalınlaşma veya ağrı gibi durumlarda uygulama yapmıyor, hekime başvurmanızı öneriyoruz — bunlar bakım değil sağlık başlığıdır." },
+
+      { t: "h2", text: "Kalıcı Oje" },
+      { t: "p", html: "Kalıcı oje, lamba altında sertleşen bir ürünle uygulanır ve normal ojeye göre daha uzun süre yerinde kalır. Kalıcılık tırnağın uzama hızına, günlük kullanımınıza ve el temasının yoğunluğuna göre kişiden kişiye değişir." },
+      { t: "p", html: "Uygulamada kullanılan ürünlerin içeriği hakkında seans öncesinde bilgi isteyebilirsiniz. Hamilelik, emzirme dönemi veya bilinen bir alerjiniz varsa randevu öncesinde paylaşmanız önemlidir." },
+
+      { t: "h2", text: "Kalıcı Oje Nasıl Çıkarılmalı?" },
+      { t: "p", html: "Tırnağa verilen zararın büyük bölümü uygulamada değil, çıkarmada oluşur. Kalıcı oje kaldırılarak, kazınarak veya zorlanarak sökülmemelidir; tırnak yüzeyinden tabaka kopması bu şekilde olur. Doğru yöntem, ürüne uygun çözücüyle yumuşatıp yüzeyi zorlamadan almaktır." },
+      { t: "p", html: "Ayrıntılı anlatım için <a href=\"/blog/kalici-oje-manikur-pedikur-cikarma\">kalıcı oje çıkarma yazımıza</a>, ürün içeriklerinde sık sorulan TPO konusu için <a href=\"/blog/kalici-oje-tpo-nedir\">bu yazımıza</a> bakabilirsiniz." },
+
+      { t: "h2", text: "Hijyen" },
+      { t: "p", html: "Tek kullanımlık malzemeler her misafir için yenilenir; tekrar kullanılan metal ekipman uygulamalar arasında sterilize edilir. Çalışma alanı her randevu sonrası temizlenir." },
+
+      { t: "h2", text: "Tırnağa Ara Vermek" },
+      { t: "p", html: "Sürekli uygulama yerine arada tırnağı dinlendirmek sık sorulan bir konu. Tırnağınızın güncel durumuna göre ne zaman ara verilmesinin uygun olacağını randevuda birlikte değerlendiriyoruz." },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur. Çevre semtlerden ulaşım kolaydır." },
+    ],
+    faqs: [
+      { q: "Kalıcı oje tırnağa zarar verir mi?", a: "Asıl belirleyici olan çıkarma yöntemidir. Kaldırarak veya kazıyarak sökmek tırnak yüzeyinde incelmeye yol açabilir; ürüne uygun çözücüyle yumuşatarak almak bu riski azaltır." },
+      { q: "Kalıcı oje ne kadar yerinde kalır?", a: "Tırnağın uzama hızına, el kullanımınızın yoğunluğuna ve günlük temaslara göre kişiden kişiye değişir. Randevuda sizin tırnağınız için beklenen aralığı konuşuyoruz." },
+      { q: "Protez tırnak ile kalıcı oje aynı şey mi?", a: "Hayır. Kalıcı oje mevcut tırnağın üzerine uygulanır; protez tırnak ise jel veya akrilikle boy ve form oluşturur. Protez tırnak ayrıntıları ilgili sayfamızda." },
+      { q: "Hamileyken manikür yaptırabilir miyim?", a: "Durumunuzu randevu öncesinde paylaşın; uygulama ve kullanılacak ürün buna göre değerlendirilir. Havalandırma ve ürün seçimi konusunda ayrıca bilgi veriyoruz." },
+      { q: "Batık tırnağım var, pedikür yapılır mı?", a: "Batık tırnak, ağrı veya iltihap belirtisi olan durumlarda uygulama yapmıyoruz. Bu bir bakım değil sağlık başlığıdır; hekime başvurmanızı öneriyoruz." },
+    ],
+    afterFaqHtml:
+      "Jel ve akrilik uygulamaları için <a href=\"/protez-tirnak\">protez tırnak sayfamıza</a>, tüm hizmet başlıklarımız için <a href=\"/hizmetler\">hizmetler sayfamıza</a> bakabilirsiniz.",
+    note: NOTE,
+  },
+  {
+    path: "/led-isik-terapisi",
+    serviceKey: "led",
+    blogCategory: "LED Işık Terapisi",
+    navLabel: "LED Işık Terapisi",
+    title: "Maslak LED Işık Terapisi | Güler Ayaz Beauty",
+    description:
+      "Cilt bakımında LED ışık uygulaması: renklerin kullanım amaçları, seans akışı ve dikkat edilmesi gerekenler. Maslak 1453, Sarıyer.",
+    h1: "Cilt Bakımında LED Işık Uygulaması",
+    cover: "service-cilt-gercek.jpg",
+    coverAlt: "Güler Ayaz Beauty cilt bakımı odasında uygulama",
+    blocks: [
+      { t: "p", html: "LED ışık uygulaması, Güler Ayaz Beauty'nin Maslak 1453'teki (Sarıyer / İstanbul) cilt bakımı bölümünde, bakım programının bir adımı olarak uygulanır. Tek başına bir tedavi yöntemi değildir; bakım planını destekleyen bir basamaktır." },
+
+      { t: "h2", text: "LED Işık Uygulaması Nedir?" },
+      { t: "p", html: "Belirli dalga boylarındaki ışığın cilt yüzeyine yönlendirilmesi esasına dayanır. Isıtıcı veya kesici bir etkisi yoktur; uygulama sırasında cilt bütünlüğü bozulmaz. Bu nedenle çoğunlukla temizlik ve bakım adımlarının ardından, programın kapanış basamağı olarak planlanır." },
+      { t: "p", html: "Sağlık sorunlarının tanısı veya tedavisi için kullanılmaz. Cildinizle ilgili tanı gerektiren bir şikâyetiniz varsa önce hekime başvurmanızı öneriyoruz." },
+
+      { t: "h2", text: "Renkler Ne İçin Kullanılır?" },
+      { t: "p", html: "Farklı dalga boyları farklı amaçlarla tercih edilir. Hangi rengin ya da kombinasyonun uygun olduğu cilt analizinde belirlenir:" },
+      { t: "ul", items: [
+        "<strong>Kırmızı</strong> — genel cilt bakımı programlarında en sık tercih edilen renk",
+        "<strong>Mavi</strong> — yağlanma eğilimi olan ciltlerde bakım adımı olarak",
+        "<strong>Yeşil</strong> — ton görünümüne yönelik programlarda",
+        "<strong>Sarı</strong> — hassasiyet eğilimi olan ciltlerde yumuşak seçenek olarak",
+      ] },
+      { t: "p", html: "Renklerin ayrıntılı anlatımı için <a href=\"/blog/led-isik-terapisi-cilt-bakimi-renkler\">LED ışık terapisi ve renkler yazımıza</a> bakabilirsiniz." },
+
+      { t: "h2", text: "Seans Nasıl İlerliyor?" },
+      { t: "p", html: "Uygulama cilt analiziyle başlar. Cilt temizlendikten sonra göz koruyucu takılır ve cihaz başlığı yüze uygun mesafeye konumlandırılır. Seans boyunca uzanarak dinlenirsiniz. Uygulamanın ardından programa göre nemlendirme ve güneş koruyucu adımı gelir." },
+      { t: "p", html: "Kaç seans planlanacağı ve hangi aralıkla tekrarlanacağı cilt analizine göre belirlenir; analiz yapılmadan seans sayısı söylenmez." },
+
+      { t: "h2", text: "Diğer Bakımlarla Birlikte" },
+      { t: "p", html: "LED adımı çoğunlukla tek başına değil, bir bakım programının içinde yer alır. Hydrafacial ve medikal cilt bakımı programlarının nasıl planlandığını <a href=\"/cilt-bakimi\">cilt bakımı sayfamızda</a> anlattık; ikisinin farkı için <a href=\"/blog/hydrafacial-mi-medikal-cilt-bakimi-mi\">karşılaştırma yazımıza</a> göz atabilirsiniz." },
+
+      { t: "h2", text: "Kimlerde Dikkat Edilir?" },
+      { t: "p", html: "Işığa duyarlılık yaratan ilaç kullanımı, epilepsi öyküsü, aktif cilt enfeksiyonu, yakın zamanda yoğun güneşlenme ve bazı kronik durumlarda uygulama ertelenebilir veya yapılmayabilir. Hamilelik ve emzirme döneminde durumunuzu önceden paylaşmanız gerekir. Sağlık geçmişinizi ön görüşmede aktarmanız bu nedenle önemlidir." },
+
+      { t: "h2", text: "Beklenti" },
+      { t: "p", html: "LED bir bakım adımıdır; cilt görünümüne yönelik programın parçası olarak değerlendirilir. Günlük bakım alışkanlıkları, güneş koruması ve uyku düzeni gibi etkenler sonucu doğrudan etkiler. Gerçekçi beklentiyi ön değerlendirmede birlikte konuşuyoruz." },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız." },
+    ],
+    faqs: [
+      { q: "LED ışık uygulaması bir tedavi midir?", a: "Hayır. Cilt bakımı programının destekleyici bir adımıdır. Tanı veya tedavi gerektiren bir durumda hekime başvurmanız gerekir." },
+      { q: "Uygulama sırasında ne hissedilir?", a: "Isıtıcı veya kesici bir etkisi yoktur. Çoğu misafir seansı rahat ve dinlendirici olarak tarif eder." },
+      { q: "Hangi renk bana uygun?", a: "Cilt analizinde belirlenir. Tek bir renk ya da programa göre birden fazla renk tercih edilebilir." },
+      { q: "Kaç seans gerekir?", a: "Cilt yapısına ve programa göre değişir. Analiz yapılmadan seans sayısı söylenmez." },
+      { q: "Başka bir bakımla aynı seansta yapılabilir mi?", a: "Çoğunlukla bir bakım programının içinde, temizlik adımlarının ardından planlanır. Hangi kombinasyonun uygun olduğu analiz sonrasında netleşir." },
+    ],
+    afterFaqHtml:
+      "Bakım programlarının tamamı için <a href=\"/cilt-bakimi\">cilt bakımı sayfamıza</a>, merkezimizde kullanılan cihazlar için <a href=\"/cihazlar\">cihazlar sayfamıza</a> bakabilirsiniz.",
     note: NOTE,
   },
 ];
