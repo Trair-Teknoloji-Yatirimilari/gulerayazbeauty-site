@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CihazlarRouteImport } from './routes/cihazlar'
 import { Route as CiltBakimiRouteImport } from './routes/cilt-bakimi'
 import { Route as DovmeSilmeRouteImport } from './routes/dovme-silme'
 import { Route as ErkekLazerEpilasyonRouteImport } from './routes/erkek-lazer-epilasyon'
@@ -58,6 +59,11 @@ const AuthRoute = AuthRouteImport.update({
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CihazlarRoute = CihazlarRouteImport.update({
+  id: '/cihazlar',
+  path: '/cihazlar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CiltBakimiRoute = CiltBakimiRouteImport.update({
@@ -203,6 +209,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
+  '/cihazlar': typeof CihazlarRoute
   '/cilt-bakimi': typeof CiltBakimiRoute
   '/dovme-silme': typeof DovmeSilmeRoute
   '/erkek-lazer-epilasyon': typeof ErkekLazerEpilasyonRoute
@@ -235,6 +242,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
+  '/cihazlar': typeof CihazlarRoute
   '/cilt-bakimi': typeof CiltBakimiRoute
   '/dovme-silme': typeof DovmeSilmeRoute
   '/erkek-lazer-epilasyon': typeof ErkekLazerEpilasyonRoute
@@ -269,6 +277,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
+  '/cihazlar': typeof CihazlarRoute
   '/cilt-bakimi': typeof CiltBakimiRoute
   '/dovme-silme': typeof DovmeSilmeRoute
   '/erkek-lazer-epilasyon': typeof ErkekLazerEpilasyonRoute
@@ -303,6 +312,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/blog'
+    | '/cihazlar'
     | '/cilt-bakimi'
     | '/dovme-silme'
     | '/erkek-lazer-epilasyon'
@@ -335,6 +345,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/blog'
+    | '/cihazlar'
     | '/cilt-bakimi'
     | '/dovme-silme'
     | '/erkek-lazer-epilasyon'
@@ -368,6 +379,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/blog'
+    | '/cihazlar'
     | '/cilt-bakimi'
     | '/dovme-silme'
     | '/erkek-lazer-epilasyon'
@@ -402,6 +414,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRoute
+  CihazlarRoute: typeof CihazlarRoute
   CiltBakimiRoute: typeof CiltBakimiRoute
   DovmeSilmeRoute: typeof DovmeSilmeRoute
   ErkekLazerEpilasyonRoute: typeof ErkekLazerEpilasyonRoute
@@ -454,6 +467,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cihazlar': {
+      id: '/cihazlar'
+      path: '/cihazlar'
+      fullPath: '/cihazlar'
+      preLoaderRoute: typeof CihazlarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cilt-bakimi': {
@@ -672,6 +692,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   BlogRoute: BlogRoute,
+  CihazlarRoute: CihazlarRoute,
   CiltBakimiRoute: CiltBakimiRoute,
   DovmeSilmeRoute: DovmeSilmeRoute,
   ErkekLazerEpilasyonRoute: ErkekLazerEpilasyonRoute,

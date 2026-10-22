@@ -43,7 +43,7 @@ export const Route = createFileRoute("/hizmetler")({
             "@context": "https://schema.org",
             "@type": "ItemList",
             name: "Güler Ayaz Beauty hizmetleri",
-            itemListElement: SERVICE_PAGES.map((s, i) => ({
+            itemListElement: CATALOG.map((s, i) => ({
               "@type": "ListItem",
               position: i + 1,
               name: s.navLabel,
@@ -69,7 +69,7 @@ export const Route = createFileRoute("/hizmetler")({
             "@type": "OfferCatalog",
             name: "Hizmet listesi",
             provider: { "@id": BEAUTY_SALON_ID },
-            itemListElement: SERVICE_PAGES.map((s) => ({
+            itemListElement: CATALOG.map((s) => ({
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
@@ -91,6 +91,9 @@ const fadeUp = {
   viewport: { once: true, margin: "-60px" },
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
 };
+
+/** Hub sayfaları (ör. /cihazlar) hizmet kataloğuna girmez */
+const CATALOG = SERVICE_PAGES.filter((s) => !s.hub);
 
 /** Hub'daki gruplama — ziyaretçi ihtiyaca göre tarasın diye. */
 const GROUPS: { title: string; intro: string; paths: string[] }[] = [

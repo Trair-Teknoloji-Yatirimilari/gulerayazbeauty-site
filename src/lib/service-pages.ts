@@ -17,9 +17,11 @@ export interface ServicePage {
     | "/lazer-epilasyon" | "/erkek-lazer-epilasyon" | "/cilt-bakimi" | "/karbon-peeling"
     | "/vucut-sekillendirme" | "/dovme-silme" | "/kalici-makyaj" | "/protez-tirnak"
     | "/ipek-kirpik" | "/reformer-pilates" | "/kuafor" | "/sac-boyama"
-    | "/keratin-brezilya-fonu" | "/protez-sac";
+    | "/keratin-brezilya-fonu" | "/protez-sac" | "/cihazlar";
   /** Ana sayfadaki hizmet kartı anahtarı (SERVICE_IMAGES ile aynı) */
   serviceKey: string;
+  /** true ise bu bir hizmet değil, hub sayfasıdır: /hizmetler kataloğuna girmez */
+  hub?: boolean;
   /** Blog kategorisi eşlemesi (blog detayındaki "İlgili hizmet" kutusu) */
   blogCategory: string;
   /** Footer ve menülerde kullanılan kısa ad */
@@ -653,6 +655,67 @@ export const SERVICE_PAGES: ServicePage[] = [
     ],
     afterFaqHtml:
       "Renk uyumu için <a href=\"/sac-boyama\">saç boyama</a>, bakım uygulamaları için <a href=\"/keratin-brezilya-fonu\">keratin bakımı ve Brezilya fönü</a> sayfalarımıza bakabilirsiniz.",
+    note: NOTE,
+  },
+  {
+    path: "/cihazlar",
+    serviceKey: "cihazlar",
+    hub: true,
+    blogCategory: "Cihazlar",
+    navLabel: "Cihazlar",
+    title: "Merkezimizdeki Cihazlar | Maslak Güler Ayaz Beauty",
+    description:
+      "Güler Ayaz Beauty'de kullanılan cihazlar: Slim-X, EMS Pro, G5, soğutmalı diode lazer, Hydrafacial ve Q-Switch. Hangi cihaz hangi uygulamada kullanılır?",
+    h1: "Merkezimizde Kullanılan Cihazlar",
+    cover: "service-vucut.jpg",
+    coverAlt: "Vücut şekillendirme uygulamasında kullanılan cihaz başlığı",
+    blocks: [
+      { t: "p", html: "Bir uygulamanın sonucunu belirleyen iki şey vardır: cihazın ne yaptığı ve kime, nasıl uygulandığı. Bu sayfada Maslak 1453'teki merkezimizde kullanılan cihazları, her birinin hangi ihtiyaca yöneldiğini ve hangi hizmet başlığı altında yer aldığını topluca anlattık." },
+      { t: "p", html: "Hangi cihazın size uygun olduğu, ön değerlendirme yapılmadan belirlenmez. Aşağıdaki bilgiler karar vermeniz için değil, ne konuşulacağını bilmeniz içindir." },
+
+      { t: "h2", text: "Vücut Uygulamalarında Üç Cihaz" },
+      { t: "p", html: "Bölgesel incelme, sıkılaşma ve selülit görünümü farklı ihtiyaçlardır; her biri için farklı bir cihaz öne çıkar. Üçü çoğu zaman tek bir program içinde birlikte planlanır." },
+      { t: "h3", text: "Slim-X — Bölgesel İncelme" },
+      { t: "p", html: "Hedeflenen bölgedeki yağ dokusuna yönelik çalışan vücut şekillendirme cihazıdır. Karın, bel ve basen gibi bölgelere başlıklar yerleştirilir; seans boyunca uzanarak dinlenirsiniz. Programın &ldquo;hacim&rdquo; ayağıdır." },
+      { t: "h3", text: "EMS Pro — Sıkılaşma" },
+      { t: "p", html: "Elektriksel kas uyarımıyla hedef bölgedeki kas grubunda kasılma ve gevşeme döngüsü oluşturur. Programın &ldquo;tonus&rdquo; ayağıdır; düzenli sporun yerini almaz, onu tamamlar. Seans şiddeti konforunuza göre ayarlanır." },
+      { t: "h3", text: "G5 — Selülit Masajı" },
+      { t: "p", html: "Mekanik titreşimli başlıkla çalışan cihazdır. Derin dokuya yönelik ritmik hareketlerle dolaşımın desteklenmesi ve selülit görünümünün yumuşatılması hedeflenir. Klasik veya rahatlama masajı hizmeti merkezimizde bulunmamaktadır; G5 bir cihaz uygulamasıdır." },
+      { t: "p", html: "Üç cihazın birlikte nasıl planlandığını <a href=\"/vucut-sekillendirme\">vücut şekillendirme sayfamızda</a> anlattık." },
+
+      { t: "h2", text: "Soğutmalı Diode Lazer" },
+      { t: "p", html: "Epilasyon uygulamalarında kullanılan lazer teknolojisidir. Işık enerjisi kıl kökündeki koyu pigmenti hedefler; enerji ısıya dönüşerek kılın büyüme döngüsünü etkiler. Başlık uygulama sırasında cildi eş zamanlı soğutur, bu da seans konforunu artırır ve farklı cilt tonlarında çalışılabilmesine olanak tanır." },
+      { t: "p", html: "Bölgeler ve seans düzeni için <a href=\"/lazer-epilasyon\">lazer epilasyon</a>, erkek misafirlerimize özel anlatım için <a href=\"/erkek-lazer-epilasyon\">erkek lazer epilasyon</a> sayfalarımıza bakabilirsiniz." },
+
+      { t: "h2", text: "Hydrafacial" },
+      { t: "p", html: "Derin temizlik, peeling, vakumla arındırma ve nemlendirme adımlarını tek seansta birleştiren cilt bakımı cihazıdır. Uygulama cilt analiziyle başlar; kullanılan serum içerikleri ve yoğunluk cilt tipine göre belirlenir. Karma, yağlı, kuru ve hassas ciltler için farklı programlanır." },
+      { t: "p", html: "Bakım programlarının tamamı için <a href=\"/cilt-bakimi\">cilt bakımı sayfamıza</a> göz atabilirsiniz." },
+
+      { t: "h2", text: "Q-Switch Lazer — Tek Cihaz, Dört Uygulama" },
+      { t: "p", html: "Q-Switch, çok kısa süreli ve yüksek enerjili atımlar üreten bir lazer teknolojisidir. Bu atımlar cilt altındaki pigmenti hedefleyerek çok küçük parçacıklara ayırır; parçalanan pigment vücudun lenf sistemi tarafından zaman içinde uzaklaştırılır. Aynı prensip farklı ihtiyaçlarda kullanıldığı için tek cihaz dört ayrı uygulamaya hizmet eder:" },
+      { t: "ul", items: [
+        "<strong>Karbon peeling</strong> — cilde sürülen karbon solüsyonunun lazer atımlarıyla uzaklaştırılması; gözenek görünümü ve cilt yüzeyine yönelik çalışılır",
+        "<strong>Cilt yenileme</strong> — yüzeydeki ton dengesizliklerine yönelik seanslar",
+        "<strong>Tüy sarartma</strong> — koyu renkli ince tüylerin görünümünü açmaya yönelik uygulama",
+        "<strong>Dövme ve kalıcı makyaj silme</strong> — pigmentin kademeli olarak parçalanması",
+      ] },
+      { t: "p", html: "Karbon peeling ayrıntıları için <a href=\"/karbon-peeling\">Q-Switch karbon peeling</a>, pigment silme için <a href=\"/dovme-silme\">dövme silme</a> sayfalarımızda daha fazla bilgi var." },
+
+      { t: "h2", text: "Cihaz Seçimi Nasıl Yapılır?" },
+      { t: "p", html: "Her süreç ön değerlendirmeyle başlar. Cilt tipi veya vücut analizi, geçmiş uygulamalar, kullandığınız ilaçlar ve beklentiniz birlikte konuşulur; cihaz ve seans düzeni bundan sonra belirlenir. Bazı hedeflere tek seansta ulaşılmaz, bu durumda plan birkaç randevuya yayılır ve bu baştan söylenir." },
+
+      { t: "h2", text: "Güvenlik ve Uygunluk" },
+      { t: "p", html: "Hamilelik ve emzirme dönemi, kalp pili kullanımı, aktif cilt enfeksiyonu, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda cihaz uygulamaları ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
+    ],
+    faqs: [
+      { q: "Hangi cihazın bana uygun olduğunu nasıl öğrenirim?", a: "Ön değerlendirmede cilt tipi veya vücut analizi yapılır, geçmiş uygulamalarınız ve beklentiniz konuşulur; cihaz seçimi bundan sonra birlikte belirlenir." },
+      { q: "Aynı seansta birden fazla cihaz kullanılabilir mi?", a: "Analiz sonucuna göre bazı kombinasyonlar aynı seansta ardışık planlanabilir. Hangilerinin bir arada uygulanabileceği değerlendirme sonrasında netleşir." },
+      { q: "Q-Switch hem karbon peeling hem dövme silmede mi kullanılıyor?", a: "Evet. Cihazın çalışma prensibi aynıdır; parametreler uygulamaya ve bölgeye göre ayarlanır." },
+      { q: "Cihaz uygulamaları ağrılı mıdır?", a: "Çoğu misafir uygulamaları hafif bir ısı, karıncalanma veya kas kasılması hissi olarak tarif eder. Şiddet konforunuza göre ayarlanır." },
+      { q: "Kaç seans gerekir?", a: "Cihaza, bölgeye ve kişiye göre değişir. Analiz yapılmadan seans sayısı söylenmez." },
+    ],
+    afterFaqHtml:
+      "Tüm hizmet başlıklarımızı <a href=\"/hizmetler\">hizmetler sayfamızda</a> topladık; cihazlarla ilgili ayrıntılı yazılara <a href=\"/blog\">blog bölümümüzden</a> ulaşabilirsiniz.",
     note: NOTE,
   },
 ];
