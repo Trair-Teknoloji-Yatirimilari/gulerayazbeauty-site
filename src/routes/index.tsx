@@ -115,6 +115,7 @@ export const Route = createFileRoute("/")({
           sameAs: [
             "https://www.instagram.com/gulerayaz_beautycenter/",
             "https://www.tiktok.com/@gulerayazbeauty",
+            "https://www.facebook.com/profile.php?id=61566140064712",
           ],
           hasOfferCatalog: {
             "@type": "OfferCatalog",
