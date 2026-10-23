@@ -142,7 +142,7 @@ function ServicesHubPage() {
             Güler Ayaz Beauty, güzellik merkezi ve kuaförü tek çatı altında toplar; cilt, vücut,
             tırnak ve saç randevuları aynı ziyarette planlanabilir. Her uygulama ücretsiz bir ön
             değerlendirmeyle başlar ve seans planı kişiye özel hazırlanır. Merkezimiz her gün
-            08:30–21:00 arası açıktır ve otoparkı vardır.
+            08:30–21:00 arası açıktır; otopark ve vale hizmeti vardır.
           </p>
         </motion.div>
 

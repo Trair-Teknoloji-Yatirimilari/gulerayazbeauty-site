@@ -466,7 +466,7 @@ export const tr = {
       { q: "Randevu almadan gelebilir miyim?", a: "Kalitemizi ve size ayırdığımız süreyi koruyabilmek için tüm hizmetlerimiz randevu ile çalışmaktadır." },
       { q: "Ödeme seçenekleri nelerdir?", a: "Nakit, kredi kartı ve havale kabul edilmektedir. Paketlerimizde 3'e kadar taksit imkânımız bulunmaktadır." },
       { q: "Randevumu nasıl iptal / erteleyebilirim?", a: "Randevunuzu en az 12 saat öncesinden telefon veya WhatsApp yoluyla iptal veya erteleyebilirsiniz." },
-      { q: "Otoparkınız var mı?", a: "Maslak 1453 sitesinin ücretli kapalı otoparkını misafirlerimize önermekteyiz." },
+      { q: "Otoparkınız var mı?", a: "Maslak 1453 sitesinin kapalı otoparkını misafirlerimize önermekteyiz; ayrıca vale hizmeti sunulmaktadır." },
       { q: "Erkek misafir kabul ediyor musunuz?", a: "Lazer epilasyon, cilt bakımı, manikür-pedikür ve Pilates hizmetlerimizde erkek misafirlerimize hizmet vermekteyiz." },
       { q: "Paket satın alırsam sonrasında iade mümkün mü?", a: "Kullanılmamış seans hakları için ilk 7 gün içinde kısmi iade yapılabilir. Detaylar sözleşmemizde belirtilmiştir." },
       { q: "Yaş sınırı var mı?", a: "18 yaş altı misafirlerimiz için veli onayı ve refakati gereklidir." },

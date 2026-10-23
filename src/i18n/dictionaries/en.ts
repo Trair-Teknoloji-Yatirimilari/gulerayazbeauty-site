@@ -468,7 +468,7 @@ export const en: typeof tr = {
       { q: "Can I come without an appointment?", a: "To preserve quality and the time we dedicate to you, all services are by appointment only." },
       { q: "What are the payment options?", a: "Cash, credit card and bank transfer are accepted. Up to 3 installments available on packages." },
       { q: "How can I cancel / reschedule?", a: "You can cancel or reschedule by phone or WhatsApp at least 12 hours in advance." },
-      { q: "Is there parking?", a: "We recommend the paid indoor parking of Maslak 1453 for our guests." },
+      { q: "Is there parking?", a: "We recommend the indoor parking of Maslak 1453 for our guests; valet service is also available." },
       { q: "Do you accept male guests?", a: "Yes — for laser hair removal, skincare, manicure-pedicure and Pilates." },
       { q: "Can I get a partial refund if I buy a package?", a: "Partial refund possible within the first 7 days for unused sessions. Details are in your agreement." },
       { q: "Is there an age limit?", a: "Guests under 18 require parental consent and accompaniment." },

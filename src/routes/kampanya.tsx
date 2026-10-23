@@ -106,7 +106,7 @@ const TRUST = [
   { icon: ShieldCheck, t: "Tek kullanımlık ekipman", d: "Her seansta steril, tek kullanımlık malzeme." },
   { icon: Sparkles, t: "Kişiye özel planlama", d: "Analiz olmadan program başlamaz." },
   { icon: Cpu, t: "Premium cihaz altyapısı", d: "Alma, Alpha ve benzeri profesyonel markalar." },
-  { icon: MapPin, t: "Kolay ulaşım", d: "Maslak 1453 içinde, otoparklı." },
+  { icon: MapPin, t: "Kolay ulaşım", d: "Maslak 1453 içinde, otopark ve vale hizmetiyle." },
 ];
 
 const FAQS = [

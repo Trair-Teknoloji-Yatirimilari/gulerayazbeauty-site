@@ -81,7 +81,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "h2", text: "Kimler İçin Uygun Değildir?" },
       { t: "p", html: "Hamilelik, aktif cilt enfeksiyonu, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda uygulama ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
       { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
-      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Sarıyer, Ayazağa, Levent, Etiler, Nişantaşı ve Şişli çevresinden metro ve ana arterlerle kolay ulaşılır." },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Sarıyer, Ayazağa, Levent, Etiler, Nişantaşı ve Şişli çevresinden metro ve ana arterlerle kolay ulaşılır." },
     ],
     faqs: [
       { q: "Lazer epilasyon acı verir mi?", a: "Kişiden kişiye değişir. Soğutmalı başlık sayesinde çoğu misafir uygulamayı hafif bir sıcaklık ve karıncalanma olarak tanımlar." },
@@ -123,7 +123,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "h2", text: "Kimler İçin Uygun Değildir?" },
       { t: "p", html: "Aktif cilt enfeksiyonu, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda uygulama ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
       { t: "h2", text: "Maslak ve Çevresinden Ulaşım" },
-      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Maslak plazalarında çalışanlar için iş çıkışı saatleri de uygundur — hafta içi ve hafta sonu 08:30–21:00 arası açığız. Sarıyer, Ayazağa, Levent ve Şişli çevresinden metro ve ana arterlerle kolay ulaşılır." },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Maslak plazalarında çalışanlar için iş çıkışı saatleri de uygundur — hafta içi ve hafta sonu 08:30–21:00 arası açığız. Sarıyer, Ayazağa, Levent ve Şişli çevresinden metro ve ana arterlerle kolay ulaşılır." },
     ],
     faqs: [
       { q: "Erkekler için ayrı bir kabin var mı?", a: "Uygulamalar kapalı kabinde birebir yapılır. Randevu planlanırken tercihinizi belirtebilirsiniz." },
@@ -205,7 +205,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "h2", text: "Kimler İçin Uygun Değildir?" },
       { t: "p", html: "Aktif cilt enfeksiyonu, açık yara, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda uygulama ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
       { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
-      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur." },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur." },
     ],
     faqs: [
       { q: "Karbon peeling ile Hydrafacial arasındaki fark nedir?", a: "Hydrafacial su ve vakum temelli bir temizlik ve besleme uygulamasıdır; karbon peeling ise lazer atımlarıyla çalışır. Hangisinin uygun olduğu cilt analizinde belirlenir, bazı durumlarda ikisi dönüşümlü planlanır." },
@@ -378,7 +378,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "h2", text: "Bakım ve Dolgu" },
       { t: "p", html: "Tırnak uzadıkça dipte boşluk oluşur; bu noktada dolgu yapılması hem görünümü tazeler hem de kalkmayı önler. Dolgu aralığı tırnağın büyüme hızına göre değişir. Suyla yoğun temasta eldiven kullanmak ve kütikül yağıyla nemlendirmek uygulamanın ömrünü uzatır." },
       { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
-      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır. Randevu WhatsApp üzerinden planlanır." },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır. Randevu WhatsApp üzerinden planlanır." },
     ],
     faqs: [
       { q: "Protez tırnak doğal tırnağa zarar verir mi?", a: "Doğru uygulama, düzenli dolgu ve profesyonel sökümle zarar vermesi beklenmez. Sorunlar çoğunlukla evde zorla çıkarmaktan veya uzun süre bakımsız bırakmaktan kaynaklanır." },
@@ -426,7 +426,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         "İpek kirpikte görünümü korumak için birkaç haftada bir bakım planlayın",
       ] },
       { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
-      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark mevcuttur. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır. Randevu WhatsApp üzerinden planlanır." },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır. Randevu WhatsApp üzerinden planlanır." },
     ],
     faqs: [
       { q: "İpek kirpik ile kirpik lifting arasındaki fark nedir?", a: "İpek kirpikte doğal kirpiğe sentetik kirpik eklenir ve hem uzunluk hem yoğunluk kazanılır. Lifting'de ekleme yapılmaz, mevcut kirpikler kıvrılarak daha belirgin hale gelir." },
@@ -470,7 +470,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         "Su şişesi",
       ] },
       { t: "h2", text: "Sarıyer ve Maslak'tan Ulaşım" },
-      { t: "p", html: "Stüdyomuz Maslak 1453 içinde yer alır; otopark mevcuttur. Maslak plazalarında çalışanlar için iş çıkışı saatleri de planlanabilir. Randevu WhatsApp üzerinden alınır." },
+      { t: "p", html: "Stüdyomuz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Maslak plazalarında çalışanlar için iş çıkışı saatleri de planlanabilir. Randevu WhatsApp üzerinden alınır." },
     ],
     faqs: [
       { q: "Daha önce hiç pilates yapmadım, başlayabilir miyim?", a: "Evet. Reformer'daki yay direnci seviyeye göre ayarlanır; başlangıç için birebir ders önerilir." },
@@ -562,7 +562,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         "Havuz ve deniz sonrası saçın durulanması rengin ömrünü uzatır",
       ] },
       { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
-      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır." },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız. Sarıyer, Ayazağa, Levent ve Şişli çevresinden kolay ulaşılır." },
     ],
     faqs: [
       { q: "Ombre ile sombre arasındaki fark nedir?", a: "İkisi de kökten uca renk geçişidir; sombre'de ton farkı daha az ve geçiş daha yumuşaktır, ombre'de geçiş daha belirgindir." },
@@ -604,7 +604,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "h2", text: "Boya ile Birlikte Planlama" },
       { t: "p", html: "Renk çalışması ve keratin işlemi genellikle aynı güne konmaz. Hangisinin önce yapılacağı ve aradaki süre, saçın güncel durumuna göre ön değerlendirmede belirlenir." },
       { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
-      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur." },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur." },
     ],
     faqs: [
       { q: "Brezilya fönü ile keratin bakımı aynı şey mi?", a: "Brezilya fönü de keratin içerikli bir uygulamadır. Keratin bakımı besleme ve pürüzsüzleştirme odaklıdır; Brezilya fönü buna ek olarak daha belirgin bir düzleşme sağlar." },
@@ -645,7 +645,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "h2", text: "Kimler İçin Uygun Değildir?" },
       { t: "p", html: "Saç derisinde egzama, mantar veya açık yara gibi aktif bir sorun varsa uygulama yapılmaz. Yaygın saç dökülmesi şikâyetiniz varsa, uygulamadan önce bir hekim değerlendirmesi öneriyoruz; dökülmenin nedeni belirlenmeden eklenen ağırlık durumu zorlaştırabilir. Çok ince ve kırılgan saçlarda yöntem seçimi ayrıca dikkat gerektirir." },
       { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
-      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız." },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "Kendi saçıma zarar verir mi?", a: "Uygun yöntem seçildiğinde ve bakım aralıklarına uyulduğunda beklenmez. Risk; yanlış yöntem, fazla ağırlık ve bakımın aksaması durumunda artar. Bu yüzden ön değerlendirme ve periyodik kontrol uygulamanın parçasıdır." },
@@ -763,7 +763,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "p", html: "Sürekli uygulama yerine arada tırnağı dinlendirmek sık sorulan bir konu. Tırnağınızın güncel durumuna göre ne zaman ara verilmesinin uygun olacağını randevuda birlikte değerlendiriyoruz." },
 
       { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
-      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur. Çevre semtlerden ulaşım kolaydır." },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız, iş çıkışı saatleri de uygundur. Çevre semtlerden ulaşım kolaydır." },
     ],
     faqs: [
       { q: "Kalıcı oje tırnağa zarar verir mi?", a: "Asıl belirleyici olan çıkarma yöntemidir. Kaldırarak veya kazıyarak sökmek tırnak yüzeyinde incelmeye yol açabilir; ürüne uygun çözücüyle yumuşatarak almak bu riski azaltır." },
@@ -818,7 +818,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { t: "p", html: "LED bir bakım adımıdır; cilt görünümüne yönelik programın parçası olarak değerlendirilir. Günlük bakım alışkanlıkları, güneş koruması ve uyku düzeni gibi etkenler sonucu doğrudan etkiler. Gerçekçi beklentiyi ön değerlendirmede birlikte konuşuyoruz." },
 
       { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
-      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark mevcuttur. Her gün 08:30–21:00 arası açığız." },
+      { t: "p", html: "Salonumuz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "LED ışık uygulaması bir tedavi midir?", a: "Hayır. Cilt bakımı programının destekleyici bir adımıdır. Tanı veya tedavi gerektiren bir durumda hekime başvurmanız gerekir." },
