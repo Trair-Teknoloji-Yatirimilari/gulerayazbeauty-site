@@ -172,7 +172,8 @@ export const SERVICE_PAGES_FA: ServicePage[] = [
 
   {
     path: "/manikur-pedikur",
-    serviceKey: "manikur-pedikur",
+    // TR ile aynı anahtar: ana sayfadaki "nail" kartının hedefi.
+    serviceKey: "nail",
     blogCategory: "مانیکور و پدیکور",
     navLabel: "مانیکور و پدیکور",
     title: "مانیکور، پدیکور و لاک ژل در ماسلاک | Güler Ayaz",

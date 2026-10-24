@@ -312,7 +312,10 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
   },
   {
     path: "/protez-tirnak",
-    serviceKey: "nail",
+    // Ana sayfadaki "nail" kartı artık daha geniş olan /manikur-pedikur'a
+    // gidiyor; protez tırnak onun alt başlığı. Kart anahtarını ezmemesi için
+    // ayrı bir anahtar kullanıyor.
+    serviceKey: "protez-tirnak",
     blogCategory: "Tırnak Bakımı",
     navLabel: "Protez Tırnak & Nail Art",
     title: "Maslak Protez Tırnak & Nail Art | Güler Ayaz Beauty",
@@ -687,7 +690,10 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
   },
   {
     path: "/manikur-pedikur",
-    serviceKey: "manikur-pedikur",
+    // Ana sayfadaki genel "tırnak" kartının hedefi: manikür, pedikür, kalıcı
+    // oje ve nail art'ı kapsayan geniş sayfa. Protez tırnak alt başlık olarak
+    // bu sayfanın metninden link alıyor.
+    serviceKey: "nail",
     blogCategory: "Manikür & Pedikür",
     navLabel: "Manikür & Pedikür",
     title: "Maslak Manikür, Pedikür ve Kalıcı Oje | Güler Ayaz Beauty",
