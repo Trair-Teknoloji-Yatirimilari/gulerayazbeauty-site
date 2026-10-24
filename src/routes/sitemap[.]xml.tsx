@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { TRANSLATED_PATHS, isTranslatedPath, localizedPath } from "@/i18n/locale-path";
 
 const STATIC_PAGES = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
@@ -47,10 +48,26 @@ export const Route = createFileRoute("/sitemap.xml")({
           /* DB erişilemezse statik sayfalarla devam */
         }
 
+        // Çevrilmiş sayfalar üç dilde, karşılıklı xhtml:link alternatifleriyle.
+        // Liste TRANSLATED_PATHS'ten gelir; Aşama 2'de oraya ekleme yapmak yeterli.
+        const altBlock = (basePath: string) =>
+          (["tr", "en", "fa"] as const)
+            .map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${base}${localizedPath(basePath, l)}"/>`)
+            .join("") +
+          `<xhtml:link rel="alternate" hreflang="x-default" href="${base}${basePath}"/>`;
+
         const urls = [
-          ...STATIC_PAGES.map(
-            (p) =>
-              `  <url><loc>${base}${p.path}</loc><changefreq>${p.changefreq}</changefreq><priority>${p.priority}</priority></url>`,
+          ...STATIC_PAGES.map((p) => {
+            const translated = isTranslatedPath(p.path);
+            const alts = translated ? altBlock(p.path) : "";
+            return `  <url><loc>${base}${p.path}</loc><changefreq>${p.changefreq}</changefreq><priority>${p.priority}</priority>${alts}</url>`;
+          }),
+          // Türkçe dışındaki diller
+          ...TRANSLATED_PATHS.flatMap((basePath) =>
+            (["en", "fa"] as const).map((l) => {
+              const sp = STATIC_PAGES.find((x) => x.path === basePath);
+              return `  <url><loc>${base}${localizedPath(basePath, l)}</loc><changefreq>${sp?.changefreq ?? "monthly"}</changefreq><priority>${sp?.priority ?? "0.5"}</priority>${altBlock(basePath)}</url>`;
+            }),
           ),
           ...posts.map(
             (p) =>
@@ -58,7 +75,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           ),
         ].join("\n");
 
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
         return new Response(xml, {
           headers: {
             "content-type": "application/xml; charset=utf-8",

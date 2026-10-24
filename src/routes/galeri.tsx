@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { listGallery } from "@/lib/gallery.functions";
 import { useT } from "@/i18n/context";
 import { SiteFooter } from "@/components/SiteFooter";
+import { alternateLinks } from "@/i18n/locale-path";
 
 export const Route = createFileRoute("/galeri")({
   head: () => ({
@@ -26,12 +27,12 @@ export const Route = createFileRoute("/galeri")({
       { property: "og:url", content: `${SITE_URL}/galeri` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/galeri` }],
+    links: alternateLinks("/galeri", "tr"),
   }),
   component: GalleryPage,
 });
 
-function GalleryPage() {
+export function GalleryPage() {
   const { t } = useT();
   const fetchGallery = useServerFn(listGallery);
   const { data, isLoading, error } = useQuery({

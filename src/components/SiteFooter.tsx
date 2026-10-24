@@ -3,6 +3,7 @@ import { Phone, MapPin, Instagram, Mail } from "lucide-react";
 import { useT } from "@/i18n/context";
 import { SERVICE_PAGES } from "@/lib/service-pages";
 import { reopenConsent } from "@/lib/consent";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function SiteFooter() {
   const { t } = useT();
@@ -131,6 +132,14 @@ export function SiteFooter() {
             </button>
             <span className="hidden sm:inline">·</span>
             <span>{t.footer.disclaimer}</span>
+          </div>
+          {/*
+            Dil değiştirici: SiteNav yalnızca ana sayfada render edildiği için
+            /kvkk ve /galeri'de dil değiştirmenin başka yolu yoktu. Bileşen
+            çevrilmemiş sayfalarda kendini gizler (TRANSLATED_PATHS).
+          */}
+          <div className="mt-3 flex justify-center">
+            <LanguageSwitcher variant="footer" />
           </div>
           <p className="mt-2 text-[10px] text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
             {t.footer.resultDisclaimer}

@@ -1,10 +1,19 @@
-import { useT } from "@/i18n/context";
-import { LOCALES, localeLabels, type Locale } from "@/i18n/types";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Globe } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { LOCALES, localeLabels, localeFullNames } from "@/i18n/types";
+import { basePathOf, isTranslatedPath, localeFromPath, localizedPath } from "@/i18n/locale-path";
 
+/**
+ * Dil değişimi bir gezinmedir: <Link> ile ilgili dilin URL'sine gidilir.
+ * Böylece bağlantılar taranabilir ve geri/ileri tuşları doğru çalışır.
+ *
+ * Yalnızca çevrilmiş sayfalarda görünür (TRANSLATED_PATHS). Çevrilmemiş bir
+ * sayfada alternatif dil yok; değiştirici gösterilirse kullanıcı dili
+ * değiştirdiğinde içeriği kaybeder, o yüzden hiç render edilmiyor.
+ */
 export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | "footer" }) {
-  const { locale, setLocale } = useT();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -15,6 +24,12 @@ export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | 
     document.addEventListener("mousedown", onDoc);
     return () => document.removeEventListener("mousedown", onDoc);
   }, []);
+
+  const locale = localeFromPath(pathname);
+  const basePath = basePathOf(pathname);
+
+  // Bu sayfanın başka dilde karşılığı yoksa değiştiriciyi hiç gösterme.
+  if (!isTranslatedPath(basePath)) return null;
 
   const base =
     variant === "header"
@@ -28,21 +43,23 @@ export function LanguageSwitcher({ variant = "header" }: { variant?: "header" | 
         onClick={() => setOpen((o) => !o)}
         className={base}
         aria-label="Language / Dil"
+        aria-expanded={open}
       >
         <Globe className="w-3.5 h-3.5" />
         {localeLabels[locale]}
       </button>
       {open && (
-        <div className="absolute right-0 mt-2 min-w-[110px] rounded-md border border-border/60 bg-popover backdrop-blur py-1 shadow-lg z-50">
+        <div className="absolute right-0 mt-2 min-w-[130px] rounded-md border border-border/60 bg-popover backdrop-blur py-1 shadow-lg z-50">
           {LOCALES.map((l) => (
-            <button
+            <Link
               key={l}
-              type="button"
-              onClick={() => { setLocale(l as Locale); setOpen(false); }}
+              to={localizedPath(basePath, l)}
+              hrefLang={l}
+              onClick={() => setOpen(false)}
               className={`block w-full text-left px-3 py-1.5 text-xs uppercase tracking-widest hover:bg-primary/10 ${l === locale ? "text-primary" : "text-foreground/80"}`}
             >
-              {localeLabels[l]} · {l.toUpperCase()}
-            </button>
+              {localeLabels[l]} · {localeFullNames[l]}
+            </Link>
           ))}
         </div>
       )}

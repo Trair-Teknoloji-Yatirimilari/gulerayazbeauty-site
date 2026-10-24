@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Shield, Mail, ArrowLeft, Clock, Trash2, Eye, Lock, FileText } from "lucide-react";
 import { useT } from "@/i18n/context";
 import { SiteFooter } from "@/components/SiteFooter";
+import { alternateLinks } from "@/i18n/locale-path";
 
 export const Route = createFileRoute("/kvkk")({
   head: () => ({
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/kvkk")({
       { property: "og:url", content: `${SITE_URL}/kvkk` },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/kvkk` }],
+    links: alternateLinks("/kvkk", "tr"),
   }),
   component: KvkkPage,
 });
@@ -33,7 +34,7 @@ const ICONS: Record<string, React.ElementType> = {
   FileText, Eye, Shield, Lock, Clock, Mail, Trash2,
 };
 
-function KvkkPage() {
+export function KvkkPage() {
   const { t } = useT();
   const legal = t.legal;
   return (

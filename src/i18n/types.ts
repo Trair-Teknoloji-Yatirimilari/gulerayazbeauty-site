@@ -6,17 +6,6 @@ export function isLocale(v: unknown): v is Locale {
   return typeof v === "string" && (LOCALES as readonly string[]).includes(v);
 }
 
-export function detectBrowserLocale(): Locale {
-  if (typeof navigator === "undefined") return DEFAULT_LOCALE;
-  const langs = navigator.languages ?? [navigator.language];
-  for (const l of langs) {
-    const low = l.toLowerCase();
-    if (low.startsWith("fa") || low.startsWith("pe")) return "fa";
-    if (low.startsWith("en")) return "en";
-    if (low.startsWith("tr")) return "tr";
-  }
-  return DEFAULT_LOCALE;
-}
 
 export function dirOf(l: Locale): "ltr" | "rtl" {
   return l === "fa" ? "rtl" : "ltr";

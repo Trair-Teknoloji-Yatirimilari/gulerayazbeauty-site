@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -36,6 +37,9 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SacBoyamaRouteImport } from './routes/sac-boyama'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillendirme'
+import { Route as LangIndexRouteImport } from './routes/$lang/index'
+import { Route as LangGaleriRouteImport } from './routes/$lang/galeri'
+import { Route as LangKvkkRouteImport } from './routes/$lang/kvkk'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as UploadsSplatRouteImport } from './routes/uploads.$'
@@ -47,6 +51,11 @@ import { Route as AuthenticatedAdminBlogNewRouteImport } from './routes/_authent
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangRoute = LangRouteImport.update({
+  id: '/$lang',
+  path: '/$lang',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
@@ -178,6 +187,21 @@ const VucutSekillendirmeRoute = VucutSekillendirmeRouteImport.update({
   path: '/vucut-sekillendirme',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangIndexRoute = LangIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangGaleriRoute = LangGaleriRouteImport.update({
+  id: '/galeri',
+  path: '/galeri',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangKvkkRoute = LangKvkkRouteImport.update({
+  id: '/kvkk',
+  path: '/kvkk',
+  getParentRoute: () => LangRoute,
+} as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -219,6 +243,7 @@ const AuthenticatedAdminBlogNewRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/cihazlar': typeof CihazlarRoute
@@ -244,9 +269,12 @@ export interface FileRoutesByFullPath {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/kvkk': typeof LangKvkkRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
+  '/$lang/': typeof LangIndexRoute
   '/admin/blog': typeof AuthenticatedAdminBlogRoute
   '/admin/gallery': typeof AuthenticatedAdminGalleryRoute
   '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -279,9 +307,12 @@ export interface FileRoutesByTo {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/kvkk': typeof LangKvkkRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
+  '/$lang': typeof LangIndexRoute
   '/admin/blog': typeof AuthenticatedAdminBlogRoute
   '/admin/gallery': typeof AuthenticatedAdminGalleryRoute
   '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -291,6 +322,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/$lang': typeof LangRouteWithChildren
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/cihazlar': typeof CihazlarRoute
@@ -316,9 +348,12 @@ export interface FileRoutesById {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/kvkk': typeof LangKvkkRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
+  '/$lang/': typeof LangIndexRoute
   '/_authenticated/admin_/blog': typeof AuthenticatedAdminBlogRoute
   '/_authenticated/admin_/gallery': typeof AuthenticatedAdminGalleryRoute
   '/_authenticated/admin_/blog_/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -328,6 +363,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$lang'
     | '/auth'
     | '/blog'
     | '/cihazlar'
@@ -353,9 +389,12 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/galeri'
+    | '/$lang/kvkk'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
+    | '/$lang/'
     | '/admin/blog'
     | '/admin/gallery'
     | '/admin/blog/$id'
@@ -388,9 +427,12 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/galeri'
+    | '/$lang/kvkk'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
+    | '/$lang'
     | '/admin/blog'
     | '/admin/gallery'
     | '/admin/blog/$id'
@@ -399,6 +441,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/$lang'
     | '/auth'
     | '/blog'
     | '/cihazlar'
@@ -424,9 +467,12 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/galeri'
+    | '/$lang/kvkk'
     | '/_authenticated/admin'
     | '/blog_/$slug'
     | '/uploads/$'
+    | '/$lang/'
     | '/_authenticated/admin_/blog'
     | '/_authenticated/admin_/gallery'
     | '/_authenticated/admin_/blog_/$id'
@@ -436,6 +482,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  LangRoute: typeof LangRouteWithChildren
   AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRoute
   CihazlarRoute: typeof CihazlarRoute
@@ -472,6 +519,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang': {
+      id: '/$lang'
+      path: '/$lang'
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -656,6 +710,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VucutSekillendirmeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang/': {
+      id: '/$lang/'
+      path: '/'
+      fullPath: '/$lang/'
+      preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/galeri': {
+      id: '/$lang/galeri'
+      path: '/galeri'
+      fullPath: '/$lang/galeri'
+      preLoaderRoute: typeof LangGaleriRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/kvkk': {
+      id: '/$lang/kvkk'
+      path: '/kvkk'
+      fullPath: '/$lang/kvkk'
+      preLoaderRoute: typeof LangKvkkRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
       path: '/admin'
@@ -727,9 +802,24 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface LangRouteChildren {
+  LangGaleriRoute: typeof LangGaleriRoute
+  LangKvkkRoute: typeof LangKvkkRoute
+  LangIndexRoute: typeof LangIndexRoute
+}
+
+const LangRouteChildren: LangRouteChildren = {
+  LangGaleriRoute: LangGaleriRoute,
+  LangKvkkRoute: LangKvkkRoute,
+  LangIndexRoute: LangIndexRoute,
+}
+
+const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  LangRoute: LangRouteWithChildren,
   AuthRoute: AuthRoute,
   BlogRoute: BlogRoute,
   CihazlarRoute: CihazlarRoute,

@@ -59,6 +59,7 @@ import { SERVICE_PATH_BY_KEY } from "@/lib/service-pages";
 import { BEAUTY_SALON_ID } from "@/lib/service-head";
 import { useT } from "@/i18n/context";
 import { SITE_URL, PHONE_MOBILE, OPENING_HOURS, whatsappLink } from "@/lib/site";
+import { alternateLinks } from "@/i18n/locale-path";
 
 export const Route = createFileRoute("/")({
   // Blog bölümü için yazılar. DB erişilemezse ana sayfanın tamamı çökmesin —
@@ -80,7 +81,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    links: alternateLinks("/", "tr"),
     scripts: [
       {
         type: "application/ld+json",
@@ -146,7 +147,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: Index,
+  component: IndexRoute,
 });
 
 const fadeUp = {
@@ -179,7 +180,17 @@ const SERVICE_IMAGES: Record<string, string> = {
   kuafor: serviceKuafor,
 };
 
-function Index() {
+/** Türkçe ana sayfa: blog bölümü DB'den gelen yazılarla render edilir. */
+function IndexRoute() {
+  return <Index posts={Route.useLoaderData()} />;
+}
+
+/**
+ * Ana sayfa gövdesi. `posts` verilmezse (EN/FA) blog bölümü hiç render edilmez
+ * ve o dillerde loader da çağrılmaz — Türkçe başlıklar sayfanın dil sinyalini
+ * zayıflatmasın diye.
+ */
+export function Index({ posts }: { posts?: Awaited<ReturnType<typeof listPublishedPosts>> }) {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <SiteNav onHome />
@@ -191,7 +202,7 @@ function Index() {
       <Services />
       <Journey />
       <Faq />
-      <HomeBlog />
+      <HomeBlog posts={posts} />
       <Contact />
       <SiteFooter />
     </div>
@@ -879,9 +890,8 @@ function Faq() {
 
 /* ---------------- BLOG'DAN (ana sayfadan blog'a iç bağlantı) ---------------- */
 
-function HomeBlog() {
+function HomeBlog({ posts }: { posts?: Awaited<ReturnType<typeof listPublishedPosts>> }) {
   const { t } = useT();
-  const posts = Route.useLoaderData();
   const latest = (posts ?? []).slice(0, 3);
   if (latest.length === 0) return null;
 

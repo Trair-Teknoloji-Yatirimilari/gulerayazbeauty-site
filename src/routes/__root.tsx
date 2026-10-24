@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -12,6 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LocaleProvider, useT } from "@/i18n/context";
+import { localeFromPath } from "@/i18n/locale-path";
+import { dirOf } from "@/i18n/types";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ContactTracking } from "@/components/ContactTracking";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -109,9 +112,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+/**
+ * Dil, SSR'da da doğru basılsın diye yoldan türetiliyor. head() htmlAttrs
+ * desteklemediği için <html lang>/<html dir> yalnızca burada set edilebilir.
+ * useRouterState sunucuda senkron okur (SSR güvenli).
+ */
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const locale = localeFromPath(pathname);
   return (
-    <html lang="tr" dir="ltr">
+    <html lang={locale} dir={dirOf(locale)}>
       <head>
         <HeadContent />
       </head>
@@ -135,9 +145,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <QueryClientProvider client={queryClient}>
-      <LocaleProvider>
+      <LocaleProvider locale={localeFromPath(pathname)}>
         <Outlet />
         <WhatsAppButton />
         <ContactTracking />
