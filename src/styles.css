@@ -72,6 +72,27 @@
   --shadow-elegant: 0 40px 80px -30px oklch(0.30 0.06 310 / 0.25);
 }
 
+/*
+ * Farsça: Cormorant Garamond ve Inter'de Arap harfi yok; kural olmadan
+ * tarayıcı sistem yedeğine düşüyor ve marka tipografisi tamamen kayboluyor.
+ * Vazirmatn zaten __root.tsx'teki Google Fonts isteğinde yer alıyor.
+ * Farsça'da serif/sans ayrımı taklit edilmiyor; hiyerarşi ağırlıkla kuruluyor.
+ */
+html[lang="fa"] {
+  --font-display: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Tailwind v4 @theme inline, .font-display yardımcı sınıfının değerini
+ * var() ile değil gömülü üretiyor; bu yüzden yukarıdaki değişken
+ * geçersiz kılma başlıklara ulaşmıyor. Sınıfı değişkene geri bağlıyoruz.
+ * Özgüllük: (0,2,0) > (0,1,0). Etki yalnızca Farsça sayfalarda.
+ */
+html[lang="fa"] .font-display {
+  font-family: var(--font-display);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
