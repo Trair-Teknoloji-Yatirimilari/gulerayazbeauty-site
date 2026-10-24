@@ -7,7 +7,15 @@ import { SITE_URL } from "@/lib/site";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/blog")({
-  loader: () => listPublishedPosts(),
+  // DB bir an tökezlerse sayfa 500 dönmesin: Googlebot o anda çekerse
+  // dizinden düşebilir. Hata durumunda boş liste + kullanıcıya açıklama.
+  loader: async () => {
+    try {
+      return { posts: await listPublishedPosts(), failed: false };
+    } catch {
+      return { posts: [], failed: true };
+    }
+  },
   head: () => ({
     meta: [
       { title: "Blog | Güler Ayaz Beauty" },
@@ -25,7 +33,7 @@ export const Route = createFileRoute("/blog")({
 
 function BlogListPage() {
   const { t } = useT();
-  const posts = Route.useLoaderData();
+  const { posts, failed } = Route.useLoaderData();
 
   return (
     <div className="min-h-screen bg-background text-foreground pt-28 md:pt-32 pb-24">
@@ -49,12 +57,14 @@ function BlogListPage() {
           </Link>
         </motion.div>
 
-        {posts && posts.length === 0 && (
-          <div className="text-center text-foreground/60 py-24">{t.blog.empty}</div>
+        {posts.length === 0 && (
+          <div className="text-center text-foreground/60 py-24">
+            {failed ? t.blog.loadError : t.blog.empty}
+          </div>
         )}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts?.map((post, i) => (
+          {posts.map((post, i) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
