@@ -24,6 +24,7 @@ export const fa: typeof tr = {
   },
   nav: {
     brand: "Güler Ayaz Beauty",
+    home: "صفحهٔ اصلی",
     tagline: "Beauty Clinic",
     about: "مرکز ما",
     services: "خدمات",

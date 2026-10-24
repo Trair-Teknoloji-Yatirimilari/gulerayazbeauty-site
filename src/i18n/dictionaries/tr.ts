@@ -22,6 +22,7 @@ export const tr = {
   },
   nav: {
     brand: "Güler Ayaz Beauty",
+    home: "Ana Sayfa",
     tagline: "Beauty Clinic",
     about: "Merkezimiz",
     services: "Hizmetler",

@@ -40,6 +40,7 @@ import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillend
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
 import { Route as LangGaleriRouteImport } from './routes/$lang/galeri'
 import { Route as LangKvkkRouteImport } from './routes/$lang/kvkk'
+import { Route as LangLazerEpilasyonRouteImport } from './routes/$lang/lazer-epilasyon'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as UploadsSplatRouteImport } from './routes/uploads.$'
@@ -202,6 +203,11 @@ const LangKvkkRoute = LangKvkkRouteImport.update({
   path: '/kvkk',
   getParentRoute: () => LangRoute,
 } as any)
+const LangLazerEpilasyonRoute = LangLazerEpilasyonRouteImport.update({
+  id: '/lazer-epilasyon',
+  path: '/lazer-epilasyon',
+  getParentRoute: () => LangRoute,
+} as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -271,6 +277,7 @@ export interface FileRoutesByFullPath {
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/kvkk': typeof LangKvkkRoute
+  '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -309,6 +316,7 @@ export interface FileRoutesByTo {
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/kvkk': typeof LangKvkkRoute
+  '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -350,6 +358,7 @@ export interface FileRoutesById {
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/kvkk': typeof LangKvkkRoute
+  '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -391,6 +400,7 @@ export interface FileRouteTypes {
     | '/vucut-sekillendirme'
     | '/$lang/galeri'
     | '/$lang/kvkk'
+    | '/$lang/lazer-epilasyon'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -429,6 +439,7 @@ export interface FileRouteTypes {
     | '/vucut-sekillendirme'
     | '/$lang/galeri'
     | '/$lang/kvkk'
+    | '/$lang/lazer-epilasyon'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -469,6 +480,7 @@ export interface FileRouteTypes {
     | '/vucut-sekillendirme'
     | '/$lang/galeri'
     | '/$lang/kvkk'
+    | '/$lang/lazer-epilasyon'
     | '/_authenticated/admin'
     | '/blog_/$slug'
     | '/uploads/$'
@@ -731,6 +743,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangKvkkRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/lazer-epilasyon': {
+      id: '/$lang/lazer-epilasyon'
+      path: '/lazer-epilasyon'
+      fullPath: '/$lang/lazer-epilasyon'
+      preLoaderRoute: typeof LangLazerEpilasyonRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
       path: '/admin'
@@ -805,12 +824,14 @@ const AuthenticatedRouteRouteWithChildren =
 interface LangRouteChildren {
   LangGaleriRoute: typeof LangGaleriRoute
   LangKvkkRoute: typeof LangKvkkRoute
+  LangLazerEpilasyonRoute: typeof LangLazerEpilasyonRoute
   LangIndexRoute: typeof LangIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
   LangGaleriRoute: LangGaleriRoute,
   LangKvkkRoute: LangKvkkRoute,
+  LangLazerEpilasyonRoute: LangLazerEpilasyonRoute,
   LangIndexRoute: LangIndexRoute,
 }
 

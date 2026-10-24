@@ -59,7 +59,7 @@ import { SERVICE_PATH_BY_KEY } from "@/lib/service-pages";
 import { BEAUTY_SALON_ID } from "@/lib/service-head";
 import { useT } from "@/i18n/context";
 import { SITE_URL, PHONE_MOBILE, OPENING_HOURS, whatsappLink } from "@/lib/site";
-import { alternateLinks } from "@/i18n/locale-path";
+import { alternateLinks, localesForPath, localizedPath } from "@/i18n/locale-path";
 
 export const Route = createFileRoute("/")({
   // Blog bölümü için yazılar. DB erişilemezse ana sayfanın tamamı çökmesin —
@@ -690,10 +690,15 @@ function Services() {
 type ServiceItem = ReturnType<typeof useT>["t"]["services"]["items"][number];
 
 function ServiceRow({ service, reversed, index }: { service: ServiceItem; reversed: boolean; index: number }) {
-  const { t } = useT();
+  const { t, locale } = useT();
   const Icon = SERVICE_ICONS[service.key] ?? Sparkles;
   const image = SERVICE_IMAGES[service.key] ?? beautyCenter;
-  const servicePath = SERVICE_PATH_BY_KEY[service.key];
+  // Karar: kart, sayfa o dilde çevrilmişse dildeki URL'ye, değilse Türkçe'ye gider.
+  // Ziyaretçi mevcut en iyi içeriğe ulaşır; 404 olmaz, çevrilmiş sayfa gizlenmez.
+  const basePath = SERVICE_PATH_BY_KEY[service.key];
+  const servicePath = basePath && localesForPath(basePath).includes(locale)
+    ? localizedPath(basePath, locale)
+    : basePath;
   const [open, setOpen] = useState(false);
   const detail: Detail = {
     pitch: service.pitch,

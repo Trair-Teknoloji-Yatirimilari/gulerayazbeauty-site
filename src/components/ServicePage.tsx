@@ -71,7 +71,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
       <section className="relative pt-28 md:pt-36 pb-14 md:pb-20">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <nav aria-label="breadcrumb" className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary transition-colors">Ana Sayfa</Link>
+            <Link to="/" className="hover:text-primary transition-colors">{t.nav.home}</Link>
             <ChevronRight className="w-3 h-3" />
             <span className="text-foreground/70">{data.navLabel}</span>
           </nav>
@@ -125,7 +125,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <motion.div {...fadeUp} className="flex items-center gap-3 mb-8">
             <div className="h-px w-10 bg-primary" />
-            <h2 className="text-xs uppercase tracking-[0.4em] text-primary">Sık Sorulan Sorular</h2>
+            <h2 className="text-xs uppercase tracking-[0.4em] text-primary">{t.faqSection.badge}</h2>
           </motion.div>
 
           <motion.div {...fadeUp}>

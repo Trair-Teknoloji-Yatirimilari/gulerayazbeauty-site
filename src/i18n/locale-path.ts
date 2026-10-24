@@ -12,6 +12,7 @@
  */
 
 import { SITE_URL } from "@/lib/site";
+import { SERVICE_PAGES, serviceLocalesForPath } from "@/lib/service-pages";
 import { DEFAULT_LOCALE, type Locale } from "./types";
 
 /** Türkçe dışındaki diller URL'de önek alır. */
@@ -23,17 +24,35 @@ function isPrefixedLocale(v: string): v is PrefixedLocale {
 }
 
 /**
- * Aşama 1'de üç dile çevrilmiş sayfalar.
- *
- * Hem hreflang etiketleri hem dil değiştirici bu listeden beslenir. Aşama 2'de
- * hizmet sayfaları çevrilince YALNIZCA buraya ekleme yapılır; iki yeri birden
- * güncellemek gerekmez.
+ * Rota tabanlı çevrilmiş sayfalar (hizmet sayfası olmayanlar).
+ * Bunların karşılığı $lang/ altındaki rota dosyalarıdır.
  */
-export const TRANSLATED_PATHS = ["/", "/kvkk", "/galeri"] as const;
-export type TranslatedPath = (typeof TRANSLATED_PATHS)[number];
+const STATIC_TRANSLATED = ["/", "/kvkk", "/galeri"] as const;
 
-export function isTranslatedPath(p: string): p is TranslatedPath {
-  return (TRANSLATED_PATHS as readonly string[]).includes(p);
+/**
+ * Bu yolun karşılığı olan diller. TEK KAYNAK — hreflang, dil değiştirici ve
+ * sitemap hep buradan beslenir.
+ *
+ * Hizmet sayfaları için liste service-pages.{tr,en,fa}.ts dizilerinden TÜRETİLİR:
+ * bir sayfa service-pages.en.ts'e eklendiği an /en/<path> otomatik olarak
+ * çevrilmiş sayılır, ikinci bir listeye elle eklemek gerekmez. Diller arası
+ * asimetri de desteklenir (EN'de var, FA'da yok → hreflang yalnızca tr+en).
+ */
+export function localesForPath(basePath: string): Locale[] {
+  if ((STATIC_TRANSLATED as readonly string[]).includes(basePath)) return ["tr", "en", "fa"];
+  return serviceLocalesForPath(basePath);
+}
+
+/** Birden fazla dilde karşılığı var mı? */
+export function isTranslatedPath(p: string): boolean {
+  return localesForPath(p).length > 1;
+}
+
+/** Sitemap'in gezeceği, çevrilmiş tüm kanonik yollar. */
+export function allTranslatedPaths(): string[] {
+  const set = new Set<string>(STATIC_TRANSLATED);
+  for (const s of SERVICE_PAGES) if (localesForPath(s.path).length > 1) set.add(s.path);
+  return [...set];
 }
 
 /** Yoldan dili türetir. Önek yoksa Türkçe. */
@@ -66,11 +85,14 @@ export function localizedUrl(basePath: string, locale: Locale): string {
  * Yalnızca çevrilmiş sayfalarda çağrılmalı.
  */
 export function alternateLinks(basePath: string, locale: Locale) {
-  return [
+  const locales = localesForPath(basePath);
+  const links: Array<{ rel: string; hreflang?: string; href: string }> = [
     { rel: "canonical", href: localizedUrl(basePath, locale) },
-    { rel: "alternate", hreflang: "tr", href: localizedUrl(basePath, "tr") },
-    { rel: "alternate", hreflang: "en", href: localizedUrl(basePath, "en") },
-    { rel: "alternate", hreflang: "fa", href: localizedUrl(basePath, "fa") },
-    { rel: "alternate", hreflang: "x-default", href: localizedUrl(basePath, "tr") },
   ];
+  if (locales.length < 2) return links; // tek dilli sayfaya hreflang basma
+  for (const l of locales) {
+    links.push({ rel: "alternate", hreflang: l, href: localizedUrl(basePath, l) });
+  }
+  links.push({ rel: "alternate", hreflang: "x-default", href: localizedUrl(basePath, "tr") });
+  return links;
 }

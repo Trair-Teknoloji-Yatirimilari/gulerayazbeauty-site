@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TRANSLATED_PATHS, isTranslatedPath, localizedPath } from "@/i18n/locale-path";
+import { allTranslatedPaths, isTranslatedPath, localesForPath, localizedPath } from "@/i18n/locale-path";
 
 const STATIC_PAGES = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         // Çevrilmiş sayfalar üç dilde, karşılıklı xhtml:link alternatifleriyle.
         // Liste TRANSLATED_PATHS'ten gelir; Aşama 2'de oraya ekleme yapmak yeterli.
         const altBlock = (basePath: string) =>
-          (["tr", "en", "fa"] as const)
+          localesForPath(basePath)
             .map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${base}${localizedPath(basePath, l)}"/>`)
             .join("") +
           `<xhtml:link rel="alternate" hreflang="x-default" href="${base}${basePath}"/>`;
@@ -63,11 +63,13 @@ export const Route = createFileRoute("/sitemap.xml")({
             return `  <url><loc>${base}${p.path}</loc><changefreq>${p.changefreq}</changefreq><priority>${p.priority}</priority>${alts}</url>`;
           }),
           // Türkçe dışındaki diller
-          ...TRANSLATED_PATHS.flatMap((basePath) =>
-            (["en", "fa"] as const).map((l) => {
-              const sp = STATIC_PAGES.find((x) => x.path === basePath);
-              return `  <url><loc>${base}${localizedPath(basePath, l)}</loc><changefreq>${sp?.changefreq ?? "monthly"}</changefreq><priority>${sp?.priority ?? "0.5"}</priority>${altBlock(basePath)}</url>`;
-            }),
+          ...allTranslatedPaths().flatMap((basePath) =>
+            localesForPath(basePath)
+              .filter((l) => l !== "tr")
+              .map((l) => {
+                const sp = STATIC_PAGES.find((x) => x.path === basePath);
+                return `  <url><loc>${base}${localizedPath(basePath, l)}</loc><changefreq>${sp?.changefreq ?? "monthly"}</changefreq><priority>${sp?.priority ?? "0.5"}</priority>${altBlock(basePath)}</url>`;
+              }),
           ),
           ...posts.map(
             (p) =>
