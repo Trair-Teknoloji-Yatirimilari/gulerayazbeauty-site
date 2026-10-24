@@ -38,9 +38,12 @@ import { Route as SacBoyamaRouteImport } from './routes/sac-boyama'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillendirme'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
+import { Route as LangCiltBakimiRouteImport } from './routes/$lang/cilt-bakimi'
 import { Route as LangGaleriRouteImport } from './routes/$lang/galeri'
+import { Route as LangKeratinBrezilyaFonuRouteImport } from './routes/$lang/keratin-brezilya-fonu'
 import { Route as LangKvkkRouteImport } from './routes/$lang/kvkk'
 import { Route as LangLazerEpilasyonRouteImport } from './routes/$lang/lazer-epilasyon'
+import { Route as LangManikurPedikurRouteImport } from './routes/$lang/manikur-pedikur'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as UploadsSplatRouteImport } from './routes/uploads.$'
@@ -193,9 +196,19 @@ const LangIndexRoute = LangIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LangRoute,
 } as any)
+const LangCiltBakimiRoute = LangCiltBakimiRouteImport.update({
+  id: '/cilt-bakimi',
+  path: '/cilt-bakimi',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangGaleriRoute = LangGaleriRouteImport.update({
   id: '/galeri',
   path: '/galeri',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangKeratinBrezilyaFonuRoute = LangKeratinBrezilyaFonuRouteImport.update({
+  id: '/keratin-brezilya-fonu',
+  path: '/keratin-brezilya-fonu',
   getParentRoute: () => LangRoute,
 } as any)
 const LangKvkkRoute = LangKvkkRouteImport.update({
@@ -206,6 +219,11 @@ const LangKvkkRoute = LangKvkkRouteImport.update({
 const LangLazerEpilasyonRoute = LangLazerEpilasyonRouteImport.update({
   id: '/lazer-epilasyon',
   path: '/lazer-epilasyon',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangManikurPedikurRoute = LangManikurPedikurRouteImport.update({
+  id: '/manikur-pedikur',
+  path: '/manikur-pedikur',
   getParentRoute: () => LangRoute,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -275,9 +293,12 @@ export interface FileRoutesByFullPath {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
   '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
+  '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -314,9 +335,12 @@ export interface FileRoutesByTo {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
   '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
+  '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -356,9 +380,12 @@ export interface FileRoutesById {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
   '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
+  '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -398,9 +425,12 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/cilt-bakimi'
     | '/$lang/galeri'
+    | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
+    | '/$lang/manikur-pedikur'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -437,9 +467,12 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/cilt-bakimi'
     | '/$lang/galeri'
+    | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
+    | '/$lang/manikur-pedikur'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -478,9 +511,12 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/cilt-bakimi'
     | '/$lang/galeri'
+    | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
+    | '/$lang/manikur-pedikur'
     | '/_authenticated/admin'
     | '/blog_/$slug'
     | '/uploads/$'
@@ -729,11 +765,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangIndexRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/cilt-bakimi': {
+      id: '/$lang/cilt-bakimi'
+      path: '/cilt-bakimi'
+      fullPath: '/$lang/cilt-bakimi'
+      preLoaderRoute: typeof LangCiltBakimiRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/galeri': {
       id: '/$lang/galeri'
       path: '/galeri'
       fullPath: '/$lang/galeri'
       preLoaderRoute: typeof LangGaleriRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/keratin-brezilya-fonu': {
+      id: '/$lang/keratin-brezilya-fonu'
+      path: '/keratin-brezilya-fonu'
+      fullPath: '/$lang/keratin-brezilya-fonu'
+      preLoaderRoute: typeof LangKeratinBrezilyaFonuRouteImport
       parentRoute: typeof LangRoute
     }
     '/$lang/kvkk': {
@@ -748,6 +798,13 @@ declare module '@tanstack/react-router' {
       path: '/lazer-epilasyon'
       fullPath: '/$lang/lazer-epilasyon'
       preLoaderRoute: typeof LangLazerEpilasyonRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/manikur-pedikur': {
+      id: '/$lang/manikur-pedikur'
+      path: '/manikur-pedikur'
+      fullPath: '/$lang/manikur-pedikur'
+      preLoaderRoute: typeof LangManikurPedikurRouteImport
       parentRoute: typeof LangRoute
     }
     '/_authenticated/admin': {
@@ -822,16 +879,22 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface LangRouteChildren {
+  LangCiltBakimiRoute: typeof LangCiltBakimiRoute
   LangGaleriRoute: typeof LangGaleriRoute
+  LangKeratinBrezilyaFonuRoute: typeof LangKeratinBrezilyaFonuRoute
   LangKvkkRoute: typeof LangKvkkRoute
   LangLazerEpilasyonRoute: typeof LangLazerEpilasyonRoute
+  LangManikurPedikurRoute: typeof LangManikurPedikurRoute
   LangIndexRoute: typeof LangIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
+  LangCiltBakimiRoute: LangCiltBakimiRoute,
   LangGaleriRoute: LangGaleriRoute,
+  LangKeratinBrezilyaFonuRoute: LangKeratinBrezilyaFonuRoute,
   LangKvkkRoute: LangKvkkRoute,
   LangLazerEpilasyonRoute: LangLazerEpilasyonRoute,
+  LangManikurPedikurRoute: LangManikurPedikurRoute,
   LangIndexRoute: LangIndexRoute,
 }
 
