@@ -3,7 +3,10 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useT } from "@/i18n/context";
 import {
   CONSENT_REOPEN_EVENT,
+  initConsentDefaults,
+  isGoogleAdsLoaded,
   isPixelLoaded,
+  loadGoogleAds,
   loadMetaPixel,
   readConsent,
   writeConsent,
@@ -32,6 +35,11 @@ export function CookieConsent() {
 
   useEffect(() => setMounted(true), []);
 
+  // Consent Mode v2 varsayılanları (denied) — ağ isteği yapmaz
+  useEffect(() => {
+    initConsentDefaults();
+  }, []);
+
   // Rıza varsa Pixel'i yükle; yoksa bandı göster. Yönetim ekranlarında ikisi de yok.
   useEffect(() => {
     if (!trackable) {
@@ -41,6 +49,7 @@ export function CookieConsent() {
     const stored = readConsent();
     if (stored === "granted") {
       loadMetaPixel();
+      loadGoogleAds();
       setVisible(false);
     } else if (stored === "denied") {
       setVisible(false);
@@ -61,13 +70,14 @@ export function CookieConsent() {
   const accept = () => {
     writeConsent("granted");
     loadMetaPixel();
+    loadGoogleAds();
     setVisible(false);
   };
 
   const decline = () => {
     // localStorage'a bakılmaz: bandı yeniden açan reopenConsent() kaydı zaten
     // silmiş olur, o yüzden ölçüt Pixel'in bellekte yüklü olup olmadığıdır.
-    const wasLoaded = isPixelLoaded();
+    const wasLoaded = isPixelLoaded() || isGoogleAdsLoaded();
     writeConsent("denied");
     setVisible(false);
     // Yüklenmiş fbq'yu bellekten kaldırmanın tek güvenilir yolu sayfayı yenilemek

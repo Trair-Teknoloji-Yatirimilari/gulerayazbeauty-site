@@ -6,17 +6,29 @@
  * bağlantıyı geciktirmez veya engellemez.
  */
 
+import { ADS_CONVERSIONS } from "@/lib/consent";
+
 type ContactMethod = "whatsapp" | "phone";
 
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
 export function trackContact(method: ContactMethod, contentName: string): void {
   try {
     window.fbq?.("track", "Contact", { content_name: contentName, method });
+  } catch {
+    /* ölçüm hatası kullanıcıyı etkilemesin */
+  }
+  try {
+    window.gtag?.("event", "conversion", {
+      send_to: ADS_CONVERSIONS[method],
+      value: 1,
+      currency: "TRY",
+    });
   } catch {
     /* ölçüm hatası kullanıcıyı etkilemesin */
   }

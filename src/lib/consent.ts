@@ -107,3 +107,91 @@ export function loadMetaPixel(): void {
   w.fbq("init", META_PIXEL_ID);
   w.fbq("track", "PageView");
 }
+
+/* ------------------------------------------------------------------ *
+ * Google Ads (gtag.js) — Consent Mode v2
+ *
+ * Meta Pixel ile aynı kural: rıza verilmeden Google'a HİÇBİR istek
+ * gitmez. gtag.js yalnızca "Kabul et" sonrası yüklenir.
+ *
+ * Consent Mode v2 sinyalleri yine de doğru kurulur: varsayılanlar
+ * sayfa açılışında "denied" olarak kuyruğa yazılır (ağ isteği yok),
+ * rıza gelince "update" ile granted'a çekilir ve etiket ondan sonra
+ * yüklenir. Böylece etiket ilk isteğini doğru rıza durumuyla atar.
+ * ------------------------------------------------------------------ */
+
+export const GOOGLE_ADS_ID = "AW-18531159927";
+
+/** Ads dönüşüm etiketleri (Google Ads > Hedefler > Dönüşümler). */
+export const ADS_CONVERSIONS = {
+  whatsapp: `${GOOGLE_ADS_ID}/EB0pCMrS96cdEPeerIRF`,
+  phone: `${GOOGLE_ADS_ID}/sFwWCM3S96cdEPeerIRF`,
+} as const;
+
+type GtagWindow = Window & {
+  dataLayer?: unknown[];
+  gtag?: (...args: unknown[]) => void;
+};
+
+let adsLoaded = false;
+
+/** gtag kuyruğunu kurar. Ağ isteği YAPMAZ. */
+function ensureGtagStub(): void {
+  if (typeof window === "undefined") return;
+  const w = window as GtagWindow;
+  if (w.gtag) return;
+  w.dataLayer = w.dataLayer || [];
+  w.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    w.dataLayer!.push(arguments);
+  };
+}
+
+/**
+ * Consent Mode v2 varsayılanları: hepsi denied.
+ * Uygulama açılışında bir kez çağrılır; ağ isteği yapmaz.
+ */
+export function initConsentDefaults(): void {
+  if (typeof window === "undefined") return;
+  ensureGtagStub();
+  const w = window as GtagWindow;
+  w.gtag!("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    wait_for_update: 500,
+  });
+}
+
+/** Google Ads etiketi bu sayfa yaşam döngüsünde yüklendi mi? */
+export function isGoogleAdsLoaded(): boolean {
+  return adsLoaded;
+}
+
+/**
+ * Rıza sonrası: consent update + gtag.js yüklemesi.
+ * Birden fazla çağrılsa da bir kez yükler.
+ */
+export function loadGoogleAds(): void {
+  if (typeof window === "undefined" || adsLoaded) return;
+  adsLoaded = true;
+
+  ensureGtagStub();
+  const w = window as GtagWindow;
+
+  w.gtag!("consent", "update", {
+    ad_storage: "granted",
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+    analytics_storage: "granted",
+  });
+
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
+  document.head.appendChild(s);
+
+  w.gtag!("js", new Date());
+  w.gtag!("config", GOOGLE_ADS_ID);
+}
