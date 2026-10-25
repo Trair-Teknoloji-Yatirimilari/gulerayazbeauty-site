@@ -460,6 +460,15 @@ export const en: typeof tr = {
       { n: "04", t: "Care Plan", d: "At-home care recommendations for long-lasting results." },
     ],
   },
+  serviceCta: {
+    titleA: "A free",
+    titleB: "assessment",
+    body: "Message us on WhatsApp or call directly, and we will talk through the plan that suits you.",
+    meta: "Maslak 1453, Sarıyer / Istanbul · Every day 08:30–21:00",
+    whatsapp: "Book on WhatsApp",
+    call: "Call",
+    waMessage: "Hello, I would like to book an appointment at Güler Ayaz Beauty Clinic.",
+  },
   faqSection: {
     badge: "Frequently Asked",
     titleA: "Before you", titleB: "book",

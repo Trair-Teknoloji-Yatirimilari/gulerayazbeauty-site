@@ -35,8 +35,6 @@ const COVERS: Record<string, string> = {
   "service-kuafor.jpg": serviceKuafor,
 };
 
-/** Sayfa genelinde kullanılan randevu mesajı (kampanya sayfası kendi metnini kullanır) */
-export const SERVICE_WA_MESSAGE = "Merhaba, randevu almak istiyorum.";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -46,9 +44,10 @@ const fadeUp = {
 };
 
 function Cta({ label }: { label: string }) {
+  const { t } = useT();
   return (
     <a
-      href={whatsappLink(SERVICE_WA_MESSAGE)}
+      href={whatsappLink(t.serviceCta.waMessage)}
       target="_blank"
       rel="noopener noreferrer"
       className="btn-sheen group inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 text-sm uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-all glow-gold"
@@ -60,7 +59,7 @@ function Cta({ label }: { label: string }) {
 }
 
 export function ServicePage({ data }: { data: ServicePageData }) {
-  const { t } = useT();
+  const { t, locale } = useT();
   const cover = COVERS[data.cover] ?? serviceLazer;
 
   return (
@@ -87,13 +86,13 @@ export function ServicePage({ data }: { data: ServicePageData }) {
           </motion.div>
 
           <motion.div {...fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
-            <Cta label="WhatsApp'tan Randevu Al" />
+            <Cta label={t.serviceCta.whatsapp} />
             <a
               href={`tel:${PHONE_MOBILE}`}
               className="inline-flex items-center gap-3 rounded-full border border-primary/60 px-8 py-3.5 text-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
             >
               <Phone className="w-4 h-4" strokeWidth={1.5} />
-              Ara
+              {t.serviceCta.call}
             </a>
           </motion.div>
         </div>
@@ -161,20 +160,21 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <div className="rounded-sm border border-border/60 bg-card/85 backdrop-blur px-6 py-10 md:px-12 md:py-12 text-center shadow-elegant">
             <h2 className="font-display text-2xl md:text-3xl leading-tight">
-              Ücretsiz <span className="italic text-gold-gradient">ön değerlendirme</span>
+              {t.serviceCta.titleA}{" "}
+              <span className={`${locale === "fa" ? "" : "italic"} text-gold-gradient`}>{t.serviceCta.titleB}</span>
             </h2>
             <p className="mt-4 text-foreground/70 leading-relaxed max-w-xl mx-auto">
-              Size uygun planlamayı birlikte konuşmak için WhatsApp'tan yazabilir ya da doğrudan arayabilirsiniz.
-              Maslak 1453, Sarıyer / İstanbul · Her gün 08:30–21:00
+              {t.serviceCta.body}{" "}
+              {t.serviceCta.meta}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Cta label="WhatsApp'tan Randevu Al" />
+              <Cta label={t.serviceCta.whatsapp} />
               <a
                 href={`tel:${PHONE_MOBILE}`}
                 className="inline-flex items-center gap-3 rounded-full border border-primary/60 px-8 py-3.5 text-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
               >
                 <Phone className="w-4 h-4" strokeWidth={1.5} />
-                Ara
+                {t.serviceCta.call}
               </a>
             </div>
             <div className="mt-7 pt-6 border-t border-border/40">

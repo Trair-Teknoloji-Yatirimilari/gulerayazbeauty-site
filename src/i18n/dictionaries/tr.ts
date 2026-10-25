@@ -458,6 +458,15 @@ export const tr = {
       { n: "04", t: "Bakım Planı", d: "Uzun soluklu sonuç için evde uygulanacak bakım önerileri." },
     ],
   },
+  serviceCta: {
+    titleA: "Ücretsiz",
+    titleB: "ön değerlendirme",
+    body: "Size uygun planlamayı birlikte konuşmak için WhatsApp'tan yazabilir ya da doğrudan arayabilirsiniz.",
+    meta: "Maslak 1453, Sarıyer / İstanbul · Her gün 08:30–21:00",
+    whatsapp: "WhatsApp'tan Randevu Al",
+    call: "Ara",
+    waMessage: "Merhaba, randevu almak istiyorum.",
+  },
   faqSection: {
     badge: "Sık Sorulan Sorular",
     titleA: "Randevu öncesi", titleB: "merak edilenler",
