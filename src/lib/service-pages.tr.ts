@@ -133,6 +133,9 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
         "Uygulama sonrası birkaç gün peeling içeren ev bakım ürünlerini erteleyin",
         "Bol su tüketimi ve düzenli uyku, cilt bakımının ev ayağıdır",
       ] },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Merkezimiz Sarıyer'de, Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "Cilt bakımından sonra işe dönebilir miyim?", a: "Uygulamaya göre değişir. Hydrafacial sonrası genellikle aynı gün sosyal hayata dönülür; ciltte kısa süreli hafif pembelik olabilir." },
@@ -213,9 +216,12 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
         "Doğum sonrası veya kilo sonrası gevşeklik → EMS Pro öncelikli, G5 destekli",
       ] },
       { t: "h2", text: "Reformer Pilates ile Birlikte" },
-      { t: "p", html: "Hareket alışkanlığını sürece dahil etmek isteyenler için merkezimizdeki reformer Pilates seansları programa eklenebilir. Cihaz destekli uygulamalar ile düzenli hareketin birlikte planlanması, sürecin sürdürülebilirliğine katkı sağlar." },
+      { t: "p", html: "Hareket alışkanlığını sürece dahil etmek isteyenler için merkezimizdeki <a href=\"/reformer-pilates\">reformer Pilates</a> seansları programa eklenebilir. Cihaz destekli uygulamalar ile düzenli hareketin birlikte planlanması, sürecin sürdürülebilirliğine katkı sağlar." },
       { t: "h2", text: "Dikkat Edilmesi Gerekenler" },
       { t: "p", html: "Hamilelik, kalp pili kullanımı, aktif enfeksiyon ve bazı kronik hastalıklarda uygulamalar ertelenebilir. Sağlık geçmişinizi ön görüşmede paylaşmanız gerekir. Seans sonrasında bol su tüketimi ve gün içinde hareketli kalmak önerilir." },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "Kilo verdirir mi?", a: "Hayır. Bu uygulamalar kilo verme yöntemi değildir; genel yaşam düzeniyle birlikte ele alınmalıdır." },
@@ -256,6 +262,9 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
       { t: "h2", text: "Seans ve Bakım" },
       { t: "p", html: "Uygulama öncesi bölge temizlenir; gerekli görülürse konforu artırıcı önlemler alınır. Lazer atımları sırasında lastik çarpması benzeri bir his tarif edilir. Seanslar arasında cildin toparlanması ve pigmentin atılması için genellikle 6–8 haftalık aralıklar bırakılır." },
       { t: "p", html: "Seans sonrasında bölgede hafif kızarıklık ve hassasiyet görülebilir. İyileşme döneminde bölgenin güneşten korunması, önerilen bakım kreminin kullanılması ve kabuklanma olursa koparılmaması önemlidir." },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "Dövme tamamen çıkar mı?", a: "Süreç dövmenin rengine, derinliğine ve yaşına göre değişir. Beklenti, ön değerlendirmede dövmeniz incelenerek gerçekçi biçimde konuşulur." },
@@ -299,6 +308,9 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
       { t: "p", html: "İlk hafta bölgeyi ıslatmayın ve ovalamayın, kabuk oluşursa koparmayın, sauna-havuz-deniz ve terletici aktiviteleri erteleyin, bölgeyi güneşten koruyun." },
       { t: "h2", text: "Kimler İçin Uygun Değildir?" },
       { t: "p", html: "Hamilelik ve emzirme dönemi, aktif cilt hastalıkları, keloid eğilimi, bazı kronik hastalıklar ve kan sulandırıcı kullanımı gibi durumlarda uygulama ertelenebilir veya yapılmayabilir." },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "Acı verir mi?", a: "Çoğu misafir uygulamayı hafif bir kaşıntı ya da çizilme hissi olarak tanımlar; konforu artırıcı önlemler alınır." },
@@ -671,11 +683,17 @@ export const SERVICE_PAGES_TR: ServicePage[] = [
       ] },
       { t: "p", html: "Karbon peeling ayrıntıları için <a href=\"/karbon-peeling\">Q-Switch karbon peeling</a>, pigment silme için <a href=\"/dovme-silme\">dövme silme</a> sayfalarımızda daha fazla bilgi var." },
 
+      { t: "h2", text: "LED Işık" },
+      { t: "p", html: "Belirli dalga boylarındaki ışığın cilt yüzeyine yönlendirilmesi esasına dayanır; ısıtıcı veya kesici bir etkisi yoktur. Tek başına değil, bakım programının bir adımı olarak planlanır — ayrıntılar <a href=\"/led-isik-terapisi\">LED ışık terapisi sayfamızda</a>." },
+
       { t: "h2", text: "Cihaz Seçimi Nasıl Yapılır?" },
       { t: "p", html: "Her süreç ön değerlendirmeyle başlar. Cilt tipi veya vücut analizi, geçmiş uygulamalar, kullandığınız ilaçlar ve beklentiniz birlikte konuşulur; cihaz ve seans düzeni bundan sonra belirlenir. Bazı hedeflere tek seansta ulaşılmaz, bu durumda plan birkaç randevuya yayılır ve bu baştan söylenir." },
 
       { t: "h2", text: "Güvenlik ve Uygunluk" },
       { t: "p", html: "Hamilelik ve emzirme dönemi, kalp pili kullanımı, aktif cilt enfeksiyonu, yakın zamanda yoğun güneşlenme, ışığa duyarlılık yaratan ilaç kullanımı ve bazı kronik durumlarda cihaz uygulamaları ertelenebilir veya yapılmayabilir. Sağlık geçmişinizi ön görüşmede paylaşmanız bu nedenle önemlidir." },
+
+      { t: "h2", text: "Maslak ve Sarıyer'den Ulaşım" },
+      { t: "p", html: "Merkezimiz Maslak 1453 içinde yer alır; otopark ve vale hizmeti mevcuttur. Her gün 08:30–21:00 arası açığız." },
     ],
     faqs: [
       { q: "Hangi cihazın bana uygun olduğunu nasıl öğrenirim?", a: "Ön değerlendirmede cilt tipi veya vücut analizi yapılır, geçmiş uygulamalarınız ve beklentiniz konuşulur; cihaz seçimi bundan sonra birlikte belirlenir." },
