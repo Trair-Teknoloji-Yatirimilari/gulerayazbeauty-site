@@ -664,4 +664,231 @@ export const SERVICE_PAGES_EN: ServicePage[] = [
       "The same Q-Switch device is used for our <a href=\"/en/karbon-peeling\">carbon peel</a>. You can reach us on WhatsApp to arrange a free assessment.",
     note: NOTE_EN,
   },
+
+  {
+    path: "/vucut-sekillendirme",
+    serviceKey: "vucut",
+    blogCategory: "Body Contouring",
+    navLabel: "Body Contouring",
+    title: "Body Contouring in Maslak | Slim-X, EMS Pro & G5",
+    description:
+      "Body contouring programmes with Slim-X, EMS Pro and G5 at Maslak 1453, Sarıyer. Every programme begins with a free body analysis.",
+    h1: "Body Contouring in Maslak",
+    cover: "service-vucut.jpg",
+    coverAlt: "Body contouring treatment with the G5 massage handpiece",
+    blocks: [
+      { t: "p", html: "Localised slimming, firming and the appearance of cellulite are three different needs, and a different technology comes to the fore for each. At our centre these three are planned together, after a body analysis." },
+      { t: "p", html: "<strong>To be clear from the start:</strong> these are not a weight-loss method. The aim is to support the appearance and quality of the tissue in specific areas, alongside regular eating and movement habits. Results differ according to body structure and how closely the programme is followed." },
+
+      { t: "h2", text: "Three Technologies, Three Different Jobs" },
+      { t: "h3", text: "Slim-X — Localised Slimming" },
+      { t: "p", html: "A body contouring technology directed at the fat tissue in the target area. Handpieces are placed on areas such as the abdomen, waist and hips; you rest lying down through the session. This is the &ldquo;volume&rdquo; side of the programme." },
+      { t: "h3", text: "EMS Pro — Firming" },
+      { t: "p", html: "Electrical muscle stimulation creates a contract-and-release cycle in the muscle group of the target area. This is the &ldquo;tone&rdquo; side of the programme; it does not replace regular exercise, it complements it." },
+      { t: "h3", text: "G5 — Cellulite Massage" },
+      { t: "p", html: "A mechanical vibration massage device. Rhythmic movement directed at the deeper tissue aims to support circulation and lymph flow and to soften the appearance of cellulite." },
+
+      { t: "h2", text: "How a Programme Is Built" },
+      { t: "p", html: "Every programme begins with a body analysis: priority areas, tissue structure, muscle tone and your general routine are assessed together. Sessions are usually once or twice a week. At a mid-programme review the balance between the devices can be changed." },
+      { t: "p", html: "Example combinations:" },
+      { t: "ul", items: [
+        "Volume concern around the abdomen and waist → Slim-X led, EMS Pro supporting",
+        "Appearance of cellulite on hips and legs → G5 led, Slim-X supporting where needed",
+        "Postnatal or post-weight-loss laxity → EMS Pro first, G5 supporting",
+      ] },
+
+      { t: "h2", text: "Alongside Reformer Pilates" },
+      { t: "p", html: "For anyone who wants to bring a movement habit into the process, the <a href=\"/en/reformer-pilates\">reformer pilates</a> sessions at our centre can be added to the programme. Planning device-based treatments together with regular movement helps the process hold over time." },
+
+      { t: "h2", text: "What to Be Aware Of" },
+      { t: "p", html: "Treatments may be postponed during pregnancy, with a pacemaker, with an active infection and with certain chronic conditions. You need to share your medical history at the consultation. Drinking plenty of water and staying active during the day are recommended after a session." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "Will it make me lose weight?", a: "No. These treatments are not a weight-loss method; they should be considered alongside your general routine." },
+      { q: "How many sessions will I need?", a: "It depends on body structure, the target area and how closely the programme is followed; it is set after the body analysis." },
+      { q: "Can all three be done on the same day?", a: "Depending on the analysis, some combinations can be planned consecutively within the same session." },
+      { q: "Is the session painful?", a: "No. During EMS the sensation is muscle contraction, and during G5 a firm massage." },
+      { q: "Do you offer classic massage?", a: "No. We do not offer classic or relaxation massage at our centre. G5 is a mechanical device treatment that forms part of the body contouring programme." },
+    ],
+    afterFaqHtml:
+      "You can reach us on WhatsApp to arrange your free body analysis, or call the centre during opening hours.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/kalici-makyaj",
+    serviceKey: "kalicimakyaj",
+    blogCategory: "Permanent Make-up",
+    navLabel: "Permanent Make-up",
+    title: "Permanent Make-up in Maslak | Brows, Eyeliner & Lips",
+    description:
+      "Permanent make-up at Maslak 1453, Sarıyer: microblading and powder brows, permanent eyeliner, lip blush. Nothing starts without your approval.",
+    h1: "Permanent Make-up in Maslak",
+    cover: "service-kalici-makyaj.jpg",
+    coverAlt: "Natural brow and lip result after permanent make-up",
+    blocks: [
+      { t: "p", html: "Permanent make-up is a semi-permanent treatment in which specialised pigments are placed in the upper layer of the skin. It differs from a tattoo in that the pigment stays more superficial and fades over time, which means it can be renewed as your features change." },
+
+      { t: "h2", text: "What We Offer" },
+      { t: "h3", text: "Brows — Microblading and Powder" },
+      { t: "p", html: "With microblading, fine strokes are worked in to read as individual hairs, aiming at natural fullness on sparse or asymmetric brows. The powder technique gives a shaded, made-up look and is generally preferred on oily skin and by anyone who fills their brows daily." },
+      { t: "h3", text: "Permanent Eyeliner" },
+      { t: "p", html: "Options range from a fine fill at the lash line to a defined line with a tail. The shape is drawn together at the consultation, according to your eyes and your everyday make-up habits." },
+      { t: "h3", text: "Lip Blush" },
+      { t: "p", html: "The aim is to define the lip contour and bring out the natural tone. Colour is chosen with your lip tone and skin undertone in mind." },
+
+      { t: "h2", text: "The Process" },
+      { t: "h3", text: "Drawing and Approval" },
+      { t: "p", html: "Every treatment begins with a drawing made to your features. The brow shape, eyeliner thickness or lip contour is drawn in pencil first; <strong>we do not move to pigment until you approve it.</strong>" },
+      { t: "h3", text: "The Treatment" },
+      { t: "p", html: "The area is cleansed and measures to improve comfort are taken. Single-use sterile needle tips are used in every session. Including the design stage, a session usually takes one to two hours." },
+      { t: "h3", text: "Healing and Touch-Up" },
+      { t: "p", html: "In the first days the colour looks darker than intended; this is expected. There may be light flaking, and the colour softens gradually. At a touch-up session four to six weeks later the shape takes its final form." },
+
+      { t: "h2", text: "How Long It Lasts, and Care" },
+      { t: "p", html: "How long the pigment stays varies from person to person with skin type, lifestyle and sun exposure; for most treatments a refresh comes up somewhere between one and three years." },
+      { t: "p", html: "For the first week do not wet or rub the area, do not pick at any flaking, postpone sauna, pool, sea and anything that makes you sweat, and keep the area out of the sun." },
+
+      { t: "h2", text: "When It Isn't Suitable" },
+      { t: "p", html: "Treatment may be postponed or declined during pregnancy and breastfeeding, with active skin conditions, a tendency to keloid scarring, certain chronic conditions and while taking blood thinners." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "Does it hurt?", a: "Most guests describe it as a light itching or scratching sensation; measures to improve comfort are taken." },
+      { q: "How long does it last?", a: "Generally a refresh comes up somewhere between one and three years; the time varies from person to person." },
+      { q: "Can I go back to work the same day?", a: "Yes. In the first days the colour is darker and the area can be slightly tender." },
+      { q: "I am not happy with my existing permanent make-up — what can be done?", a: "Correction with a touch-up, or removal with the Q-Switch laser, is assessed at the consultation." },
+    ],
+    afterFaqHtml:
+      "If you are not happy with existing permanent make-up, <a href=\"/en/dovme-silme\">removal with the Q-Switch laser</a> is assessed at the consultation. You can reach us on WhatsApp to book.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/led-isik-terapisi",
+    serviceKey: "led",
+    blogCategory: "LED Light Therapy",
+    navLabel: "LED Light Therapy",
+    title: "LED Light Therapy in Maslak | Güler Ayaz Beauty",
+    description:
+      "LED light in skin care at Maslak 1453, Sarıyer: what the colours are used for, how a session runs and what to be aware of.",
+    h1: "LED Light in Skin Care",
+    cover: "service-cilt-gercek.jpg",
+    coverAlt: "Treatment in the Güler Ayaz Beauty skin care room",
+    blocks: [
+      { t: "p", html: "LED light is used in the skin care department at Güler Ayaz Beauty in Maslak 1453, Sarıyer, Istanbul, as one step within a care programme. It is not a treatment on its own; it is a step that supports the plan." },
+
+      { t: "h2", text: "What LED Light Is" },
+      { t: "p", html: "It works by directing light of particular wavelengths at the surface of the skin. It has no heating or cutting effect, and the skin is not broken during the application. For that reason it is usually planned as the closing step of a programme, after the cleansing and care stages." },
+      { t: "p", html: "It is not used to diagnose or treat health conditions. If you have a complaint about your skin that needs a diagnosis, we recommend seeing a doctor first." },
+
+      { t: "h2", text: "What the Colours Are Used For" },
+      { t: "p", html: "Different wavelengths are chosen for different purposes. Which colour or combination suits you is decided at the skin analysis:" },
+      { t: "ul", items: [
+        "<strong>Red</strong> — the colour most often chosen in general skin care programmes",
+        "<strong>Blue</strong> — as a care step on skin that tends towards oiliness",
+        "<strong>Green</strong> — in programmes directed at the appearance of tone",
+        "<strong>Yellow</strong> — as the gentler option on skin that tends towards sensitivity",
+      ] },
+
+      { t: "h2", text: "How a Session Runs" },
+      { t: "p", html: "The session begins with a skin analysis. After the skin is cleansed, eye protection is put on and the device head is positioned at the right distance from the face. You rest lying down through the session. Depending on the programme, moisturising and sunscreen follow." },
+      { t: "p", html: "How many sessions are planned and at what interval they are repeated is decided from the skin analysis; we do not quote a session count without one." },
+
+      { t: "h2", text: "Alongside Other Treatments" },
+      { t: "p", html: "The LED step is usually part of a care programme rather than something on its own. How Hydrafacial and medical skin care programmes are planned is explained on our <a href=\"/en/cilt-bakimi\">skin care page</a>." },
+
+      { t: "h2", text: "When to Take Care" },
+      { t: "p", html: "Treatment may be postponed or declined while taking medication that increases light sensitivity, with a history of epilepsy, with an active skin infection, after recent intense sun exposure and with certain chronic conditions. During pregnancy and breastfeeding you need to tell us beforehand. This is why sharing your medical history at the consultation matters." },
+
+      { t: "h2", text: "What to Expect" },
+      { t: "p", html: "LED is a care step, assessed as part of a programme directed at the appearance of the skin. Daily care habits, sun protection and sleep all affect the result directly. We talk through realistic expectations together at the consultation." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "Is LED light a treatment?", a: "No. It is a supporting step within a skin care programme. For anything requiring diagnosis or medical treatment you need to see a doctor." },
+      { q: "What does it feel like?", a: "It has no heating or cutting effect. Most guests describe the session as comfortable and restful." },
+      { q: "Which colour suits me?", a: "It is decided at the skin analysis. A single colour, or several depending on the programme, may be chosen." },
+      { q: "How many sessions will I need?", a: "It depends on your skin and the programme. We do not quote a session count without an analysis." },
+      { q: "Can it be done in the same session as another treatment?", a: "It is usually planned within a care programme, after the cleansing steps. Which combination suits you becomes clear after the analysis." },
+    ],
+    afterFaqHtml:
+      "For the full range of care programmes see our <a href=\"/en/cilt-bakimi\">skin care page</a>, and for the devices used at our centre our <a href=\"/en/cihazlar\">devices page</a>.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/cihazlar",
+    serviceKey: "cihazlar",
+    hub: true,
+    blogCategory: "Devices",
+    navLabel: "Devices",
+    title: "The Devices at Our Centre | Maslak Güler Ayaz Beauty",
+    description:
+      "The devices used at Güler Ayaz Beauty: Slim-X, EMS Pro, G5, cooled diode laser, Hydrafacial and Q-Switch — and what each one is for.",
+    h1: "The Devices We Use at Our Centre",
+    cover: "service-vucut.jpg",
+    coverAlt: "Device handpiece used in a body contouring treatment",
+    blocks: [
+      { t: "p", html: "Two things decide the outcome of a treatment: what the device does, and who it is applied to and how. On this page we have gathered the devices used at our centre in Maslak 1453, what need each one addresses, and which service it sits under." },
+      { t: "p", html: "Which device suits you is not decided without an assessment. What follows is not here for you to decide with — it is here so you know what will be discussed." },
+
+      { t: "h2", text: "Three Devices for Body Treatments" },
+      { t: "p", html: "Localised slimming, firming and the appearance of cellulite are different needs, and a different device comes to the fore for each. The three are most often planned together within a single programme." },
+      { t: "h3", text: "Slim-X — Localised Slimming" },
+      { t: "p", html: "A body contouring device that works on the fat tissue in the target area. Handpieces are placed on areas such as the abdomen, waist and hips; you rest lying down through the session. This is the &ldquo;volume&rdquo; side of the programme." },
+      { t: "h3", text: "EMS Pro — Firming" },
+      { t: "p", html: "Electrical muscle stimulation creates a contract-and-release cycle in the muscle group of the target area. This is the &ldquo;tone&rdquo; side of the programme; it does not replace regular exercise, it complements it. The intensity is set to your comfort." },
+      { t: "h3", text: "G5 — Cellulite Massage" },
+      { t: "p", html: "A device working with a mechanical vibrating head. Rhythmic movement directed at the deeper tissue aims to support circulation and soften the appearance of cellulite. We do not offer classic or relaxation massage at our centre; G5 is a device treatment." },
+      { t: "p", html: "How the three are planned together is explained on our <a href=\"/en/vucut-sekillendirme\">body contouring page</a>." },
+
+      { t: "h2", text: "Cooled Diode Laser" },
+      { t: "p", html: "The laser technology used in hair removal. Light energy targets the dark pigment in the hair follicle; the energy converts to heat and affects the hair's growth cycle. The handpiece cools the skin at the moment of application, which makes the session more comfortable and allows work across a wider range of skin tones." },
+      { t: "p", html: "For areas and session structure see <a href=\"/en/lazer-epilasyon\">laser hair removal</a>, and for male guests <a href=\"/en/erkek-lazer-epilasyon\">men's laser hair removal</a>." },
+
+      { t: "h2", text: "Hydrafacial" },
+      { t: "p", html: "A skin care device that combines deep cleansing, exfoliation, vacuum extraction and hydration in one session. The treatment begins with a skin analysis; the serums used and the intensity are set according to skin type. It is programmed differently for combination, oily, dry and sensitive skin." },
+      { t: "p", html: "For the full range of care programmes see our <a href=\"/en/cilt-bakimi\">skin care page</a>." },
+
+      { t: "h2", text: "Q-Switch Laser — One Device, Four Treatments" },
+      { t: "p", html: "Q-Switch is a laser technology producing very short, high-energy pulses. These target the pigment beneath the skin and break it into very small particles, which the body's lymphatic system clears over time. Because the same principle serves different needs, one device covers four separate treatments:" },
+      { t: "ul", items: [
+        "<strong>Carbon peel</strong> — removing a carbon solution applied to the skin with laser pulses; worked on the appearance of pores and the skin surface",
+        "<strong>Skin renewal</strong> — sessions directed at unevenness of tone at the surface",
+        "<strong>Hair lightening</strong> — a treatment aimed at lightening the appearance of fine dark hair",
+        "<strong>Tattoo and permanent make-up removal</strong> — breaking down the pigment gradually",
+      ] },
+      { t: "p", html: "There is more on <a href=\"/en/karbon-peeling\">Q-Switch carbon peel</a> and on <a href=\"/en/dovme-silme\">tattoo removal</a>." },
+
+      { t: "h2", text: "LED Light" },
+      { t: "p", html: "Light of particular wavelengths directed at the surface of the skin, with no heating or cutting effect. It is planned as a step within a care programme rather than on its own — see our <a href=\"/en/led-isik-terapisi\">LED light therapy page</a>." },
+
+      { t: "h2", text: "How the Device Is Chosen" },
+      { t: "p", html: "Every course begins with an assessment. A skin or body analysis, your past treatments, any medication you take and what you are hoping for are discussed together; the device and session structure are decided after that. Some goals are not reached in one session, in which case the plan is spread across several appointments and we say so at the start." },
+
+      { t: "h2", text: "Safety and Suitability" },
+      { t: "p", html: "Device treatments may be postponed or declined during pregnancy and breastfeeding, with a pacemaker, with an active skin infection, after recent intense sun exposure, while taking medication that increases light sensitivity, and with certain chronic conditions. This is why sharing your medical history at the consultation matters." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "How do I find out which device suits me?", a: "At the assessment we carry out a skin or body analysis and discuss your past treatments and what you are hoping for; the device is then chosen together." },
+      { q: "Can more than one device be used in the same session?", a: "Depending on the analysis, some combinations can be planned consecutively in the same session. Which ones can be combined becomes clear after the assessment." },
+      { q: "Is Q-Switch used for both carbon peel and tattoo removal?", a: "Yes. The working principle of the device is the same; the parameters are set according to the treatment and the area." },
+      { q: "Are device treatments painful?", a: "Most guests describe them as mild warmth, tingling or muscle contraction. The intensity is set to your comfort." },
+      { q: "How many sessions will I need?", a: "It depends on the device, the area and the person. We do not quote a session count without an analysis." },
+    ],
+    afterFaqHtml:
+      "You can reach us on WhatsApp to arrange an assessment, or call the centre during opening hours.",
+    note: NOTE_EN,
+  },
 ];

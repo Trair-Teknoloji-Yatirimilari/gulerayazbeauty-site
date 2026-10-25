@@ -38,21 +38,25 @@ import { Route as SacBoyamaRouteImport } from './routes/sac-boyama'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillendirme'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
+import { Route as LangCihazlarRouteImport } from './routes/$lang/cihazlar'
 import { Route as LangCiltBakimiRouteImport } from './routes/$lang/cilt-bakimi'
 import { Route as LangDovmeSilmeRouteImport } from './routes/$lang/dovme-silme'
 import { Route as LangErkekLazerEpilasyonRouteImport } from './routes/$lang/erkek-lazer-epilasyon'
 import { Route as LangGaleriRouteImport } from './routes/$lang/galeri'
 import { Route as LangIpekKirpikRouteImport } from './routes/$lang/ipek-kirpik'
+import { Route as LangKaliciMakyajRouteImport } from './routes/$lang/kalici-makyaj'
 import { Route as LangKarbonPeelingRouteImport } from './routes/$lang/karbon-peeling'
 import { Route as LangKeratinBrezilyaFonuRouteImport } from './routes/$lang/keratin-brezilya-fonu'
 import { Route as LangKuaforRouteImport } from './routes/$lang/kuafor'
 import { Route as LangKvkkRouteImport } from './routes/$lang/kvkk'
 import { Route as LangLazerEpilasyonRouteImport } from './routes/$lang/lazer-epilasyon'
+import { Route as LangLedIsikTerapisiRouteImport } from './routes/$lang/led-isik-terapisi'
 import { Route as LangManikurPedikurRouteImport } from './routes/$lang/manikur-pedikur'
 import { Route as LangProtezSacRouteImport } from './routes/$lang/protez-sac'
 import { Route as LangProtezTirnakRouteImport } from './routes/$lang/protez-tirnak'
 import { Route as LangReformerPilatesRouteImport } from './routes/$lang/reformer-pilates'
 import { Route as LangSacBoyamaRouteImport } from './routes/$lang/sac-boyama'
+import { Route as LangVucutSekillendirmeRouteImport } from './routes/$lang/vucut-sekillendirme'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as UploadsSplatRouteImport } from './routes/uploads.$'
@@ -205,6 +209,11 @@ const LangIndexRoute = LangIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LangRoute,
 } as any)
+const LangCihazlarRoute = LangCihazlarRouteImport.update({
+  id: '/cihazlar',
+  path: '/cihazlar',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangCiltBakimiRoute = LangCiltBakimiRouteImport.update({
   id: '/cilt-bakimi',
   path: '/cilt-bakimi',
@@ -228,6 +237,11 @@ const LangGaleriRoute = LangGaleriRouteImport.update({
 const LangIpekKirpikRoute = LangIpekKirpikRouteImport.update({
   id: '/ipek-kirpik',
   path: '/ipek-kirpik',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangKaliciMakyajRoute = LangKaliciMakyajRouteImport.update({
+  id: '/kalici-makyaj',
+  path: '/kalici-makyaj',
   getParentRoute: () => LangRoute,
 } as any)
 const LangKarbonPeelingRoute = LangKarbonPeelingRouteImport.update({
@@ -255,6 +269,11 @@ const LangLazerEpilasyonRoute = LangLazerEpilasyonRouteImport.update({
   path: '/lazer-epilasyon',
   getParentRoute: () => LangRoute,
 } as any)
+const LangLedIsikTerapisiRoute = LangLedIsikTerapisiRouteImport.update({
+  id: '/led-isik-terapisi',
+  path: '/led-isik-terapisi',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangManikurPedikurRoute = LangManikurPedikurRouteImport.update({
   id: '/manikur-pedikur',
   path: '/manikur-pedikur',
@@ -278,6 +297,11 @@ const LangReformerPilatesRoute = LangReformerPilatesRouteImport.update({
 const LangSacBoyamaRoute = LangSacBoyamaRouteImport.update({
   id: '/sac-boyama',
   path: '/sac-boyama',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangVucutSekillendirmeRoute = LangVucutSekillendirmeRouteImport.update({
+  id: '/vucut-sekillendirme',
+  path: '/vucut-sekillendirme',
   getParentRoute: () => LangRoute,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -347,21 +371,25 @@ export interface FileRoutesByFullPath {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/cihazlar': typeof LangCihazlarRoute
   '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
   '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
   '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
+  '/$lang/kalici-makyaj': typeof LangKaliciMakyajRoute
   '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
   '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kuafor': typeof LangKuaforRoute
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
+  '/$lang/led-isik-terapisi': typeof LangLedIsikTerapisiRoute
   '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
   '/$lang/protez-sac': typeof LangProtezSacRoute
   '/$lang/protez-tirnak': typeof LangProtezTirnakRoute
   '/$lang/reformer-pilates': typeof LangReformerPilatesRoute
   '/$lang/sac-boyama': typeof LangSacBoyamaRoute
+  '/$lang/vucut-sekillendirme': typeof LangVucutSekillendirmeRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -398,21 +426,25 @@ export interface FileRoutesByTo {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/cihazlar': typeof LangCihazlarRoute
   '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
   '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
   '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
+  '/$lang/kalici-makyaj': typeof LangKaliciMakyajRoute
   '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
   '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kuafor': typeof LangKuaforRoute
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
+  '/$lang/led-isik-terapisi': typeof LangLedIsikTerapisiRoute
   '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
   '/$lang/protez-sac': typeof LangProtezSacRoute
   '/$lang/protez-tirnak': typeof LangProtezTirnakRoute
   '/$lang/reformer-pilates': typeof LangReformerPilatesRoute
   '/$lang/sac-boyama': typeof LangSacBoyamaRoute
+  '/$lang/vucut-sekillendirme': typeof LangVucutSekillendirmeRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -452,21 +484,25 @@ export interface FileRoutesById {
   '/sac-boyama': typeof SacBoyamaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
+  '/$lang/cihazlar': typeof LangCihazlarRoute
   '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
   '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
   '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
+  '/$lang/kalici-makyaj': typeof LangKaliciMakyajRoute
   '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
   '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kuafor': typeof LangKuaforRoute
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
+  '/$lang/led-isik-terapisi': typeof LangLedIsikTerapisiRoute
   '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
   '/$lang/protez-sac': typeof LangProtezSacRoute
   '/$lang/protez-tirnak': typeof LangProtezTirnakRoute
   '/$lang/reformer-pilates': typeof LangReformerPilatesRoute
   '/$lang/sac-boyama': typeof LangSacBoyamaRoute
+  '/$lang/vucut-sekillendirme': typeof LangVucutSekillendirmeRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
@@ -506,21 +542,25 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/cihazlar'
     | '/$lang/cilt-bakimi'
     | '/$lang/dovme-silme'
     | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
     | '/$lang/ipek-kirpik'
+    | '/$lang/kalici-makyaj'
     | '/$lang/karbon-peeling'
     | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kuafor'
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
+    | '/$lang/led-isik-terapisi'
     | '/$lang/manikur-pedikur'
     | '/$lang/protez-sac'
     | '/$lang/protez-tirnak'
     | '/$lang/reformer-pilates'
     | '/$lang/sac-boyama'
+    | '/$lang/vucut-sekillendirme'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -557,21 +597,25 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/cihazlar'
     | '/$lang/cilt-bakimi'
     | '/$lang/dovme-silme'
     | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
     | '/$lang/ipek-kirpik'
+    | '/$lang/kalici-makyaj'
     | '/$lang/karbon-peeling'
     | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kuafor'
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
+    | '/$lang/led-isik-terapisi'
     | '/$lang/manikur-pedikur'
     | '/$lang/protez-sac'
     | '/$lang/protez-tirnak'
     | '/$lang/reformer-pilates'
     | '/$lang/sac-boyama'
+    | '/$lang/vucut-sekillendirme'
     | '/admin'
     | '/blog/$slug'
     | '/uploads/$'
@@ -610,21 +654,25 @@ export interface FileRouteTypes {
     | '/sac-boyama'
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
+    | '/$lang/cihazlar'
     | '/$lang/cilt-bakimi'
     | '/$lang/dovme-silme'
     | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
     | '/$lang/ipek-kirpik'
+    | '/$lang/kalici-makyaj'
     | '/$lang/karbon-peeling'
     | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kuafor'
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
+    | '/$lang/led-isik-terapisi'
     | '/$lang/manikur-pedikur'
     | '/$lang/protez-sac'
     | '/$lang/protez-tirnak'
     | '/$lang/reformer-pilates'
     | '/$lang/sac-boyama'
+    | '/$lang/vucut-sekillendirme'
     | '/_authenticated/admin'
     | '/blog_/$slug'
     | '/uploads/$'
@@ -873,6 +921,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangIndexRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/cihazlar': {
+      id: '/$lang/cihazlar'
+      path: '/cihazlar'
+      fullPath: '/$lang/cihazlar'
+      preLoaderRoute: typeof LangCihazlarRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/cilt-bakimi': {
       id: '/$lang/cilt-bakimi'
       path: '/cilt-bakimi'
@@ -906,6 +961,13 @@ declare module '@tanstack/react-router' {
       path: '/ipek-kirpik'
       fullPath: '/$lang/ipek-kirpik'
       preLoaderRoute: typeof LangIpekKirpikRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/kalici-makyaj': {
+      id: '/$lang/kalici-makyaj'
+      path: '/kalici-makyaj'
+      fullPath: '/$lang/kalici-makyaj'
+      preLoaderRoute: typeof LangKaliciMakyajRouteImport
       parentRoute: typeof LangRoute
     }
     '/$lang/karbon-peeling': {
@@ -943,6 +1005,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangLazerEpilasyonRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/led-isik-terapisi': {
+      id: '/$lang/led-isik-terapisi'
+      path: '/led-isik-terapisi'
+      fullPath: '/$lang/led-isik-terapisi'
+      preLoaderRoute: typeof LangLedIsikTerapisiRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/manikur-pedikur': {
       id: '/$lang/manikur-pedikur'
       path: '/manikur-pedikur'
@@ -976,6 +1045,13 @@ declare module '@tanstack/react-router' {
       path: '/sac-boyama'
       fullPath: '/$lang/sac-boyama'
       preLoaderRoute: typeof LangSacBoyamaRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/vucut-sekillendirme': {
+      id: '/$lang/vucut-sekillendirme'
+      path: '/vucut-sekillendirme'
+      fullPath: '/$lang/vucut-sekillendirme'
+      preLoaderRoute: typeof LangVucutSekillendirmeRouteImport
       parentRoute: typeof LangRoute
     }
     '/_authenticated/admin': {
@@ -1050,40 +1126,48 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface LangRouteChildren {
+  LangCihazlarRoute: typeof LangCihazlarRoute
   LangCiltBakimiRoute: typeof LangCiltBakimiRoute
   LangDovmeSilmeRoute: typeof LangDovmeSilmeRoute
   LangErkekLazerEpilasyonRoute: typeof LangErkekLazerEpilasyonRoute
   LangGaleriRoute: typeof LangGaleriRoute
   LangIpekKirpikRoute: typeof LangIpekKirpikRoute
+  LangKaliciMakyajRoute: typeof LangKaliciMakyajRoute
   LangKarbonPeelingRoute: typeof LangKarbonPeelingRoute
   LangKeratinBrezilyaFonuRoute: typeof LangKeratinBrezilyaFonuRoute
   LangKuaforRoute: typeof LangKuaforRoute
   LangKvkkRoute: typeof LangKvkkRoute
   LangLazerEpilasyonRoute: typeof LangLazerEpilasyonRoute
+  LangLedIsikTerapisiRoute: typeof LangLedIsikTerapisiRoute
   LangManikurPedikurRoute: typeof LangManikurPedikurRoute
   LangProtezSacRoute: typeof LangProtezSacRoute
   LangProtezTirnakRoute: typeof LangProtezTirnakRoute
   LangReformerPilatesRoute: typeof LangReformerPilatesRoute
   LangSacBoyamaRoute: typeof LangSacBoyamaRoute
+  LangVucutSekillendirmeRoute: typeof LangVucutSekillendirmeRoute
   LangIndexRoute: typeof LangIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
+  LangCihazlarRoute: LangCihazlarRoute,
   LangCiltBakimiRoute: LangCiltBakimiRoute,
   LangDovmeSilmeRoute: LangDovmeSilmeRoute,
   LangErkekLazerEpilasyonRoute: LangErkekLazerEpilasyonRoute,
   LangGaleriRoute: LangGaleriRoute,
   LangIpekKirpikRoute: LangIpekKirpikRoute,
+  LangKaliciMakyajRoute: LangKaliciMakyajRoute,
   LangKarbonPeelingRoute: LangKarbonPeelingRoute,
   LangKeratinBrezilyaFonuRoute: LangKeratinBrezilyaFonuRoute,
   LangKuaforRoute: LangKuaforRoute,
   LangKvkkRoute: LangKvkkRoute,
   LangLazerEpilasyonRoute: LangLazerEpilasyonRoute,
+  LangLedIsikTerapisiRoute: LangLedIsikTerapisiRoute,
   LangManikurPedikurRoute: LangManikurPedikurRoute,
   LangProtezSacRoute: LangProtezSacRoute,
   LangProtezTirnakRoute: LangProtezTirnakRoute,
   LangReformerPilatesRoute: LangReformerPilatesRoute,
   LangSacBoyamaRoute: LangSacBoyamaRoute,
+  LangVucutSekillendirmeRoute: LangVucutSekillendirmeRoute,
   LangIndexRoute: LangIndexRoute,
 }
 
