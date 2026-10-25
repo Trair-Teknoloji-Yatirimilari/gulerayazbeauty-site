@@ -27,7 +27,7 @@ export function SiteFooter() {
             <h4 className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">{t.footer.servicesHeader}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/hizmetler" className="text-sm text-primary hover:text-primary/80 transition-colors">
+                <Link to={localizedPath("/hizmetler", locale)} className="text-sm text-primary hover:text-primary/80 transition-colors">
                   {t.footer.allServices}
                 </Link>
               </li>

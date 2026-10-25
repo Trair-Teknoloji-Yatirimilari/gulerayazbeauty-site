@@ -27,7 +27,7 @@ function isPrefixedLocale(v: string): v is PrefixedLocale {
  * Rota tabanlı çevrilmiş sayfalar (hizmet sayfası olmayanlar).
  * Bunların karşılığı $lang/ altındaki rota dosyalarıdır.
  */
-const STATIC_TRANSLATED = ["/", "/kvkk", "/galeri"] as const;
+const STATIC_TRANSLATED = ["/", "/kvkk", "/galeri", "/hizmetler"] as const;
 
 /**
  * Bu yolun karşılığı olan diller. TEK KAYNAK — hreflang, dil değiştirici ve

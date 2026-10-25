@@ -43,6 +43,7 @@ import { Route as LangCiltBakimiRouteImport } from './routes/$lang/cilt-bakimi'
 import { Route as LangDovmeSilmeRouteImport } from './routes/$lang/dovme-silme'
 import { Route as LangErkekLazerEpilasyonRouteImport } from './routes/$lang/erkek-lazer-epilasyon'
 import { Route as LangGaleriRouteImport } from './routes/$lang/galeri'
+import { Route as LangHizmetlerRouteImport } from './routes/$lang/hizmetler'
 import { Route as LangIpekKirpikRouteImport } from './routes/$lang/ipek-kirpik'
 import { Route as LangKaliciMakyajRouteImport } from './routes/$lang/kalici-makyaj'
 import { Route as LangKarbonPeelingRouteImport } from './routes/$lang/karbon-peeling'
@@ -234,6 +235,11 @@ const LangGaleriRoute = LangGaleriRouteImport.update({
   path: '/galeri',
   getParentRoute: () => LangRoute,
 } as any)
+const LangHizmetlerRoute = LangHizmetlerRouteImport.update({
+  id: '/hizmetler',
+  path: '/hizmetler',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangIpekKirpikRoute = LangIpekKirpikRouteImport.update({
   id: '/ipek-kirpik',
   path: '/ipek-kirpik',
@@ -376,6 +382,7 @@ export interface FileRoutesByFullPath {
   '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
   '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/hizmetler': typeof LangHizmetlerRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
   '/$lang/kalici-makyaj': typeof LangKaliciMakyajRoute
   '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
@@ -431,6 +438,7 @@ export interface FileRoutesByTo {
   '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
   '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/hizmetler': typeof LangHizmetlerRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
   '/$lang/kalici-makyaj': typeof LangKaliciMakyajRoute
   '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
@@ -489,6 +497,7 @@ export interface FileRoutesById {
   '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
   '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
+  '/$lang/hizmetler': typeof LangHizmetlerRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
   '/$lang/kalici-makyaj': typeof LangKaliciMakyajRoute
   '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
@@ -547,6 +556,7 @@ export interface FileRouteTypes {
     | '/$lang/dovme-silme'
     | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
+    | '/$lang/hizmetler'
     | '/$lang/ipek-kirpik'
     | '/$lang/kalici-makyaj'
     | '/$lang/karbon-peeling'
@@ -602,6 +612,7 @@ export interface FileRouteTypes {
     | '/$lang/dovme-silme'
     | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
+    | '/$lang/hizmetler'
     | '/$lang/ipek-kirpik'
     | '/$lang/kalici-makyaj'
     | '/$lang/karbon-peeling'
@@ -659,6 +670,7 @@ export interface FileRouteTypes {
     | '/$lang/dovme-silme'
     | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
+    | '/$lang/hizmetler'
     | '/$lang/ipek-kirpik'
     | '/$lang/kalici-makyaj'
     | '/$lang/karbon-peeling'
@@ -956,6 +968,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangGaleriRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/hizmetler': {
+      id: '/$lang/hizmetler'
+      path: '/hizmetler'
+      fullPath: '/$lang/hizmetler'
+      preLoaderRoute: typeof LangHizmetlerRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/ipek-kirpik': {
       id: '/$lang/ipek-kirpik'
       path: '/ipek-kirpik'
@@ -1131,6 +1150,7 @@ interface LangRouteChildren {
   LangDovmeSilmeRoute: typeof LangDovmeSilmeRoute
   LangErkekLazerEpilasyonRoute: typeof LangErkekLazerEpilasyonRoute
   LangGaleriRoute: typeof LangGaleriRoute
+  LangHizmetlerRoute: typeof LangHizmetlerRoute
   LangIpekKirpikRoute: typeof LangIpekKirpikRoute
   LangKaliciMakyajRoute: typeof LangKaliciMakyajRoute
   LangKarbonPeelingRoute: typeof LangKarbonPeelingRoute
@@ -1154,6 +1174,7 @@ const LangRouteChildren: LangRouteChildren = {
   LangDovmeSilmeRoute: LangDovmeSilmeRoute,
   LangErkekLazerEpilasyonRoute: LangErkekLazerEpilasyonRoute,
   LangGaleriRoute: LangGaleriRoute,
+  LangHizmetlerRoute: LangHizmetlerRoute,
   LangIpekKirpikRoute: LangIpekKirpikRoute,
   LangKaliciMakyajRoute: LangKaliciMakyajRoute,
   LangKarbonPeelingRoute: LangKarbonPeelingRoute,

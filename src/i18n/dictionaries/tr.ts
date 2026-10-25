@@ -467,6 +467,42 @@ export const tr = {
     call: "Ara",
     waMessage: "Merhaba, randevu almak istiyorum.",
   },
+  servicesHub: {
+    title: "Hizmetlerimiz | Maslak Güzellik Merkezi — Güler Ayaz Beauty",
+    description:
+      "Güler Ayaz Beauty'nin Maslak 1453'teki tüm hizmetleri: lazer epilasyon, cilt bakımı, karbon peeling, vücut şekillendirme, kalıcı makyaj, tırnak, kirpik, reformer pilates ve kuaför.",
+    eyebrow: "Maslak 1453 · Sarıyer / İstanbul",
+    h1: "Hizmetlerimiz",
+    intro:
+      "Güler Ayaz Beauty, güzellik merkezi ve kuaförü tek çatı altında toplar; cilt, vücut, tırnak ve saç randevuları aynı ziyarette planlanabilir. Her uygulama ücretsiz bir ön değerlendirmeyle başlar ve seans planı kişiye özel hazırlanır. Merkezimiz her gün 08:30–21:00 arası açıktır; otopark ve vale hizmeti vardır.",
+    groups: {
+      laser: {
+        title: "Lazer Uygulamaları",
+        intro: "Soğutmalı diode ve Q-Switch lazer cihazlarıyla yapılan uygulamalar. Hepsi cilt tonu ve kıl/pigment yapısı değerlendirmesiyle başlar.",
+      },
+      skinBody: {
+        title: "Cilt ve Vücut",
+        intro: "Cilt analiziyle planlanan bakım programları ve ölçüm temelli vücut uygulamaları.",
+      },
+      hair: {
+        title: "Saç",
+        intro: "Kuaför bölümümüzde kesim ve şekillendirmenin yanında renk, bakım ve uzatma uygulamaları yapılır.",
+      },
+      detail: {
+        title: "Tırnak, Kirpik ve Kalıcı Makyaj",
+        intro: "Tek kullanımlık ve sterilize ekipmanla çalışılan detay uygulamaları.",
+      },
+    },
+    closingBefore: "Hangi uygulamanın size uygun olduğundan emin değilseniz, ücretsiz ön değerlendirme için ",
+    closingLink: "WhatsApp'tan yazabilirsiniz",
+    closingAfter: ".",
+    disclaimer:
+      "Bu sayfadaki bilgiler tanıtım ve bilgilendirme amaçlıdır; kişisel bir değerlendirme yerine geçmez. Uygulama sonuçları kişiye göre farklılık gösterebilir.",
+    ldItemList: "Güler Ayaz Beauty hizmetleri",
+    ldOfferCatalog: "Hizmet listesi",
+    ldBreadcrumb: "Hizmetler",
+  },
+
   faqSection: {
     badge: "Sık Sorulan Sorular",
     titleA: "Randevu öncesi", titleB: "merak edilenler",

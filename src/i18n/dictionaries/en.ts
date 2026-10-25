@@ -469,6 +469,42 @@ export const en: typeof tr = {
     call: "Call",
     waMessage: "Hello, I would like to book an appointment at Güler Ayaz Beauty Clinic.",
   },
+  servicesHub: {
+    title: "Our Services | Beauty Centre in Maslak — Güler Ayaz Beauty",
+    description:
+      "Every service at Güler Ayaz Beauty in Maslak 1453: laser hair removal, skin care, carbon peel, body contouring, permanent make-up, nails, lashes, reformer pilates and hair.",
+    eyebrow: "Maslak 1453 · Sarıyer / Istanbul",
+    h1: "Our Services",
+    intro:
+      "Güler Ayaz Beauty brings a beauty centre and a hair salon under one roof; skin, body, nail and hair appointments can be arranged within the same visit. Every treatment begins with a free assessment and the session plan is built around you. We are open every day from 08:30 to 21:00; parking and valet service are available.",
+    groups: {
+      laser: {
+        title: "Laser Treatments",
+        intro: "Treatments carried out with cooled diode and Q-Switch laser devices. All of them begin with an assessment of skin tone and hair or pigment structure.",
+      },
+      skinBody: {
+        title: "Skin and Body",
+        intro: "Care programmes planned from a skin analysis, and body treatments based on measurement.",
+      },
+      hair: {
+        title: "Hair",
+        intro: "Alongside cutting and styling, our hair department covers colour, treatments and extensions.",
+      },
+      detail: {
+        title: "Nails, Lashes and Permanent Make-up",
+        intro: "Detail work carried out with single-use and sterilised equipment.",
+      },
+    },
+    closingBefore: "If you are not sure which treatment suits you, ",
+    closingLink: "message us on WhatsApp",
+    closingAfter: " to arrange a free assessment.",
+    disclaimer:
+      "The information on this page is for promotion and general guidance; it does not replace a personal assessment. Results vary from person to person.",
+    ldItemList: "Güler Ayaz Beauty services",
+    ldOfferCatalog: "Service list",
+    ldBreadcrumb: "Services",
+  },
+
   faqSection: {
     badge: "Frequently Asked",
     titleA: "Before you", titleB: "book",
