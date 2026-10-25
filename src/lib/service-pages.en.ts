@@ -192,7 +192,7 @@ export const SERVICE_PAGES_EN: ServicePage[] = [
         "<strong>Gel polish</strong> — polish cured under a UV/LED lamp",
         "<strong>Nail art</strong> — design and detail work",
       ] },
-      { t: "p", html: "Gel and acrylic extensions are a separate subject and are covered on their own page." },
+      { t: "p", html: "Gel and acrylic extensions are a separate subject and are covered on our <a href=\"/en/protez-tirnak\">nail extensions page</a>." },
 
       { t: "h2", text: "How a Manicure Runs" },
       { t: "p", html: "Any existing polish is removed with the right method first. Length and shape are agreed, the nails are shaped, and the surrounding skin is tidied. We then move on to the treatment you have chosen. If we see a cut, redness or anything that suggests a fungal problem, we recommend postponing — and we say so at the start." },
@@ -252,7 +252,7 @@ export const SERVICE_PAGES_EN: ServicePage[] = [
       { t: "h3", text: "Keratin Treatment and Brazilian Blowout" },
       { t: "p", html: "The treatments most often chosen for hair that frizzes and will not settle. The difference between the two and the aftercare are explained on our <a href=\"/en/keratin-brezilya-fonu\">keratin and Brazilian blowout page</a>." },
       { t: "h3", text: "Hair Extensions" },
-      { t: "p", html: "Extensions are applied to add length and density. The method is chosen according to your own hair, and the maintenance routine is explained at the consultation." },
+      { t: "p", html: "Extensions are applied to add length and density. The method is chosen according to your own hair, and the maintenance routine is explained at the consultation — details on our <a href=\"/en/protez-sac\">hair extensions page</a>." },
 
       { t: "h2", text: "Why One Visit" },
       { t: "ul", items: [
@@ -378,6 +378,153 @@ export const SERVICE_PAGES_EN: ServicePage[] = [
     ],
     afterFaqHtml:
       "You can reach us on WhatsApp to book an appointment, or call the centre during opening hours.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/protez-tirnak",
+    serviceKey: "protez-tirnak",
+    blogCategory: "Nail Extensions",
+    navLabel: "Nail Extensions & Nail Art",
+    title: "Nail Extensions & Nail Art in Maslak | Güler Ayaz Beauty",
+    description:
+      "Gel and acrylic nail extensions, gel polish, manicure and nail art at Maslak 1453, Sarıyer. Material and shape chosen for your own nails.",
+    h1: "Nail Extensions, Manicure and Nail Art in Maslak",
+    cover: "service-nail-gercek.jpg",
+    coverAlt: "Gel polish application during a manicure at our centre",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty in Maslak 1453, Sarıyer, Istanbul offers nail extensions, gel polish, manicure, pedicure and nail art. Every appointment begins by looking at the structure of your own nail; material, length and shape are then chosen together." },
+
+      { t: "h2", text: "What We Offer" },
+      { t: "h3", text: "Nail Extensions" },
+      { t: "p", html: "Shape and length are built over your own nail with gel or acrylic. Gel feels lighter and more flexible; acrylic is harder and can be the better choice for longer designs. Which suits you is assessed against how you use your hands." },
+      { t: "h3", text: "Gel Polish and Nail Strengthening" },
+      { t: "p", html: "Applied over your natural nail without adding length, gel polish holds colour longer through daily wear. On thin or brittle nails it can be planned together with a strengthening layer." },
+      { t: "h3", text: "Manicure and Pedicure" },
+      { t: "p", html: "A classic manicure and pedicure covers cuticle care, shaping and hydration. We work with single-use files and sterilised tools — more on our <a href=\"/en/manikur-pedikur\">manicure and pedicure page</a>." },
+      { t: "h3", text: "Nail Art" },
+      { t: "p", html: "From French, ombre, chrome, stone and foil detail to designs for a particular occasion. The design is decided together so that it fits your daily routine." },
+
+      { t: "h2", text: "Choosing Shape and Length" },
+      { t: "p", html: "Round and almond shapes are more comfortable for everyday wear; coffin and stiletto shapes suit anyone after a more striking look. Typing, sport and housework all feed directly into the decision on length." },
+
+      { t: "h2", text: "Hygiene" },
+      { t: "ul", items: [
+        "Single-use files and buffers",
+        "Metal tools sterilised after every guest",
+        "Hands and nail surface disinfected before the appointment",
+        "Where there is any sign of infection or a fungal problem, the appointment is postponed",
+      ] },
+
+      { t: "h2", text: "Maintenance and Infills" },
+      { t: "p", html: "As the nail grows a gap appears at the base; an infill at that point both refreshes the look and keeps the extension from lifting. The interval depends on how fast your nails grow. Wearing gloves for work involving a lot of water, and using cuticle oil, extends the life of the application." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are easy to reach from Ayazağa, Levent and Şişli, and we are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "Do nail extensions damage the natural nail?", a: "Applied correctly, with regular infills and professional removal, damage is not expected. Problems mostly come from forcing them off at home or leaving them unmaintained for a long time." },
+      { q: "Should I choose gel or acrylic?", a: "Gel feels more natural and lighter; acrylic is more durable for longer designs. We choose together, based on your nail structure and how you use your hands." },
+      { q: "When should I come for an infill?", a: "It depends on how fast your nails grow; usually it is planned at intervals of a few weeks." },
+      { q: "Can a manicure and extensions be done in the same appointment?", a: "Yes. The time needed depends on the design chosen, and we agree it when the appointment is booked." },
+    ],
+    afterFaqHtml:
+      "For work on your own nails without added length, see our <a href=\"/en/manikur-pedikur\">manicure, pedicure and gel polish page</a>. You can reach us on WhatsApp to book.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/protez-sac",
+    serviceKey: "protez-sac",
+    blogCategory: "Hair Extensions",
+    navLabel: "Hair Extensions",
+    title: "Hair Extensions in Maslak, Istanbul | Güler Ayaz Beauty",
+    description:
+      "Hair extensions at Maslak 1453, Sarıyer. Method, colour match and maintenance planned after assessing your hair density and scalp.",
+    h1: "Hair Extensions in Maslak",
+    cover: "service-kuafor.jpg",
+    coverAlt: "Hair work in the Güler Ayaz Beauty salon",
+    blocks: [
+      { t: "p", html: "Hair extensions are applied to add length or density to the hair you already have. In the hair department at Güler Ayaz Beauty in Maslak 1453, Sarıyer, Istanbul, every application begins with an assessment of your hair density and your scalp." },
+
+      { t: "h2", text: "Choosing the Method" },
+      { t: "p", html: "There is more than one method, and none of them suits every head of hair. The choice is made together at the consultation, based on the thickness of your hair, its current density, the sensitivity of your scalp and your daily care routine. The method to be used, the maintenance interval and the removal process are all discussed clearly before the appointment." },
+      { t: "h3", text: "Matching Colour and Texture" },
+      { t: "p", html: "The tone and texture of the added hair are matched to your own. Where necessary, colour work before or after the application brings the two together; in that case the order is planned separately — see our <a href=\"/en/sac-boyama\">hair colouring page</a>." },
+
+      { t: "h2", text: "Care and Everyday Wear" },
+      { t: "ul", items: [
+        "The brushing and washing routine is explained at the end of the appointment",
+        "Regular brushing is needed to prevent tangling at the attachment points",
+        "As the hair grows the attachment points move down, so a periodic maintenance appointment is planned",
+        "We recommend having the extensions removed at the salon",
+      ] },
+
+      { t: "h2", text: "When It Isn't Suitable" },
+      { t: "p", html: "Where there is an active problem on the scalp — eczema, a fungal condition or an open wound — the application is not carried out. If you have widespread hair loss we recommend a medical assessment first; added weight can make matters harder before the cause of the loss has been established. Very fine and fragile hair needs particular care in choosing the method." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our salon is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "Will it damage my own hair?", a: "Not expected when the right method is chosen and the maintenance intervals are kept. The risk rises with the wrong method, too much weight or missed maintenance, which is why the assessment and periodic checks are part of the service." },
+      { q: "How long does it last?", a: "It depends on the method, how fast your hair grows and the care it gets. We tell you the maintenance interval to expect at the consultation." },
+      { q: "Can I wash and blow-dry my hair?", a: "Yes. The washing and styling routine is explained in detail at the end of the appointment, including what to watch for around the attachment points." },
+      { q: "I have hair loss — can I still have extensions?", a: "We recommend having the cause assessed by a doctor first. Suitability is discussed together after that assessment." },
+      { q: "What happens when I want them removed?", a: "We recommend having removal done at the salon. Forcing them out at home can break the hair shaft." },
+    ],
+    afterFaqHtml:
+      "For colour matching see <a href=\"/en/sac-boyama\">hair colouring</a>, and for treatments <a href=\"/en/keratin-brezilya-fonu\">keratin treatment and Brazilian blowout</a>. You can reach us on WhatsApp to book.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/reformer-pilates",
+    serviceKey: "pilates",
+    blogCategory: "Reformer Pilates",
+    navLabel: "Reformer Pilates",
+    title: "Reformer Pilates in Maslak | Private Classes — Güler Ayaz",
+    description:
+      "Private, duet and small-group reformer pilates at Maslak 1453, Sarıyer. Certified instructors and a programme planned around you.",
+    h1: "Reformer Pilates in Maslak",
+    cover: "service-pilates.jpg",
+    coverAlt: "A private reformer pilates class in the studio",
+    blocks: [
+      { t: "p", html: "At the Güler Ayaz Beauty studio in Maslak 1453, reformer pilates classes run with certified instructors as private sessions, duets (2 people) and small groups (3–4 people). The programme is built on the posture and movement assessment done in your first class." },
+
+      { t: "h2", text: "What Reformer Pilates Is" },
+      { t: "p", html: "The reformer is a pilates apparatus that works with spring resistance. The springs can make a movement harder or support it, which means the exercises can be set to different levels. Core strength, posture, flexibility and controlled movement are the focus of the classes." },
+
+      { t: "h2", text: "Class Formats" },
+      { t: "h3", text: "Private Classes" },
+      { t: "p", html: "The instructor works only with you for the whole class. This suits beginners, anyone with a specific goal, and anyone who wants the programme built entirely around them." },
+      { t: "h3", text: "Duets and Small Groups" },
+      { t: "p", html: "In duets of two and small groups of three or four, participants are grouped at a similar level and the instructor follows each person's movement." },
+      { t: "h3", text: "Pregnancy and Postnatal" },
+      { t: "p", html: "Pregnancy and postnatal recovery classes begin with your doctor's approval and a programme appropriate to that stage." },
+
+      { t: "h2", text: "Your First Class" },
+      { t: "p", html: "In the first class we look at posture, flexibility and basic movement patterns, and talk through any past injuries and your general health. The programme is planned from that. If you have a known condition, we recommend speaking to your doctor before starting." },
+
+      { t: "h2", text: "What to Bring" },
+      { t: "ul", items: [
+        "Comfortable, close-fitting sportswear",
+        "Grip socks, for hygiene and safety",
+        "Avoid a heavy meal before class",
+        "A water bottle",
+      ] },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our studio is inside Maslak 1453 in Sarıyer; parking and valet service are available. After-work times can be arranged for those working in the Maslak offices." },
+    ],
+    faqs: [
+      { q: "I have never done pilates — can I start?", a: "Yes. The spring resistance on the reformer is set to your level; we recommend starting with private classes." },
+      { q: "How many classes a week should I do?", a: "It depends on your goal and the programme; we set a frequency that suits you after the first assessment." },
+      { q: "What is the difference between reformer and mat pilates?", a: "Mat pilates works with your own body weight; on the reformer, spring resistance can either support or challenge the movement, which allows finer adjustment to your level." },
+      { q: "Can I do pilates while pregnant?", a: "You can start with your doctor's approval and a programme appropriate to that stage. We do not plan classes without that approval." },
+    ],
+    afterFaqHtml:
+      "You can reach us on WhatsApp to arrange your first class, or call the studio during opening hours.",
     note: NOTE_EN,
   },
 ];

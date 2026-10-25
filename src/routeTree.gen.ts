@@ -46,6 +46,9 @@ import { Route as LangKuaforRouteImport } from './routes/$lang/kuafor'
 import { Route as LangKvkkRouteImport } from './routes/$lang/kvkk'
 import { Route as LangLazerEpilasyonRouteImport } from './routes/$lang/lazer-epilasyon'
 import { Route as LangManikurPedikurRouteImport } from './routes/$lang/manikur-pedikur'
+import { Route as LangProtezSacRouteImport } from './routes/$lang/protez-sac'
+import { Route as LangProtezTirnakRouteImport } from './routes/$lang/protez-tirnak'
+import { Route as LangReformerPilatesRouteImport } from './routes/$lang/reformer-pilates'
 import { Route as LangSacBoyamaRouteImport } from './routes/$lang/sac-boyama'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
@@ -239,6 +242,21 @@ const LangManikurPedikurRoute = LangManikurPedikurRouteImport.update({
   path: '/manikur-pedikur',
   getParentRoute: () => LangRoute,
 } as any)
+const LangProtezSacRoute = LangProtezSacRouteImport.update({
+  id: '/protez-sac',
+  path: '/protez-sac',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangProtezTirnakRoute = LangProtezTirnakRouteImport.update({
+  id: '/protez-tirnak',
+  path: '/protez-tirnak',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangReformerPilatesRoute = LangReformerPilatesRouteImport.update({
+  id: '/reformer-pilates',
+  path: '/reformer-pilates',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangSacBoyamaRoute = LangSacBoyamaRouteImport.update({
   id: '/sac-boyama',
   path: '/sac-boyama',
@@ -319,6 +337,9 @@ export interface FileRoutesByFullPath {
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
   '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
+  '/$lang/protez-sac': typeof LangProtezSacRoute
+  '/$lang/protez-tirnak': typeof LangProtezTirnakRoute
+  '/$lang/reformer-pilates': typeof LangReformerPilatesRoute
   '/$lang/sac-boyama': typeof LangSacBoyamaRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -364,6 +385,9 @@ export interface FileRoutesByTo {
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
   '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
+  '/$lang/protez-sac': typeof LangProtezSacRoute
+  '/$lang/protez-tirnak': typeof LangProtezTirnakRoute
+  '/$lang/reformer-pilates': typeof LangReformerPilatesRoute
   '/$lang/sac-boyama': typeof LangSacBoyamaRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -412,6 +436,9 @@ export interface FileRoutesById {
   '/$lang/kvkk': typeof LangKvkkRoute
   '/$lang/lazer-epilasyon': typeof LangLazerEpilasyonRoute
   '/$lang/manikur-pedikur': typeof LangManikurPedikurRoute
+  '/$lang/protez-sac': typeof LangProtezSacRoute
+  '/$lang/protez-tirnak': typeof LangProtezTirnakRoute
+  '/$lang/reformer-pilates': typeof LangReformerPilatesRoute
   '/$lang/sac-boyama': typeof LangSacBoyamaRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog_/$slug': typeof BlogSlugRoute
@@ -460,6 +487,9 @@ export interface FileRouteTypes {
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
     | '/$lang/manikur-pedikur'
+    | '/$lang/protez-sac'
+    | '/$lang/protez-tirnak'
+    | '/$lang/reformer-pilates'
     | '/$lang/sac-boyama'
     | '/admin'
     | '/blog/$slug'
@@ -505,6 +535,9 @@ export interface FileRouteTypes {
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
     | '/$lang/manikur-pedikur'
+    | '/$lang/protez-sac'
+    | '/$lang/protez-tirnak'
+    | '/$lang/reformer-pilates'
     | '/$lang/sac-boyama'
     | '/admin'
     | '/blog/$slug'
@@ -552,6 +585,9 @@ export interface FileRouteTypes {
     | '/$lang/kvkk'
     | '/$lang/lazer-epilasyon'
     | '/$lang/manikur-pedikur'
+    | '/$lang/protez-sac'
+    | '/$lang/protez-tirnak'
+    | '/$lang/reformer-pilates'
     | '/$lang/sac-boyama'
     | '/_authenticated/admin'
     | '/blog_/$slug'
@@ -857,6 +893,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangManikurPedikurRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/protez-sac': {
+      id: '/$lang/protez-sac'
+      path: '/protez-sac'
+      fullPath: '/$lang/protez-sac'
+      preLoaderRoute: typeof LangProtezSacRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/protez-tirnak': {
+      id: '/$lang/protez-tirnak'
+      path: '/protez-tirnak'
+      fullPath: '/$lang/protez-tirnak'
+      preLoaderRoute: typeof LangProtezTirnakRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/reformer-pilates': {
+      id: '/$lang/reformer-pilates'
+      path: '/reformer-pilates'
+      fullPath: '/$lang/reformer-pilates'
+      preLoaderRoute: typeof LangReformerPilatesRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/sac-boyama': {
       id: '/$lang/sac-boyama'
       path: '/sac-boyama'
@@ -944,6 +1001,9 @@ interface LangRouteChildren {
   LangKvkkRoute: typeof LangKvkkRoute
   LangLazerEpilasyonRoute: typeof LangLazerEpilasyonRoute
   LangManikurPedikurRoute: typeof LangManikurPedikurRoute
+  LangProtezSacRoute: typeof LangProtezSacRoute
+  LangProtezTirnakRoute: typeof LangProtezTirnakRoute
+  LangReformerPilatesRoute: typeof LangReformerPilatesRoute
   LangSacBoyamaRoute: typeof LangSacBoyamaRoute
   LangIndexRoute: typeof LangIndexRoute
 }
@@ -957,6 +1017,9 @@ const LangRouteChildren: LangRouteChildren = {
   LangKvkkRoute: LangKvkkRoute,
   LangLazerEpilasyonRoute: LangLazerEpilasyonRoute,
   LangManikurPedikurRoute: LangManikurPedikurRoute,
+  LangProtezSacRoute: LangProtezSacRoute,
+  LangProtezTirnakRoute: LangProtezTirnakRoute,
+  LangReformerPilatesRoute: LangReformerPilatesRoute,
   LangSacBoyamaRoute: LangSacBoyamaRoute,
   LangIndexRoute: LangIndexRoute,
 }
