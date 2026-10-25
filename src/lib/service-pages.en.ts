@@ -209,6 +209,9 @@ export const SERVICE_PAGES_EN: ServicePage[] = [
       { t: "h2", text: "Hygiene" },
       { t: "p", html: "Single-use items are replaced for every guest, and metal tools that are reused are sterilised between appointments. The work area is cleaned after each one." },
 
+      { t: "h2", text: "Giving Your Nails a Break" },
+      { t: "p", html: "Resting the nail between applications rather than going straight on is a question we hear often. We assess together at your appointment when a break would make sense, based on the current condition of your nails." },
+
       { t: "h2", text: "Finding Us" },
       { t: "p", html: "Our studio is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
     ],

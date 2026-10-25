@@ -522,6 +522,7 @@ export const tr = {
     address: "Maslak 1453\nSarıyer / İstanbul",
     copyright: "Tüm hakları saklıdır.",
     galleryLink: "Galeri",
+    credit: "Web tasarım & geliştirme:",
     legalLink: "KVKK Aydınlatma Metni",
     disclaimer: "Bu sitedeki bilgiler tanıtım amaçlıdır.",
     resultDisclaimer: "Uygulama sonuçları kişiye göre farklılık gösterebilir.",

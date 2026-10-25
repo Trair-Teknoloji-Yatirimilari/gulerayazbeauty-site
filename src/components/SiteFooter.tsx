@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Instagram, Mail } from "lucide-react";
 import { useT } from "@/i18n/context";
-import { SERVICE_PAGES } from "@/lib/service-pages";
+import { SERVICE_PAGES, serviceByPath } from "@/lib/service-pages";
+import { localizedPath } from "@/i18n/locale-path";
 import { reopenConsent } from "@/lib/consent";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function SiteFooter() {
-  const { t } = useT();
+  const { t, locale } = useT();
   const addressLines = t.footer.address.split("\n");
   return (
     <footer className="relative border-t border-border/40 py-12 md:py-16">
@@ -30,13 +31,21 @@ export function SiteFooter() {
                   {t.footer.allServices}
                 </Link>
               </li>
-              {SERVICE_PAGES.map((s) => (
-                <li key={s.path}>
-                  <Link to={s.path} className="text-sm text-foreground/80 hover:text-primary transition-colors">
-                    {s.navLabel}
-                  </Link>
-                </li>
-              ))}
+              {/*
+                Sıra KASITLI olarak TR dizisinden geliyor: üç dil dizisi farklı
+                sırada tutuluyor, buradan dönseydik footer sırası dile göre
+                değişirdi. Etiket ve href dile göre çözülür, sıra sabit kalır.
+              */}
+              {SERVICE_PAGES.map((s) => {
+                const localized = serviceByPath(locale)[s.path] ?? s;
+                return (
+                  <li key={s.path}>
+                    <Link to={localizedPath(s.path, locale)} className="text-sm text-foreground/80 hover:text-primary transition-colors">
+                      {localized.navLabel}
+                    </Link>
+                  </li>
+                );
+              })}
               <li>
                 <Link to="/kampanya" className="text-sm text-foreground/80 hover:text-primary transition-colors">
                   {t.campaign.footerLink}
@@ -48,7 +57,7 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link to="/galeri" className="text-sm text-foreground/80 hover:text-primary transition-colors">
+                <Link to={localizedPath("/galeri", locale)} className="text-sm text-foreground/80 hover:text-primary transition-colors">
                   {t.footer.galleryLink}
                 </Link>
               </li>
@@ -110,7 +119,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {t.nav.brand}. {t.footer.copyright}
           </p>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-[10px] text-muted-foreground">
-            <Link to="/galeri" className="hover:text-primary transition-colors underline underline-offset-2">
+            <Link to={localizedPath("/galeri", locale)} className="hover:text-primary transition-colors underline underline-offset-2">
               {t.footer.galleryLink}
             </Link>
             ·
@@ -118,7 +127,7 @@ export function SiteFooter() {
               Blog
             </Link>
             <span className="hidden sm:inline">·</span>
-            <Link to="/kvkk" className="hover:text-primary transition-colors underline underline-offset-2">
+            <Link to={localizedPath("/kvkk", locale)} className="hover:text-primary transition-colors underline underline-offset-2">
               {t.footer.legalLink}
             </Link>
             <span className="hidden sm:inline">·</span>
@@ -146,7 +155,7 @@ export function SiteFooter() {
           </p>
         </div>
         <p className="text-[11px] text-muted-foreground text-center mt-8">
-          Web tasarım &amp; geliştirme:{" "}
+          {t.footer.credit}{" "}
           <a
             href="https://www.trairx.com"
             rel="noopener"

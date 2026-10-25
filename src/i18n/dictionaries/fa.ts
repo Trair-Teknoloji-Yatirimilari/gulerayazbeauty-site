@@ -524,6 +524,7 @@ export const fa: typeof tr = {
     address: "ماسلاک ۱۴۵۳\nسریئر / استانبول",
     copyright: "همهٔ حقوق محفوظ است.",
     galleryLink: "گالری",
+    credit: "طراحی و توسعهٔ وب:",
     legalLink: "متن روشنگری KVKK",
     disclaimer: "اطلاعات این سایت برای اهداف تبلیغاتی است.",
     resultDisclaimer: "نتایج ممکن است از فردی به فرد دیگر متفاوت باشد.",

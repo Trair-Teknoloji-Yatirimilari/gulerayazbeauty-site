@@ -524,6 +524,7 @@ export const en: typeof tr = {
     address: "Maslak 1453\nSarıyer / Istanbul",
     copyright: "All rights reserved.",
     galleryLink: "Gallery",
+    credit: "Web design & development:",
     legalLink: "Privacy Notice",
     disclaimer: "The information on this site is for promotional purposes.",
     resultDisclaimer: "Results may vary from person to person.",
