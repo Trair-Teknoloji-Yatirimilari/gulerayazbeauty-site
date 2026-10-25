@@ -39,8 +39,11 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VucutSekillendirmeRouteImport } from './routes/vucut-sekillendirme'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
 import { Route as LangCiltBakimiRouteImport } from './routes/$lang/cilt-bakimi'
+import { Route as LangDovmeSilmeRouteImport } from './routes/$lang/dovme-silme'
+import { Route as LangErkekLazerEpilasyonRouteImport } from './routes/$lang/erkek-lazer-epilasyon'
 import { Route as LangGaleriRouteImport } from './routes/$lang/galeri'
 import { Route as LangIpekKirpikRouteImport } from './routes/$lang/ipek-kirpik'
+import { Route as LangKarbonPeelingRouteImport } from './routes/$lang/karbon-peeling'
 import { Route as LangKeratinBrezilyaFonuRouteImport } from './routes/$lang/keratin-brezilya-fonu'
 import { Route as LangKuaforRouteImport } from './routes/$lang/kuafor'
 import { Route as LangKvkkRouteImport } from './routes/$lang/kvkk'
@@ -207,6 +210,16 @@ const LangCiltBakimiRoute = LangCiltBakimiRouteImport.update({
   path: '/cilt-bakimi',
   getParentRoute: () => LangRoute,
 } as any)
+const LangDovmeSilmeRoute = LangDovmeSilmeRouteImport.update({
+  id: '/dovme-silme',
+  path: '/dovme-silme',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangErkekLazerEpilasyonRoute = LangErkekLazerEpilasyonRouteImport.update({
+  id: '/erkek-lazer-epilasyon',
+  path: '/erkek-lazer-epilasyon',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangGaleriRoute = LangGaleriRouteImport.update({
   id: '/galeri',
   path: '/galeri',
@@ -215,6 +228,11 @@ const LangGaleriRoute = LangGaleriRouteImport.update({
 const LangIpekKirpikRoute = LangIpekKirpikRouteImport.update({
   id: '/ipek-kirpik',
   path: '/ipek-kirpik',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangKarbonPeelingRoute = LangKarbonPeelingRouteImport.update({
+  id: '/karbon-peeling',
+  path: '/karbon-peeling',
   getParentRoute: () => LangRoute,
 } as any)
 const LangKeratinBrezilyaFonuRoute = LangKeratinBrezilyaFonuRouteImport.update({
@@ -330,8 +348,11 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
+  '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
+  '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
+  '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
   '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kuafor': typeof LangKuaforRoute
   '/$lang/kvkk': typeof LangKvkkRoute
@@ -378,8 +399,11 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
+  '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
+  '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
+  '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
   '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kuafor': typeof LangKuaforRoute
   '/$lang/kvkk': typeof LangKvkkRoute
@@ -429,8 +453,11 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vucut-sekillendirme': typeof VucutSekillendirmeRoute
   '/$lang/cilt-bakimi': typeof LangCiltBakimiRoute
+  '/$lang/dovme-silme': typeof LangDovmeSilmeRoute
+  '/$lang/erkek-lazer-epilasyon': typeof LangErkekLazerEpilasyonRoute
   '/$lang/galeri': typeof LangGaleriRoute
   '/$lang/ipek-kirpik': typeof LangIpekKirpikRoute
+  '/$lang/karbon-peeling': typeof LangKarbonPeelingRoute
   '/$lang/keratin-brezilya-fonu': typeof LangKeratinBrezilyaFonuRoute
   '/$lang/kuafor': typeof LangKuaforRoute
   '/$lang/kvkk': typeof LangKvkkRoute
@@ -480,8 +507,11 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
     | '/$lang/cilt-bakimi'
+    | '/$lang/dovme-silme'
+    | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
     | '/$lang/ipek-kirpik'
+    | '/$lang/karbon-peeling'
     | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kuafor'
     | '/$lang/kvkk'
@@ -528,8 +558,11 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
     | '/$lang/cilt-bakimi'
+    | '/$lang/dovme-silme'
+    | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
     | '/$lang/ipek-kirpik'
+    | '/$lang/karbon-peeling'
     | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kuafor'
     | '/$lang/kvkk'
@@ -578,8 +611,11 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/vucut-sekillendirme'
     | '/$lang/cilt-bakimi'
+    | '/$lang/dovme-silme'
+    | '/$lang/erkek-lazer-epilasyon'
     | '/$lang/galeri'
     | '/$lang/ipek-kirpik'
+    | '/$lang/karbon-peeling'
     | '/$lang/keratin-brezilya-fonu'
     | '/$lang/kuafor'
     | '/$lang/kvkk'
@@ -844,6 +880,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangCiltBakimiRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/dovme-silme': {
+      id: '/$lang/dovme-silme'
+      path: '/dovme-silme'
+      fullPath: '/$lang/dovme-silme'
+      preLoaderRoute: typeof LangDovmeSilmeRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/erkek-lazer-epilasyon': {
+      id: '/$lang/erkek-lazer-epilasyon'
+      path: '/erkek-lazer-epilasyon'
+      fullPath: '/$lang/erkek-lazer-epilasyon'
+      preLoaderRoute: typeof LangErkekLazerEpilasyonRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/galeri': {
       id: '/$lang/galeri'
       path: '/galeri'
@@ -856,6 +906,13 @@ declare module '@tanstack/react-router' {
       path: '/ipek-kirpik'
       fullPath: '/$lang/ipek-kirpik'
       preLoaderRoute: typeof LangIpekKirpikRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/karbon-peeling': {
+      id: '/$lang/karbon-peeling'
+      path: '/karbon-peeling'
+      fullPath: '/$lang/karbon-peeling'
+      preLoaderRoute: typeof LangKarbonPeelingRouteImport
       parentRoute: typeof LangRoute
     }
     '/$lang/keratin-brezilya-fonu': {
@@ -994,8 +1051,11 @@ const AuthenticatedRouteRouteWithChildren =
 
 interface LangRouteChildren {
   LangCiltBakimiRoute: typeof LangCiltBakimiRoute
+  LangDovmeSilmeRoute: typeof LangDovmeSilmeRoute
+  LangErkekLazerEpilasyonRoute: typeof LangErkekLazerEpilasyonRoute
   LangGaleriRoute: typeof LangGaleriRoute
   LangIpekKirpikRoute: typeof LangIpekKirpikRoute
+  LangKarbonPeelingRoute: typeof LangKarbonPeelingRoute
   LangKeratinBrezilyaFonuRoute: typeof LangKeratinBrezilyaFonuRoute
   LangKuaforRoute: typeof LangKuaforRoute
   LangKvkkRoute: typeof LangKvkkRoute
@@ -1010,8 +1070,11 @@ interface LangRouteChildren {
 
 const LangRouteChildren: LangRouteChildren = {
   LangCiltBakimiRoute: LangCiltBakimiRoute,
+  LangDovmeSilmeRoute: LangDovmeSilmeRoute,
+  LangErkekLazerEpilasyonRoute: LangErkekLazerEpilasyonRoute,
   LangGaleriRoute: LangGaleriRoute,
   LangIpekKirpikRoute: LangIpekKirpikRoute,
+  LangKarbonPeelingRoute: LangKarbonPeelingRoute,
   LangKeratinBrezilyaFonuRoute: LangKeratinBrezilyaFonuRoute,
   LangKuaforRoute: LangKuaforRoute,
   LangKvkkRoute: LangKvkkRoute,

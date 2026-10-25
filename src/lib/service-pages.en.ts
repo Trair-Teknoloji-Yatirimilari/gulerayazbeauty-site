@@ -527,4 +527,141 @@ export const SERVICE_PAGES_EN: ServicePage[] = [
       "You can reach us on WhatsApp to arrange your first class, or call the studio during opening hours.",
     note: NOTE_EN,
   },
+
+  {
+    path: "/erkek-lazer-epilasyon",
+    serviceKey: "lazer-erkek",
+    blogCategory: "Men's Laser Hair Removal",
+    navLabel: "Men's Laser Hair Removal",
+    title: "Men's Laser Hair Removal in Maslak | Diode — Güler Ayaz",
+    description:
+      "Diode laser hair removal for men at Maslak 1453, Sarıyer. Back, chest, neckline, beard line and full-body plans built around you.",
+    h1: "Men's Laser Hair Removal in Maslak",
+    cover: "service-lazer.jpg",
+    coverAlt: "Diode laser hair removal session for a male guest at our centre",
+    blocks: [
+      { t: "p", html: "Güler Ayaz Beauty in Maslak 1453, Sarıyer, Istanbul treats male guests with cooled diode laser hair removal. As with every guest, the process begins with an analysis of skin tone and hair structure — but because men's hair is generally thicker and denser, the session parameters and intervals are planned differently." },
+
+      { t: "h2", text: "Areas We Treat" },
+      { t: "p", html: "The most frequently requested areas are the back, shoulders, chest, abdomen, neckline and beard line. Arms, legs, underarms and full-body combinations are also treated. Which areas to include is decided together at the free assessment." },
+      { t: "h3", text: "Beard Line and Neckline" },
+      { t: "p", html: "Rather than removing the beard entirely, most guests choose boundary work: the stray hairs on the neck and along the cheekbone are thinned out and the shape of the beard is kept. The neckline is tidied on the same principle. We agree the look you are aiming for before the first session, because the result moves in a lasting direction." },
+
+      { t: "h2", text: "Why the Plan Differs for Men" },
+      { t: "p", html: "Thick, dark hair absorbs more laser energy, which means the parameters have to be set carefully. On large areas such as the back and chest the regrowth cycle can also run differently from the rest of the body. Session intervals are therefore set per area and reviewed as the course progresses." },
+      { t: "ul", items: [
+        "The area needs to be shaved before the session; waxing and plucking are not used",
+        "Intense sun and tanning beds are not advised in the days before and after a session",
+        "Sauna, hammam and hot showers are postponed briefly after the session",
+        "Temporary redness is normal and settles quickly",
+      ] },
+
+      { t: "h2", text: "When It Isn't Suitable" },
+      { t: "p", html: "Sessions may be postponed or declined with an active skin infection, after recent intense sun exposure, while taking medication that increases light sensitivity, and with certain chronic conditions. This is why sharing your medical history at the consultation matters." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. After-work times suit those working in the Maslak offices — we are open every day, weekdays and weekends, from 08:30 to 21:00. We are easy to reach by metro and main roads from Sarıyer, Ayazağa, Levent and Şişli." },
+    ],
+    faqs: [
+      { q: "Is there a separate room for male guests?", a: "Treatments are carried out one-to-one in a closed room. You can tell us your preference when booking." },
+      { q: "How many sessions for the back and chest?", a: "It depends on hair density, hormonal factors and the area. We build a plan specific to you after the assessment; we do not quote a number without one." },
+      { q: "Do I have to have the whole beard removed?", a: "No. Most guests only have the boundary on the neck and cheekbone tidied; the shape of the beard is kept." },
+      { q: "Should I shave before the session?", a: "Yes, the area needs to have been shaved shortly before the day of the session. Waxing and plucking remove the follicle, so they are not used beforehand." },
+      { q: "Does it hurt?", a: "It varies from person to person. Thanks to the cooled handpiece, most guests describe the session as warmth and tingling." },
+    ],
+    afterFaqHtml:
+      "The area list and session structure for female guests are on our <a href=\"/en/lazer-epilasyon\">laser hair removal page</a>. You can reach us on WhatsApp to arrange your free assessment.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/karbon-peeling",
+    serviceKey: "karbon-peeling",
+    blogCategory: "Carbon Peel",
+    navLabel: "Carbon Peel",
+    title: "Carbon Peel in Maslak | Q-Switch Laser — Güler Ayaz Beauty",
+    description:
+      "Q-Switch carbon peel at Maslak 1453, Sarıyer. Sessions planned from a skin analysis, aimed at pores, oiliness and surface texture.",
+    h1: "Q-Switch Carbon Peel in Maslak",
+    cover: "service-cilt-gercek.jpg",
+    coverAlt: "Preparation for a skin treatment at our centre",
+    blocks: [
+      { t: "p", html: "A carbon peel is a treatment in which a thin carbon solution is applied to the skin and then worked with Q-Switch laser pulses. It is carried out at Güler Ayaz Beauty in Maslak 1453, Sarıyer, Istanbul, and every session begins with a skin analysis." },
+
+      { t: "h2", text: "How It Is Done" },
+      { t: "p", html: "The skin is cleansed and the carbon solution is applied, then left for a short time. During that time the solution binds to the surface of the pores and to dead skin cells. That layer is then removed with Q-Switch laser pulses. The energy level of the device is adjusted to your skin type throughout." },
+      { t: "h3", text: "When It Is Chosen" },
+      { t: "p", html: "Most often for the appearance of pores, oiliness, dullness and uneven surface texture. Suitability and the number of sessions to expect are decided individually after the analysis; we do not quote a session count without one." },
+
+      { t: "h2", text: "After the Session" },
+      { t: "ul", items: [
+        "Brief mild pinkness is normal",
+        "Intense sun and tanning beds are not advised in the days following",
+        "Sunscreen is part of the process",
+        "Exfoliating home-care products are postponed for a while",
+      ] },
+
+      { t: "h2", text: "When It Isn't Suitable" },
+      { t: "p", html: "Treatment may be postponed or declined with an active skin infection, an open wound, recent intense sun exposure, medication that increases light sensitivity, and certain chronic conditions. This is why sharing your medical history at the consultation matters." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00, which suits after-work appointments." },
+    ],
+    faqs: [
+      { q: "What is the difference between a carbon peel and a Hydrafacial?", a: "A Hydrafacial is a water- and vacuum-based cleansing and nourishing treatment; a carbon peel works with laser pulses. Which one suits you is decided at the skin analysis, and in some cases the two are alternated." },
+      { q: "How many sessions will I need?", a: "It depends on your skin type and what you want to achieve. We build a plan specific to you after the analysis; we do not quote a number without one." },
+      { q: "Can I go back to work afterwards?", a: "Most guests return to their day the same day. There may be brief mild pinkness." },
+      { q: "Can it be done in summer?", a: "It can be considered if there has been no recent intense sun exposure. Using sunscreen after the session matters." },
+    ],
+    afterFaqHtml:
+      "For the full range of skin care programmes and Hydrafacial see our <a href=\"/en/cilt-bakimi\">skin care page</a>, and for tattoo removal with the same Q-Switch device our <a href=\"/en/dovme-silme\">tattoo removal page</a>.",
+    note: NOTE_EN,
+  },
+
+  {
+    path: "/dovme-silme",
+    serviceKey: "dovme",
+    blogCategory: "Tattoo Removal",
+    navLabel: "Tattoo Removal",
+    title: "Laser Tattoo Removal in Maslak | Q-Switch — Güler Ayaz",
+    description:
+      "Q-Switch laser tattoo and permanent make-up removal at Maslak 1453, Sarıyer. A free assessment builds a plan for your tattoo.",
+    h1: "Q-Switch Laser Tattoo Removal in Maslak and Sarıyer",
+    cover: "service-dovme-silme.jpg",
+    coverAlt: "Tattoo removal with the Q-Switch laser handpiece",
+    blocks: [
+      { t: "p", html: "A tattoo you once chose happily may stop fitting your style, your profession or the stage of life you are in. At our centre, tattoo and permanent make-up removal is carried out with Q-Switch laser technology." },
+
+      { t: "h2", text: "How the Q-Switch Laser Works" },
+      { t: "p", html: "The Q-Switch laser produces very short, high-energy pulses. These target the tattoo pigment beneath the skin and break it into very small particles; the body's immune and lymphatic systems then clear the fragmented pigment naturally over time. A tattoo is not erased in one go — each session breaks down part of the pigment and the body completes the rest over the following weeks." },
+
+      { t: "h2", text: "Which Tattoos It Works On" },
+      { t: "p", html: "Black and dark-toned tattoos generally show clearer progress. Colours such as light green and yellow can take longer. The same technology is also used to remove permanent make-up that has changed colour or whose shape no longer suits." },
+
+      { t: "h2", text: "What Determines the Number of Sessions" },
+      { t: "ul", items: [
+        "<strong>The age of the tattoo:</strong> in older tattoos the pigment has partly faded, so the process usually moves faster",
+        "<strong>Colour and pigment density:</strong> professional, deep and densely pigmented tattoos can need more sessions",
+        "<strong>The area:</strong> pigment can clear faster where circulation is stronger",
+        "<strong>Skin type and healing rate:</strong> this varies from person to person",
+      ] },
+      { t: "p", html: "For this reason the process always begins with an individual assessment; your tattoo and your skin are examined together and the session plan is built from that." },
+
+      { t: "h2", text: "The Session and Aftercare" },
+      { t: "p", html: "The area is cleansed beforehand, and measures to improve comfort are taken where appropriate. During the laser pulses the sensation is usually described as similar to the snap of an elastic band. Intervals of around six to eight weeks are generally left between sessions so the skin can recover and the pigment can clear." },
+      { t: "p", html: "Mild redness and tenderness in the area are possible after a session. During healing it is important to protect the area from the sun, to use the recommended aftercare cream, and not to pick at any scabbing." },
+
+      { t: "h2", text: "Finding Us" },
+      { t: "p", html: "Our centre is inside Maslak 1453 in Sarıyer; parking and valet service are available. We are open every day from 08:30 to 21:00." },
+    ],
+    faqs: [
+      { q: "Will the tattoo come off completely?", a: "The process depends on the colour, depth and age of the tattoo. We talk through realistic expectations at the assessment, with your tattoo in front of us." },
+      { q: "Will it leave a mark?", a: "That depends on the depth of the tattoo, your skin and the aftercare. With appropriate session intervals and correct care, the aim is for the skin to keep its healthy appearance." },
+      { q: "Can permanent make-up be removed too?", a: "Yes. Brow, eyeliner and lip work can also be removed with the Q-Switch laser; the plan is assessed separately according to the type of pigment." },
+      { q: "How long between sessions?", a: "Usually six to eight weeks." },
+    ],
+    afterFaqHtml:
+      "The same Q-Switch device is used for our <a href=\"/en/karbon-peeling\">carbon peel</a>. You can reach us on WhatsApp to arrange a free assessment.",
+    note: NOTE_EN,
+  },
 ];
