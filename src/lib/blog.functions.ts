@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { db } from "./db";
 import { requireAdmin } from "./auth.functions";
+import { pingIndexNow, blogPostUrl } from "./indexnow";
 
 const postSchema = z.object({
   id: z.string().uuid().optional(),
@@ -126,6 +127,8 @@ export const upsertPost = createServerFn({ method: "POST" })
          vals.status, vals.published_at, data.id],
       );
       if (!rows[0]) throw new Error("Yazı bulunamadı.");
+      // Yayındaki yazıyı IndexNow'a bildir — ateşle-unut, yanıtı bekletmez
+      if (vals.status === "published") void pingIndexNow([blogPostUrl(rows[0].slug)]);
       return rows[0];
     }
 
@@ -139,6 +142,7 @@ export const upsertPost = createServerFn({ method: "POST" })
        vals.category, vals.tags, vals.seo_title, vals.seo_description,
        vals.status, vals.published_at],
     );
+    if (vals.status === "published") void pingIndexNow([blogPostUrl(rows[0].slug)]);
     return rows[0];
   });
 
